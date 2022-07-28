@@ -15,71 +15,8 @@
   <script type="text/javascript" src="/hckang/guide/assets/docs/plugin.js"></script>
   <script type="text/javascript" src="/hckang/guide/assets/js/lib/jquery-1.12.1.min.js"></script>
   <script type="text/javascript" src="/hckang/guide/assets/js/lib/jquery-ui.js"></script>
+  <script type="text/javascript" src="/hckang/guide/assets/js/guide-func.js"></script>
   <!-- e : 코딩 가이드용 -->
-
-  <script>
-    $(function(){
-      $('.view_code').on('click', function(){
-				const _thisTar = $(this).next('.code-toolbar');
-        _thisTar.toggleClass('open');
-				if (_thisTar.hasClass('open')) {
-					_thisTar.slideDown();
-				} else {
-					_thisTar.slideUp();
-				}
-      });
-
-			$('.tab').on('click', 'a', function (e) {
-				const tabTitTxt = $(this).attr('title');
-				const tabParentTar = $('.contents_infor.guide-content');
-				const tabIdx = [$(this).index(), $('.tab a.active').index()];
-				e.preventDefault();
-				$.ajax({
-					type: 'get',
-					url: '/hckang/guide/html/coding_guide_' + tabTitTxt + '.html',
-					dataType : 'html',
-					success: function(data) {
-						if (!tabParentTar.is(':animated')) {
-							$(e.target).addClass('active').siblings().removeAttr('class');
-							if (tabIdx[0] > tabIdx[1]) {
-								tabParentTar.animate({'left':'-25%', 'opacity':'0'}, 300, () => {
-									tabParentTar.css({'left':'auto', 'right':'-25%'});
-									tabParentTar.animate({'right':'0', 'left':'auto', 'opacity':'1'}, 500, 'easeInOutExpo', () => {
-										$('.contents_infor.guide-content').removeAttr('style').addClass('tab-slide');
-									});
-								});
-							} else {
-								tabParentTar.animate({'right':'-25%', 'opacity':'0'}, 300, () => {
-									tabParentTar.css({'right':'auto', 'left':'-25%'});
-									tabParentTar.animate({'left':'0', 'right':'auto', 'opacity':'1'}, 500, 'easeInOutExpo', () => {
-										$('.contents_infor.guide-content').removeAttr('style').addClass('tab-slide');
-									});
-								});
-							}
-							setTimeout(() => {
-								tabParentTar.html(data);
-							}, 300);
-						}
-					}
-				});
-			});
-
-			if ($('.btn-top').length !== null) {
-				$(window).scroll(function () {
-					var ScrollPos = $(window).scrollTop();
-					if (ScrollPos > 72) {
-						$('.btn-top').addClass('active');
-					} else {
-						$('.btn-top').removeClass('active');
-					}
-				});
-			}
-
-			$('.btn-top').on('click', function () {
-				$('html, body').stop().animate({scrollTop:0}, 500, 'easeInOutCirc');
-			});
-    });
-  </script>
 </head>
 
 <body>
@@ -91,17 +28,17 @@
 
   <div class="cont_codGuide guide_container">
     <div class="tab">
-      <a href="" class="active" title="DEFAULT">DEFAULT</a>
-      <a href="" title="NAMING">NAMING</a>
-      <a href="" title="BOX">BOX</a>
-      <a href="" title="BUTTON">BUTTON</a>
-      <a href="" title="FORM">FORM</a>
-      <a href="" title="FONT">FONT</a>
-      <a href="" title="TABLE">TABLE</a>
-      <a href="" title="TAB">TAB</a>
-      <a href="" title="SWIPER">SWIPER</a>
-      <a href="" title="POPUP">POPUP</a>
-      <a href="" title="ETC">ETC</a>
+      <a href="#" class="active">DEFAULT</a>
+      <a href="#">NAMING</a>
+      <a href="#">BOX</a>
+      <a href="#">BUTTON</a>
+      <a href="#">FORM</a>
+      <a href="#">FONT</a>
+      <a href="#">TABLE</a>
+      <a href="#">TAB</a>
+      <a href="#">SWIPER</a>
+      <a href="#">POPUP</a>
+      <a href="#">ETC</a>
     </div>
 
     <div class="contents_infor guide-content">

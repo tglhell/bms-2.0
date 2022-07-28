@@ -531,7 +531,7 @@ header.guide_header h1 {
 
 .cont_codGuide .tab a:before,
 .cont_codGuide .tab a:after {
-	content: attr(title);
+	content: attr(data-label);
 	transition: all .6s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 	-ms-transform-origin: 50% 50% -20px;
 	transform-origin: 50% 50% -20px;
