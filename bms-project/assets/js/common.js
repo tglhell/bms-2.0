@@ -552,8 +552,8 @@ function designReview () {
 			+ chkSwtTxt[0] + '</strong> - <span>' + chkItemIdx[1] + '</span>' + chkSwtTxt[1] + '<button class="btn-item-del"></button></li>');
 			let swtItems = $(this).closest(swtParent).find('ul').children('li').get();
 			swtItems.sort(function (a, b) {
-				let swtLi = [$(a).text(), $(b).text()];
-				return(swtLi[lastY] < swtLi[irNum[lastY]])? - irNum[lastY]:(swtLi[lastY] > swtLi[irNum[lastY]])?irNum[lastY]:lastY;
+				let swtLi = [$(a).find('span').text(), $(b).find('span').text()];
+				return swtLi[0] - swtLi[1];
 			});
 			$.each(swtItems, function (index, obj) {
 				$(this).closest(swtParent).find('ul').append(obj);
@@ -643,7 +643,7 @@ function chkLeng (elem) {
 	} else {
 		swtCntPd[0].find('.switch-item-list .txt').show();
 	}
-	if (tarSwtPrnt.hasClass('on') && !swtCntVal[4]) {
+	if (tarSwtPrnt.hasClass('on') && !swtCntPd[0].is('.add-tag')) {
 		tarSwtPrnt.removeAttr('style');
 		elem.closest('.js-switch-outer.on:not(.active)').css('height', (swtCntVal[0] + swtCntVal[1]) + (swtCntPd[1] * irNum[1]));
 	}
