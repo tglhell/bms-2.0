@@ -566,7 +566,7 @@ function designReview () {
 				$(this).parent().remove();
 				chkCnt.find('.chk span:contains(' + dataChkTxt + ')').parent().removeClass('on').find('input').prop('checked', false);
 				chkLeng (tarInp);
-				if(chkCnt.find('.switch-item-list li').legnth = 0) {
+				if(chkCnt.find('.switch-item-list li').legnth == 0) {
 					tagTxt.show();
 				}
 			});
