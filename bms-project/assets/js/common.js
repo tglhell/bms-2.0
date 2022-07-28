@@ -558,16 +558,18 @@ function designReview () {
 			$.each(swtItems, function (index, obj) {
 				$(this).closest(swtParent).find('ul').append(obj);
 			});
-			tagTxt.hide();
 			$('.btn-item-del').on('click', function () {
 				const dataChkTxt = $(this).parent().attr('data-label');
 				const chkCnt = $(this).closest('.switch-cont');
 				const tarInp = chkCnt.find('.chk input');
 				$(this).parent().remove();
+				tagTxt.hide();
 				chkCnt.find('.chk span:contains(' + dataChkTxt + ')').parent().removeClass('on').find('input').prop('checked', false);
 				chkLeng (tarInp);
 				if (tagTxt.next().children().length = 0 ) {
 					tagTxt.show();
+				} else {
+
 				}
 			});
 		} else {
@@ -619,10 +621,12 @@ function telInputCheck(num){
 }
 
 function chkLeng (elem) {
+	
 	const tarSwtPrnt = elem.closest(swtParent);
 	const swtCntVal = [tarSwtPrnt.find('ul').height(), parseInt(tarSwtPrnt.find('ul').css('margin-top')),
 	tarSwtPrnt.find('.chk input:checked').length, tarSwtPrnt.find('.chk input:not(:checked)'), 'disabled'];
 	const swtCntPd = [tarSwtPrnt.find('.switch-cont'), parseInt(tarSwtPrnt.find('.switch-cont').css('padding-top'))];
+	chkSwitch = false;
 	if (swtCntVal[2] !== 0) {
 		if (!swtCntPd[0].hasClass('active') && !swtCntPd[0].children().is('.switch-item-list')) {
 			swtCntPd[0].addClass('active').prepend('<div class="switch-item-list"><ul></ul></div>');
