@@ -558,18 +558,16 @@ function designReview () {
 			$.each(swtItems, function (index, obj) {
 				$(this).closest(swtParent).find('ul').append(obj);
 			});
+			tagTxt.hide();
 			$('.btn-item-del').on('click', function () {
 				const dataChkTxt = $(this).parent().attr('data-label');
 				const chkCnt = $(this).closest('.switch-cont');
 				const tarInp = chkCnt.find('.chk input');
 				$(this).parent().remove();
-				tagTxt.hide();
 				chkCnt.find('.chk span:contains(' + dataChkTxt + ')').parent().removeClass('on').find('input').prop('checked', false);
 				chkLeng (tarInp);
-				if (tagTxt.next().children().length = 0 ) {
+				if(chkCnt.find('.switch-item-list li').legnth = 0) {
 					tagTxt.show();
-				} else {
-
 				}
 			});
 		} else {
