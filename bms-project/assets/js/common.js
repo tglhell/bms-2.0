@@ -542,6 +542,7 @@ function designReview () {
 	});
 	$('.switch-btm-box .chk').on('click', 'input', function () {
 		const thisTxt = $(this).parent().find('span').text();
+		const tagTxt = $(this).parents('.add-tag').find('.switch-item-list .txt');
 		$(this).parent().toggleClass('on');
 		chkLeng ($(this));
 		if ($(this).parent().hasClass('on')) {
@@ -557,6 +558,7 @@ function designReview () {
 			$.each(swtItems, function (index, obj) {
 				$(this).closest(swtParent).find('ul').append(obj);
 			});
+			tagTxt.hide();
 			$('.btn-item-del').on('click', function () {
 				const dataChkTxt = $(this).parent().attr('data-label');
 				const chkCnt = $(this).closest('.switch-cont');
@@ -564,6 +566,9 @@ function designReview () {
 				$(this).parent().remove();
 				chkCnt.find('.chk span:contains(' + dataChkTxt + ')').parent().removeClass('on').find('input').prop('checked', false);
 				chkLeng (tarInp);
+				if (tagTxt.next().children().length = 0 ) {
+					tagTxt.show();
+				}
 			});
 		} else {
 			$(this).closest(swtParent).find('ul').find('li[data-label="' + thisTxt + '"]').remove();
@@ -619,7 +624,7 @@ function chkLeng (elem) {
 	tarSwtPrnt.find('.chk input:checked').length, tarSwtPrnt.find('.chk input:not(:checked)'), 'disabled'];
 	const swtCntPd = [tarSwtPrnt.find('.switch-cont'), parseInt(tarSwtPrnt.find('.switch-cont').css('padding-top'))];
 	if (swtCntVal[2] !== 0) {
-		if (!swtCntPd[0].hasClass('active')) {
+		if (!swtCntPd[0].hasClass('active') && !swtCntPd[0].children().is('.switch-item-list')) {
 			swtCntPd[0].addClass('active').prepend('<div class="switch-item-list"><ul></ul></div>');
 		}
 		tarSwtPrnt.addClass('on');
@@ -631,11 +636,13 @@ function chkLeng (elem) {
 				swtCntVal[3].prop(swtCntVal[4], chkSwitch);
 				break
 		}
-	} else {
+	} else if (!swtCntPd[0].is('.add-tag')) {
 		tarSwtPrnt.removeClass('on').find('.switch-cont').removeClass('active');
 		tarSwtPrnt.removeAttr('style').find('.switch-item-list').remove();
+	} else {
+		swtCntPd[0].find('.switch-item-list .txt').show();
 	}
-	if (tarSwtPrnt.hasClass('on')) {
+	if (tarSwtPrnt.hasClass('on') && !swtCntVal[4]) {
 		tarSwtPrnt.removeAttr('style');
 		elem.closest('.js-switch-outer.on:not(.active)').css('height', (swtCntVal[0] + swtCntVal[1]) + (swtCntPd[1] * irNum[1]));
 	}
