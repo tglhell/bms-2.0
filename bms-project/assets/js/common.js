@@ -621,7 +621,6 @@ function telInputCheck(num){
 }
 
 function chkLeng (elem) {
-	
 	const tarSwtPrnt = elem.closest(swtParent);
 	const swtCntVal = [tarSwtPrnt.find('ul').height(), parseInt(tarSwtPrnt.find('ul').css('margin-top')),
 	tarSwtPrnt.find('.chk input:checked').length, tarSwtPrnt.find('.chk input:not(:checked)'), 'disabled'];
