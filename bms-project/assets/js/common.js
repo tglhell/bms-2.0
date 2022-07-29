@@ -534,9 +534,8 @@ function popupOpen (target) {
 }
 
 function designReview () {
-	maxItemLeng = 9; // 체크박스 체크된 최대 갯수
+	maxItemLeng = 10; // 체크박스 체크된 최대 갯수
 	swtParent = $('.js-switch-outer');
-	hypTxt = ' - ';
 	$('.js-switch, .switch-placeholder').on('click', function () {
 		$(this).closest(swtParent).toggleClass('active');
 		chkLeng ($(this));
@@ -549,11 +548,13 @@ function designReview () {
 		if ($(this).parent().hasClass('on')) {
 			let chkItemIdx = [$(this).closest('.check-box').index(), $(this).parent().index()];
 			let chkSwtTxt = [$(this).closest('.check-box').find('>label').text(), $(this).parent().find('span').text()];
+			strCateTxt = '<strong><span>' + chkItemIdx[0] + '</span>'+ chkSwtTxt[0] + '</strong>';
+			hypTxt = ' - ';
 			if (swtParent.find('.switch-cont').hasClass('add-tag')) {
+				strCateTxt = '';
 				hypTxt = '';
 			}
-			$(this).closest(swtParent).find('ul').prepend('<li data-label="' + chkSwtTxt[1] + '"><strong><span>' + chkItemIdx[0] + '</span>'
-			+ chkSwtTxt[0] + '</strong>' + hypTxt + '<span>' + chkItemIdx[1] + '</span>' + chkSwtTxt[1] + '<button class="btn-item-del"></button></li>');
+			$(this).closest(swtParent).find('ul').prepend('<li data-label="' + chkSwtTxt[1] + '">' + strCateTxt + hypTxt + '<span>' + chkItemIdx[1] + '</span>' + chkSwtTxt[1] + '<button class="btn-item-del"></button></li>');
 			let swtItems = $(this).closest(swtParent).find('ul').children('li').get();
 			swtItems.sort(function (a, b) {
 				let swtLi = [$(a).find('span').text(), $(b).find('span').text()];
