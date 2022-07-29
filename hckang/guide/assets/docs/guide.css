@@ -86,7 +86,7 @@ strong {
 .header .header-tit {
 	-webkit-backdrop-filter: blur(80px);
 	backdrop-filter: blur(80px);
-	padding: 10px 20px 10px 60px;
+	padding: 10px 20px;
 	font-family: var(--cm-font-family-head-light);
 	font-size: 26px;
 	font-weight: 400;
@@ -97,20 +97,6 @@ strong {
 	font-family: var(--cm-font-family-head-light);
 	font-style: normal;
 	color: #3fb0fc;
-}
-.header .btn-status-home {
-	overflow: hidden;
-	position: absolute;
-	top: 10px;
-	left: 10px;
-}
-.header .btn-status-home img {
-	transition: .3s ease-in-out;
-	transform: scale(1);
-}
-.header .btn-status-home:hover img {
-	transition: .3s ease-in-out;
-	transform: scale(1.2);
 }
 
 .guide_container {
