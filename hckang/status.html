@@ -1,477 +1,104 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="ko-KR">
-
+<!doctype html>
+<html>
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<title>Hyundai Status</title>
-	<link rel="icon" href="/hckang/guide/assets/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="/hckang/guide/assets/css/guide.css">
-	<script type="text/javascript" src="/hckang/guide/assets/js/lib/jquery-1.12.1.min.js"></script>
-	<script type="text/javascript" src="/hckang/guide/assets/js/lib/jquery-ui.js"></script>
-	<script type="text/javascript" src="/hckang/guide/assets/js/func.js"></script>
-	<script type="text/javascript">
-		(function ($) {
-			$.fn.state = function (options) {
-				var settings = $.extend({
-						title: 'h2.title',
-						content: 'div.content',
-						files: 'tbody tr',
-						date: 'td.state',
-						index: 0,
-						openAll: false,
-						speed: 'fast'
-					}, options),
-					all_sections = this,
-					header = $('div.header');
-				return this.each(function () {
-					var self = this,
-						$self = $(self),
-						title_text = [],
-						completed = 0;
-					self.section_title = $(settings.title, $self);
-					self.content = $(settings.content, $self);
-					self.files = $(settings.files, $self);
-					self.files.each(function () {
-						var date = $(settings.date, this);
-						date.each(function () {
-							var text = $(this).text();
-							if (text) {
-								completed++;
-							}
-						});
-					});
-					self.files
-						.bind('mouseenter', function () {
-							$(this).addClass('hover');
-						})
-						.bind('mouseleave', function () {
-							$(this).removeClass('hover');
-						});
-					title_text = [self.section_title.text(), ' <span class="page-count">(', completed, '/', self.files.length,
-						') - <span style="color:#2280ff;">1depth</span><span class="s-bar"></span></span>'
-					];
-					self.section_title.html(title_text.join(''));
-					self.section_title.bind('click', function () {
-						self.content.slideToggle(settings.speed);
-					});
-					if (settings.openAll || ((settings.index - 1) === all_sections.index(this))) {
-						self.content.css('display', 'block');
-					}
-				});
-			};
-			$(document).ready(function () {
-				$('div.section').state({
-					openAll: true
-				});
-				$('#total').text($('tbody tr').length);
-				$('tbody tr:even').addClass('even');
-				$('tbody td[rowspan][rowspan!=1]').addClass('multi');
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <title>HYUNDAI GUIDE</title>
 
-				$('td:last-child .fcR').click(function(){
-					$(this).toggleClass('on');
-				});
-			});
-		}(jQuery));
-	</script>
-	<script type="text/javascript">
-		$(function(){
-			$(window).scroll(function(){
-				var ScrollPos = $(window).scrollTop();
-				if (ScrollPos > 72) {
-					$('.btn-top').addClass('active');
-				} else {
-					$('.btn-top').removeClass('active');
-				}
-			});
-
-			$('.btn-top').click(function(){
-				$('html, body').stop().animate({scrollTop:0}, 500, 'easeInOutQuart');
-			});
-		});
-	</script>
+  <!-- s : 코딩 가이드용 -->
+  <link rel="stylesheet" href="/hckang/guide/assets/docs/guide.css">
+  <link rel="stylesheet" href="/hckang/guide/assets/docs/prism.css">
+  <link rel="stylesheet" href="/hckang/guide/assets/css/lib/jquery-ui.css">
+  <link rel="shortcut icon" href="/hckang/guide/assets/favicon.ico" type="image/x-icon">
+  <script type="text/javascript" src="/hckang/guide/assets/docs/prism.js"></script>
+  <script type="text/javascript" src="/hckang/guide/assets/docs/plugin.js"></script>
+  <script type="text/javascript" src="/hckang/guide/assets/js/lib/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="/hckang/guide/assets/js/lib/jquery-ui.js"></script>
+  <script type="text/javascript" src="/hckang/guide/assets/js/guide-func.js"></script>
+  <!-- e : 코딩 가이드용 -->
 </head>
 
 <body>
-	<script type="text/javascript">
-		document.body.className += 'js';
-	</script>
-	<div class="header">
-		<!-- <h1>Hyundai 현황판</h1> -->
-		<div class="drawsvg">
-			<svg version="1.1" viewbox="0 0 400 50">
-				<symbol id="fade-text">
-					<text x="42%" y="70%" text-anchor="middle">Hyundai Status</text>
-				</symbol>
-				<g>
-					<use class="stroke" xlink:href="#fade-text"/>
-					<use class="fill" xlink:href="#fade-text"/>
-				</g>
-			</svg>
-		</div>
-		<div class="btn-box">
-			<button class="btn btn-type1 popup btn-aem-64" pop-idx="1"><span>Notices</span></button>
-			<!-- <a target="_blank" href="http://10.25.73.93:8888/" class="btn-aem-64" ><span>Aem 6.4 현황판</span></a>
-			<a target="_blank" href="https://t-www-1.genesis.com/content/genesis-p2/kr/en/main.html" class="btn-aem-64" ><span>KR 2.0 Dev</span></a> -->
-		</div>
-		<button class="btn-top"><span>Top</span></button>
-	</div>
-	<!-- s : category 0 -->
-	<div class="section">
-		<h2 class="title">00. Hyundai Guide</h2>
-		<div class="content">
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">2depth</th>
-						<th scope="col">3depth</th>
-						<th scope="col">4depth</th>
-						<th scope="col">5depth</th>
-						<th scope="col">path</th>
-						<th scope="col">file</th>
-						<th scope="col">worker</th>
-						<th scope="col">state</th>
-						<th scope="col">date</th>
-						<th scope="col">note</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>layout sample</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>/guide/</td>
-						<td><a href="./guide/coding_guide.html">coding_guide.html</a></td>
-						<td class="worker">hc-kang</td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td>새창은 마우스 "<span class="fcB">wheel</span>"로 링크 클릭</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<!-- e : category 0 -->
+<div class="wrap" id="codingGiuide">
+  <div class="header">
+    <h1 class="header-tit"><em>Project Name</em> project coding guide</h1>
+		<a href="/hckang/status.html" class="btn-status-home"><img src="/hckang/guide/assets/images/img_home.png" alt="Home"></a>
+  </div>
 
-	<!-- s : category 1 -->
-	<div class="section">
-		<h2 class="title">01. Review Tools</h2>
-		<div class="content">
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">2depth</th>
-						<th scope="col">3depth</th>
-						<th scope="col">4depth</th>
-						<th scope="col">5depth</th>
-						<th scope="col">path</th>
-						<th scope="col">file</th>
-						<th scope="col">worker</th>
-						<th scope="col">state</th>
-						<th scope="col">date</th>
-						<th scope="col">note</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Design Review - 01</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>/designreview/</td>
-						<td><a target="_blank" href="/bms-project/html/designreview/design_review_01.html">design review - 01.html</a></td>
-						<td class="worker">hc-kang</td>
-						<td class="state">complete</td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Design Review - 02</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>/designreview/</td>
-						<td><a target="_blank" href="/bms-project/html/designreview/design_review_02.html">design review - 02.html</a></td>
-						<td class="worker">hc-kang</td>
-						<td class="state">complete</td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Design Review - 03</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>/designreview/</td>
-						<td><a target="_blank" href="/bms-project/html/designreview/design_review_03.html">design review - 03.html</a></td>
-						<td class="worker">hc-kang</td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Design Review - 04</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>/designreview/</td>
-						<td><a target="_blank" href="/bms-project/html/designreview/design_review_04.html">design review - 04.html</a></td>
-						<td class="worker">JS-KIM</td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Design Review - 05</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>/designreview/</td>
-						<td><a target="_blank" href="/bms-project/html/designreview/design_review_05.html">design review - 05.html</a></td>
-						<td class="worker">hc-kang</td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Design Review - 06</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>/designreview/</td>
-						<td><a target="_blank" href="/bms-project/html/designreview/design_review_06.html">design review - 06.html</a></td>
-						<td class="worker">hc-kang</td>
-						<td class="state">complete</td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Design Review - pop01</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>/designreview/</td>
-						<td><a target="_blank" href="/bms-project/html/designreview/create_pop.html">create_pop.html</a></td>
-						<td class="worker">JS-KIM</td>
-						<td class="state">complete</td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
+  <div class="cont_codGuide guide_container">
+    <div class="tab">
+      <a href="#" class="active">DEFAULT</a>
+      <a href="#">LIST</a>
+      <a href="#">NAMING</a>
+      <a href="#">BOX</a>
+      <a href="#">BUTTON</a>
+      <a href="#">FORM</a>
+      <a href="#">FONT</a>
+      <a href="#">TABLE</a>
+      <a href="#">TAB</a>
+      <a href="#">SWIPER</a>
+      <a href="#">POPUP</a>
+      <a href="#">ETC</a>
+    </div>
 
-	<!-- e : category 1 -->
+    <div class="contents_infor guide-content">
+			<h2 class="title">웹 스타일 가이드 정의</h2>
+			<div class="conIn_tip">
+				<p>
+					신규 페이지 생성시 DOCTYPE은 HTML5이며, 파일 인코딩은 <em>UTF-8</em>로 생성한다.<br>
+					본 프로젝트는 <em>모바일/PC 반응형</em>으로 퍼블진행되었으며 페이지 생성 및 유지보수 진행시 화면 레이아웃은 하단 코드를 참고하여 진행한다.<br>
+					javascript파일은 css 보다 하단에 위치한다.
+				</p>
+			</div>
 
-	<!-- s : category 2 -->
-	<!-- <div class="section">
-		<h2 class="title">02. Models</h2>
-		<div class="content">
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">2depth</th>
-						<th scope="col">3depth</th>
-						<th scope="col">4depth</th>
-						<th scope="col">5depth</th>
-						<th scope="col">path</th>
-						<th scope="col">file</th>
-						<th scope="col">worker</th>
-						<th scope="col">state</th>
-						<th scope="col">date</th>
-						<th scope="col">note</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Line Up</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="https://www.genesis.com/kr/en/models.html">models.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td rowspan="7">Gv80</td>
-						<td>Overview</td>
-						<td></td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="https://www.genesis.com/kr/en/models/luxury-suv-genesis/gv80/overview.html">overview.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Design</td>
-						<td></td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="https://www.genesis.com/kr/en/models/luxury-suv-genesis/gv80/design.html">design.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Safety</td>
-						<td></td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="https://www.genesis.com/kr/en/models/luxury-suv-genesis/gv80/safety.html">safety.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td></td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="https://www.genesis.com/kr/en/models/luxury-suv-genesis/gv80/technology.html">technology.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Performance</td>
-						<td></td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="https://www.genesis.com/kr/en/models/luxury-suv-genesis/gv80/performance.html">performance.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Gallery</td>
-						<td></td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="https://www.genesis.com/kr/en/models/luxury-suv-genesis/gv80/gallery.html">gallery.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Specs</td>
-						<td>Specs Detail</td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="./html/models/key-specs-detail.html#key_specs">key-specs-detail.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td rowspan="7">G80</td>
-						<td>Overview</td>
-						<td></td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="https://www.genesis.com/kr/en/models/luxury-sedan-genesis/g80/overview.html">overview.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Design</td>
-						<td></td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="https://www.genesis.com/kr/en/models/luxury-sedan-genesis/g80/design.html">design.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Safety</td>
-						<td></td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="https://www.genesis.com/kr/en/models/luxury-sedan-genesis/g80/safety.html">safety.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td></td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="https://www.genesis.com/kr/en/models/luxury-sedan-genesis/g80/technology.html">technology.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Performance</td>
-						<td></td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="https://www.genesis.com/kr/en/models/luxury-sedan-genesis/g80/performance.html">performance.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Gallery</td>
-						<td></td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="https://www.genesis.com/kr/en/models/luxury-sedan-genesis/g80/gallery.html">gallery.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Specs</td>
-						<td>Specs Detail</td>
-						<td></td>
-						<td>/models/</td>
-						<td><a target="_blank" href="./html/models/key-specs-detail.html#key_specs">key-specs-detail.html</a></td>
-						<td class="worker"></td>
-						<td class="state"></td>
-						<td class="date"></td>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div> -->
-	<!-- e : category 2 -->
+			<h2 class="title">Layout Guide</h2>
+			<div class="conIn_tip">
+				<p>
+					Layout All (GNB / My LNB) - <a href="hmj_layout.html" class="guide-layout-link" target="_blank">hmj_layout.html</a><br>
+					Sample- Rnb scroll-fix - <a href="../html/order/SC-FE-SB-001.html" class="guide-layout-link" target="_blank">SC-FE-SB-001</a><br>
+					Sample- Gallery - <a href="sample_gallery.html" class="guide-layout-link" target="_blank">sample_gallery.html</a><br>
+					Sample- SVG Chart - <a href="sample_chart.html" class="guide-layout-link" target="_blank">sample_chart.html</a><br>
+					Sample- Main Thumb - <a href="sample_thumb.html" class="guide-layout-link" target="_blank">sample_thumb.html</a><br>
+					Sample- Mocean - <a href="sample_mocean.html" class="guide-layout-link" target="_blank">sample_mocean.html</a><br>
+					Sample- Etc (Top Visual / Poll / PIP ) - <a href="sample_etc.html" class="guide-layout-link" target="_blank">sample_etc.html</a><br>
+				</p>
+			</div>
 
-	<!-- s : layer-popup-->
-	<div class="layerPopupWrap" pop-idx="1">
-		<div class="layerPopupBody">
-			<div class="layerPopupCont">
-				<h1 class="layerTitle">Publishing Notice</h1>
-				<div class="layerCont">
-					<p><span class="fcB">1. 여기에 남겨주세요.</span></p>
-					<p><span class="fcG">2. 공지를 남기세요.</span></p>
-				</div>
-				<button class="popupClose">close</button>
+			<h2 class="title">Css Rule</h2>
+			<div class="conIn_tip">
+				<p>
+					Default - common.css (with font) <br>
+					Spacial - lib/customlib.css , lib/jquery-ui.css, lib/swiper.min.css <br>
+				</p>
+			</div>
+
+			<h2 class="title">javascript  정의 - 진행중</h2>
+			<div class="conIn_tip">
+				<p>
+					UI 스크립트는 jquery 3.4.1 파일을 사용<br>
+					화면에 필요한 스크립트는 common.js<br>
+					API 커스텀 스크립트는 lib/customlib.js
+				</p>
+			</div>
+
+			<h2 class="title">주석처리</h2>
+			<div class="conIn_tip">
+				<p>
+					마크업진행시 주석처리 정의 : 주석은 HTML 작업시 해당 section 구분마다 주석처리를 해주며, 수정및 ISSUE발생시 주석처리를 한다. <br>
+					주석 문구의 경우 특별한 정의는 없으며, 주석처리시 해당하는 부분에 <em>시작과 종료를 함께 작성</em> 및 <em>수정및 ISSUE 주석의 경우 날짜 기입을 원칙</em>으로 한다.<br>
+					<em>종료 주석은 텍스트 앞에 //를 붙여 작성</em>한다.
+				</p>
+			</div>
+
+			<h2 class="title">작업 환경</h2>
+			<div class="conIn_tip">
+				<p>동일한 산출물을 위해 파일작성은 Visual Studio Code를 사용하고, Tab Size는 4로 통일한다.</p>
 			</div>
 		</div>
-	</div>
-	<!-- e : layer-popup-->
-</body>
+  </div>
 
+  <button class="btn-top"><span>Top</span></button>
+</div>
+</body>
 </html>
