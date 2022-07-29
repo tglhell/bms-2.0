@@ -566,9 +566,6 @@ function designReview () {
 				$(this).parent().remove();
 				chkCnt.find('.chk span:contains(' + dataChkTxt + ')').parent().removeClass('on').find('input').prop('checked', false);
 				chkLeng (tarInp);
-				if(chkCnt.find('.switch-item-list li').legnth = 0) {
-					tagTxt.show();
-				}
 			});
 		} else {
 			$(this).closest(swtParent).find('ul').find('li[data-label="' + thisTxt + '"]').remove();
@@ -644,11 +641,8 @@ function chkLeng (elem) {
 	} else {
 		swtCntPd[0].find('.switch-item-list .txt').show();
 	}
-	if (tarSwtPrnt.hasClass('on') && !swtCntVal[4]) {
+	if (tarSwtPrnt.hasClass('on') && !swtCntPd[0].is('.add-tag')) {
 		tarSwtPrnt.removeAttr('style');
 		elem.closest('.js-switch-outer.on:not(.active)').css('height', (swtCntVal[0] + swtCntVal[1]) + (swtCntPd[1] * irNum[1]));
 	}
 }
-
-
-
