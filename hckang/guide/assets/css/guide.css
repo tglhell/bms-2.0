@@ -304,6 +304,10 @@ td:last-child {
 	width: 300px;
 }
 
+.status-wrap {
+	margin: 0 -15px;
+}
+
 .content {
 	padding: 0;
 }
