@@ -1,4 +1,5 @@
 $(function(){
+	const tabParentTar = $('.contents_infor.guide-content');
 	$('.view_code').on('click', function(){
 		const _thisTar = $(this).next('.code-toolbar');
 		_thisTar.toggleClass('open');
@@ -9,9 +10,17 @@ $(function(){
 		}
 	});
 
+	$.ajax({
+		type: 'get',
+		url: '/hckang/guide/html/coding_guide_status.html',
+		dataType : 'html',
+		success: function(data) {
+			tabParentTar.html(data);
+		}
+	});
+
 	$('.tab').on('click', 'a', function (e) {
 		const tabTitTxt = $(e.target).attr('data-label');
-		const tabParentTar = $('.contents_infor.guide-content');
 		const tabIdx = [$(this).index(), $('.tab a.active').index()];
 		e.preventDefault();
 		$.ajax({
