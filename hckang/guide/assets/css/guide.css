@@ -50,11 +50,7 @@ a:active {
 	outline: 1px dotted #2280ff;
 }
 
-.header {
-	padding: 1.5em 1em 1em;
-}
-
-.header h1 {
+.s-header h1 {
 	display: inline;
 	margin-right: 1em;
 	color: #000;
@@ -63,13 +59,13 @@ a:active {
 	font-weight: 400;
 }
 
-.header ul {
+.s-header ul {
 	display: inline;
 	font-size: 1.5em;
 	list-style: none;
 }
 
-.header ul li {
+.s-header ul li {
 	display: inline;
 }
 
@@ -78,6 +74,10 @@ a:active {
 	color: #000;
 	font-weight: bold;
 	font-size: 1.5em;
+}
+
+* {
+	font-family: 'genesis-head-light';
 }
 
 table {
@@ -144,10 +144,6 @@ table tr.up td {
 	background-color: #ffe9f5;
 }
 
-.section {
-	margin: 3em 0;
-}
-
 body.js .section {
 	margin: 0;
 }
@@ -165,11 +161,12 @@ body.js .section {
 	font-family: 'genesis-head-light';
 }
 
-body.js .section .title {
+body.js .section .s-title {
 	padding: .5em;
 	border: 1px solid #ccc;
 	border-width: 1px 0;
 	background-color: rgba(221, 221, 221, .5);
+	font: 12px/1.5 'genesis-head-light', sans-serif;
 	cursor: pointer;
 }
 
@@ -184,22 +181,11 @@ body.js .section .title .page-count {
 
 body.js .section .content {
 	display: none;
+	padding: 0;
 }
 
 #sb-body {
 	border: none !important;
-}
-
-*:not(.content, table td, .drawsvg *) {
-	transition: all .7s ease-in-out;
-}
-
-*:not(.content, table td):active,
-*:not(.content, table td):focus,
-*:not(.content, table td):before,
-*:not(.content, table td):after,
-*:not(.content, table td):hover {
-	transition: all .7s ease-in-out;
 }
 
 .fcR {
@@ -316,6 +302,14 @@ table td.worker {
 
 td:last-child {
 	width: 300px;
+}
+
+.status-wrap {
+	margin: 0 -15px;
+}
+
+.content {
+	padding: 0;
 }
 
 /*td:last-child .fcR.more {cursor:pointer;}*/

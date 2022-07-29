@@ -559,6 +559,8 @@
 												<label class="chk"><input type="checkbox"><span>Sonata(DN)</span></label>
 												<label class="chk"><input type="checkbox"><span>Sonata(DN8)</span></label>
 												<label class="chk"><input type="checkbox"><span>Others</span></label>
+												<label class="chk"><input type="checkbox"><span>Others jsjs</span></label>
+												<label class="chk"><input type="checkbox"><span>Others jsjs2</span></label>
 											</div>
 										</div>
 									</div>
@@ -639,7 +641,7 @@
 
             <div class="cta-outer">
               <button class="btn btn-type2"><span>취소</span></button>
-              <button class="btn"><span>제출</span></button>
+              <button class="btn btn-test"><span>제출</span></button>
             </div>
           </div>
         </div>
@@ -700,6 +702,14 @@
 
 <script>
 	designReview ();
+	$(function () {
+		a = ',,,제출, 제출, 제출, 제출,,,,,';
+		for (i = 0; i < 9; i++) {
+			a = a.replace(/^\s*,/, ""); // s
+			a = a.replace(/,\s*$/, ""); // e
+		}
+		console.log(a);
+	});
 </script>
 
 </html>
