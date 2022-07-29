@@ -554,7 +554,8 @@ function designReview () {
 				strCateTxt = '';
 				hypTxt = '';
 			}
-			$(this).closest(swtParent).find('ul').prepend('<li data-label="' + chkSwtTxt[1] + '">' + strCateTxt + hypTxt + '<span>' + chkItemIdx[1] + '</span>' + chkSwtTxt[1] + '<button class="btn-item-del"></button></li>');
+			$(this).closest(swtParent).find('ul').prepend('<li data-label="' + chkSwtTxt[1] + '">'
+			+ strCateTxt + hypTxt + '<span>' + chkItemIdx[1] + '</span>' + chkSwtTxt[1] + '<button class="btn-item-del"></button></li>');
 			let swtItems = $(this).closest(swtParent).find('ul').children('li').get();
 			swtItems.sort(function (a, b) {
 				let swtLi = [$(a).find('span').text(), $(b).find('span').text()];
