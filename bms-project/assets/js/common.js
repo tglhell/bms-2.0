@@ -651,6 +651,3 @@ function chkLeng (elem) {
 		elem.closest('.js-switch-outer.on:not(.active)').css('height', (swtCntVal[0] + swtCntVal[1]) + (swtCntPd[1] * irNum[1]));
 	}
 }
-
-
-
