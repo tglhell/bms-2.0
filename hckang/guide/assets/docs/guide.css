@@ -15,17 +15,21 @@ body {
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.layerPopupBody .layerCont::-webkit-scrollbar {
 	width: 6px;
 }
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+.layerPopupBody .layerCont::-webkit-scrollbar-thumb {
 	border-radius: 3px;
 	background: rgba(102, 102, 102, .5);
 }
-body::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover,
+.layerPopupBody .layerCont::-webkit-scrollbar-thumb:hover {
 	background: rgba(102, 102, 102, .7);
 }
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track,
+.layerPopupBody .layerCont::-webkit-scrollbar-track {
 	background: #fff;
 }
 
