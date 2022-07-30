@@ -97,5 +97,5 @@ new Function (
 		}
 		while (c--) if (d[c]) a = a.replace(new RegExp("\\b" + e(c) + "\\b", "g"), d[c]);
 		return a;
-  })("$.3('/4-2.0/5/6/7/1/8-9.1');", 10, 10, "|js||getScript|bms|hckang|guide|assets|p|func".split("|"), 0, {})
+  })("$.1('/2/3/4/5/0/6-7.0');", 8, 8, "js|getScript|publishing|code|guide|assets|p|func".split("|"), 0, {})
 )();
