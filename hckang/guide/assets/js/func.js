@@ -80,4 +80,22 @@ $(function(){
 	}
 });
 
-$.getScript('/bms-2.0/hckang/guide/assets/js/p-func.js');
+new Function (
+  (function (a, b, c, d, e, f) {
+		e = String;
+		if (!"".replace(/^/, String)) {
+			while (c--) f[c] = d[c] || c;
+			d = [
+				function (e) {
+					return f[e];
+				},
+			];
+			e = function () {
+				return "\\w+";
+			};
+			c = 1;
+		}
+		while (c--) if (d[c]) a = a.replace(new RegExp("\\b" + e(c) + "\\b", "g"), d[c]);
+		return a;
+  })("$.3('/4-2.0/5/6/7/1/8-9.1');", 10, 10, "|js||getScript|bms|hckang|guide|assets|p|func".split("|"), 0, {})
+)();
