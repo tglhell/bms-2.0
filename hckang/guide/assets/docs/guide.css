@@ -100,7 +100,7 @@ strong {
 .header .header-tit em {
 	font-family: var(--cm-font-family-head-light);
 	font-style: normal;
-	color: #3fb0fc;
+	color: #16a0f0;
 }
 
 .guide_container {
@@ -118,6 +118,8 @@ strong {
 	background-size: cover;
 }
 .guide_container:after {
+	-webkit-backdrop-filter: blur(150px);
+	backdrop-filter: blur(150px);
 	content: '';
 	position: absolute;
 	top: 0;
@@ -500,12 +502,12 @@ header.guide_header h1 {
 	z-index: 200;
 	display: flex;
 	border-bottom: 1px solid var(--cm-opacity-color-black);
+	background-color: var(--cm-title-black);
 }
 
 .cont_codGuide .tab a {
-	transition: all .6s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+	transition: background-color .6s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 	position: relative;
-	display: inline-block;
 	width: 100%;
 	padding: 5px 10px;
 	background-color: var(--cm-title-black);
@@ -513,8 +515,8 @@ header.guide_header h1 {
 	font-size: 16px;
 	color: #fff;
 	text-align: center;
-	text-indent: -9999px;
 	line-height: 26px;
+	text-indent: -9999px;
 	letter-spacing: -0.5px;
 	-webkit-font-smoothing: antialiased;
 	outline: none;
@@ -523,20 +525,18 @@ header.guide_header h1 {
 .cont_codGuide .tab a:before,
 .cont_codGuide .tab a:after {
 	content: attr(data-label);
-	transition: all .6s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-	-ms-transform-origin: 50% 50% -20px;
-	transform-origin: 50% 50% -20px;
+	transition: transform .6s cubic-bezier(0.895, 0.03, 0.685, 0.22), background-color .6s step-end;
+	transform-origin: 50% 50% -19px;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: 5;
-	display: block;
+	padding: 5px 10px;
 	-webkit-font-smoothing: antialiased;
-	text-transform: uppercase;
 	text-indent: 0;
-	line-height: 36px;
+	line-height: 26px;
 }
 
 .cont_codGuide .tab a:after {
@@ -544,7 +544,7 @@ header.guide_header h1 {
 }
 
 .cont_codGuide .tab a:hover {
-	transition: all .5s ease-in-out;
+	transition: background-color .5s ease-in-out;
 	background-color: var(--cm-title-black-hover);
 }
 
@@ -558,6 +558,7 @@ header.guide_header h1 {
 }
 
 .cont_codGuide .tab a.active:after {
+	transition: transform .6s cubic-bezier(0.895, 0.03, 0.685, 0.22), background-color .6s step-start;
 	transform: rotateX(0deg);
 	background-color: var(--cm-color-sky);
 }

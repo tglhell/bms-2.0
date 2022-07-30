@@ -24,7 +24,7 @@ body {
 
 body {
 	position: relative;
-	color: #666;
+	color: #555;
 	background-color: #fff;
 	font: 12px/1.5 'genesis-head-light', sans-serif;
 }
@@ -34,7 +34,7 @@ button {
 }
 
 a {
-	color: #2280ff;
+	color: #16a0f0;
 	text-decoration: none;
 }
 
@@ -118,9 +118,13 @@ table td.date {
 	text-align: center;
 }
 
+table tr {
+	background-color: rgba(250, 250, 250, .3);
+}
+
 table tr.even,
 table tr td.multi {
-	background-color: #fafafa;
+	background-color: rgba(250, 250, 250, .7);
 }
 
 table tr.add td {
@@ -221,7 +225,7 @@ body.js .section .content {
 .btn-box .btn-aem-64 {
 	display: inline-block;
 	font: 12px/1.5 'genesis-head-light', sans-serif;
-	color: #2280ff;
+	color: #16a0f0;
 	cursor: pointer;
 }
 
@@ -231,21 +235,22 @@ body.js .section .content {
 
 .btn-box .btn-aem-64:focus {
 	outline: none;
-	box-shadow: 0 0 0 1px #2280ff;
+	box-shadow: 0 0 0 1px #16a0f0;
 }
 
 .btn-aem-64 {
-	transition: all .5s ease-in-out;
+	/* transition: all .5s ease-in-out; */
+	transition: background-color .5s, border-color .5s ease-in-out;
 	padding: 5px 15px;
 	border: 1px dotted #999;
 	border-radius: 10px;
-	background: rgba(224, 224, 224, .2);
+	background-color: rgba(255, 255, 255, .2);
 }
 
 .btn-aem-64:hover {
-	transition: all .5s ease-in-out;
-	border-color: #2280ff;
-	background: rgba(224, 224, 224, .4);
+	transition: background-color .5s, border-color .5s ease-in-out;
+	border-color: #16a0f0;
+	background-color: rgba(255, 255, 255, 1);
 	text-decoration: none;
 }
 
@@ -292,11 +297,11 @@ body.js .section .content {
 }
 
 table td.state {
-	color: #0ba31f;
+	color: #109e1c;
 }
 
 table td.worker {
-	color: #d98e02;
+	color: #d90287;
 	text-align: center;
 }
 
@@ -321,6 +326,8 @@ td:last-child {
 
 /* layerPopup */
 .layerPopupWrap {
+	-webkit-backdrop-filter: blur(15px);
+	backdrop-filter: blur(15px);
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -330,10 +337,7 @@ td:last-child {
 	display: none;
 	width: 100%;
 	height: 100%;
-	background: rgba(33, 68, 92, 0.5);
-	transition: none;
-	-webkit-backdrop-filter: blur(15px);
-	backdrop-filter: blur(15px);
+	background: rgba(255, 255, 255, 0.5);
 }
 
 .layerPopupBody {
