@@ -349,10 +349,9 @@ header.guide_header h1 {
 	padding: 10px;
 	margin-bottom: 30px;
 	border: 1px solid var(--cm-opacity-color-black);
-	border-radius: 10px;
-	box-shadow: 0 1px 2px 2px rgba(231, 160, 228, .1);
+	border-radius: 7px;
 	font-size: 14px;
-	color: #666;
+	color: #555;
 }
 
 .guide_container .box_content.type3:before,
@@ -581,8 +580,7 @@ header.guide_header h1 {
 	position: relative;
 	margin-top: 10px;
 	border: 1px solid var(--cm-opacity-color-black);
-	border-radius: 10px;
-	box-shadow: 0 1px 2px 2px rgba(231, 160, 228, .1);
+	border-radius: 7px;
 }
 
 .cont_codGuide .contents_infor .conIn_tip:before,
@@ -610,7 +608,7 @@ header.guide_header h1 {
 	-webkit-backdrop-filter: blur(150px);
 	backdrop-filter: blur(150px);
 	padding: 8px 12px;
-	border-radius: 10px;
+	border-radius: 7px;
 	font-size: 13px;
 	line-height: 17px;
 }
