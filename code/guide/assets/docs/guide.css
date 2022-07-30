@@ -506,7 +506,8 @@ header.guide_header h1 {
 }
 
 .cont_codGuide .tab a {
-	transition: background-color .6s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+	/* transition: background-color .6s cubic-bezier(0.895, 0.03, 0.685, 0.22); */
+	transition: background-color .3s linear;
 	position: relative;
 	width: 100%;
 	padding: 5px 10px;
@@ -544,7 +545,7 @@ header.guide_header h1 {
 }
 
 .cont_codGuide .tab a:hover {
-	transition: background-color .5s ease-in-out;
+	transition: background-color .3s linear;
 	background-color: var(--cm-title-black-hover);
 }
 
