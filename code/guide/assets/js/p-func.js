@@ -1,5 +1,5 @@
 // Popup
-$('.popup').click((function () {
+$('.popup').click((() => {
 	var returnTar;
 	return function (e) {
 		var bodyWid = $('body').width();
@@ -8,20 +8,20 @@ $('.popup').click((function () {
 		popIdx = $(this).attr('pop-idx');
 		$('.layerPopupWrap' + '[pop-idx=' + popIdx + ']').fadeIn(500).css('display', 'table');
 		$('.layerPopupCont').attr('tabindex', '0').fadeIn(500);
-		setTimeout(function () {
+		setTimeout(() => {
 			$('.layerPopupCont').focus().append('<a href="#" class="tarLoop"></a>');
-			$('.tarLoop').focusin(function () {
+			$('.tarLoop').focusin(() => {
 				$('.layerPopupCont').focus();
 			});
 		}, 0);
 		
-		$('.popupClose, .layerPopupWrap').click(function (e) {
+		$('.popupClose, .layerPopupWrap').on('click', (e) => {
 			var tarItem = $('.layerPopupCont > div, .layerTitle, .layerCont *');
 			if (!$(e.target).is(tarItem)) {
 				$('.layerPopupWrap').fadeOut(500);
 				$('.layerPopupCont').removeAttr('tabindex').fadeOut(500);
 				$('.tarLoop').remove();
-				setTimeout(function () {
+				setTimeout(() => {
 					returnTar.focus();
 				}, 0);
 			}
