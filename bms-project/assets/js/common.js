@@ -572,6 +572,9 @@ function designReview () {
 				$(this).parent().remove();
 				chkCnt.find('.chk span:contains(' + dataChkTxt + ')').parent().removeClass('on').find('input').prop('checked', false);
 				chkLeng (tarInp);
+				if (tagTxt.next().children().length = 0 ) {
+					tagTxt.show();
+				}
 			});
 		} else {
 			$(this).closest(swtParent).find('ul').find('li[data-label="' + thisTxt + '"]').remove();
