@@ -533,55 +533,6 @@ function popupOpen (target) {
 	});
 }
 
-function designReview () {
-	maxItemLeng = 10; // 체크박스 체크된 최대 갯수
-	swtParent = $('.js-switch-outer');
-	$('.js-switch, .switch-placeholder').on('click', function () {
-		$(this).closest(swtParent).toggleClass('active');
-		chkLeng ($(this));
-	});
-	$('.switch-btm-box .chk').on('click', 'input', function () {
-		const thisTxt = $(this).parent().find('span').text();
-		const tagTxt = $(this).parents('.add-tag').find('.switch-item-list .txt');
-		$(this).parent().toggleClass('on');
-		chkLeng ($(this));
-		if ($(this).parent().hasClass('on')) {
-			let chkItemIdx = [$(this).closest('.check-box').index(), $(this).parent().index()];
-			let chkSwtTxt = [$(this).closest('.check-box').find('>label').text(), $(this).parent().find('span').text()];
-			strCateTxt = '<strong><span>' + chkItemIdx[0] + '</span>'+ chkSwtTxt[0] + '</strong>';
-			hypTxt = ' - ';
-			if (swtParent.find('.switch-cont').hasClass('add-tag')) {
-				strCateTxt = '';
-				hypTxt = '';
-			}
-			$(this).closest(swtParent).find('ul').prepend('<li data-label="' + chkSwtTxt[1] + '">'
-			+ strCateTxt + hypTxt + '<span>' + chkItemIdx[1] + '</span>' + chkSwtTxt[1] + '<button class="btn-item-del"></button></li>');
-			let swtItems = $(this).closest(swtParent).find('ul').children('li').get();
-			swtItems.sort(function (a, b) {
-				let swtLi = [$(a).find('span').text(), $(b).find('span').text()];
-				return swtLi[0] - swtLi[1];
-			});
-			$.each(swtItems, function (index, obj) {
-				$(this).closest(swtParent).find('ul').append(obj);
-			});
-			tagTxt.hide();
-			$('.btn-item-del').on('click', function () {
-				const dataChkTxt = $(this).parent().attr('data-label');
-				const chkCnt = $(this).closest('.switch-cont');
-				const tarInp = chkCnt.find('.chk input');
-				$(this).parent().remove();
-				chkCnt.find('.chk span:contains(' + dataChkTxt + ')').parent().removeClass('on').find('input').prop('checked', false);
-				chkLeng (tarInp);
-				if (tagTxt.next().children().length = 0 ) {
-					tagTxt.show();
-				}
-			});
-		} else {
-			$(this).closest(swtParent).find('ul').find('li[data-label="' + thisTxt + '"]').remove();
-		}
-	});
-}
-
 function popClose (target) {
 	target.fadeOut(secVal[3]);
 	target.find(popCont).fadeOut(secVal[3]).parent().removeAttr('style');
@@ -622,35 +573,4 @@ function cookiePop() {
 // 휴대전화번호 체크
 function telInputCheck(num){
 	num.value = num.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1'); // 숫자만
-}
-
-function chkLeng (elem) {
-	const tarSwtPrnt = elem.closest(swtParent);
-	const swtCntVal = [tarSwtPrnt.find('ul').height(), parseInt(tarSwtPrnt.find('ul').css('margin-top')),
-	tarSwtPrnt.find('.chk input:checked').length, tarSwtPrnt.find('.chk input:not(:checked)'), 'disabled'];
-	const swtCntPd = [tarSwtPrnt.find('.switch-cont'), parseInt(tarSwtPrnt.find('.switch-cont').css('padding-top'))];
-	chkSwitch = false;
-	if (swtCntVal[2] !== 0) {
-		if (!swtCntPd[0].hasClass('active') && !swtCntPd[0].children().is('.switch-item-list')) {
-			swtCntPd[0].addClass('active').prepend('<div class="switch-item-list"><ul></ul></div>');
-		}
-		tarSwtPrnt.addClass('on');
-		switch(swtCntVal[2]) {
-			case maxItemLeng :
-				swtCntVal[3].prop(swtCntVal[4], !chkSwitch);
-				break
-			default :
-				swtCntVal[3].prop(swtCntVal[4], chkSwitch);
-				break
-		}
-	} else if (!swtCntPd[0].is('.add-tag')) {
-		tarSwtPrnt.removeClass('on').find('.switch-cont').removeClass('active');
-		tarSwtPrnt.removeAttr('style').find('.switch-item-list').remove();
-	} else {
-		swtCntPd[0].find('.switch-item-list .txt').show();
-	}
-	if (tarSwtPrnt.hasClass('on') && !swtCntPd[0].is('.add-tag')) {
-		tarSwtPrnt.removeAttr('style');
-		elem.closest('.js-switch-outer.on:not(.active)').css('height', (swtCntVal[0] + swtCntVal[1]) + (swtCntPd[1] * irNum[1]));
-	}
 }
