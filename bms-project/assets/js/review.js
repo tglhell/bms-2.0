@@ -52,13 +52,13 @@ function dateInp () {
 	}
 	eLastDate = new Date(chkDate[0], chkDate[3], 0).getDate();
 	chkDate[3] = String(chkDate[3]).padStart(2, '0');
-	if (chkDate[2] > eLastDate) {
+	if (chkDate[2] >= eLastDate) {
 		eDateVal = chkDate[3] + '.' + eLastDate + '.' + chkDate[0];
 	} else if (chkDate[2] >= sLastDate) {
 		if (sLastDate < eLastDate) {
 			eDateVal = chkDate[3] + '.' + eLastDate + '.' + chkDate[0];
 		}
-	} else { 
+	} else {
 		eDateVal = chkDate[3] + '.' + chkDate[2] + '.' + chkDate[0];
 	}
 	actDateInp ();
