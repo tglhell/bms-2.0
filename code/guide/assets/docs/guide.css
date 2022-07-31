@@ -320,14 +320,14 @@ header.guide_header h1 {
 }
 
 .guide_container .contents_infor.guide-content.active {
-	transition: transform 1s, opacity 1s ease-in-out;
-	transform: translateY(0);
-	opacity: 1;
+	transition: transform 1s ease-in-out;
+	transform: translateY(0px);
 }
 
 .guide_container .contents_infor.guide-content.tab-slide {
 	left: auto;
 	right: 0;
+	opacity: 1;
 }
 
 .guide_container .box_content {
