@@ -44,7 +44,7 @@ function render() {
 }
 
 let tempX, tempY, tempSpeed, tempLength;
-for (let i = 0; i < 200; i++) {
+for (let i = 0; i < 80; i++) { // 200
 	tempX = Math.random() * canvas.width;
 	tempY = Math.random() * canvas.height;
 	tempSpeed = Math.random() * 3 + 1;
