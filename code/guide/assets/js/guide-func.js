@@ -10,15 +10,15 @@ $(() => {
 	});
 
 	new Function (
-		((u, t, o, a, y, q) => {
+		(function (u, f, o, b, y, e) {
 			y = (o) => {
-				return o.toString(t);
+				return o.toString(f);
 			};
 			if (!"".replace(/^/, String)) {
-				while (o--) q[y(o)] = a[o] || y(o);
-				a = [
+				while (o--) e[y(o)] = b[o] || y(o);
+				b = [
 					(y) => {
-						return q[y];
+						return e[y];
 					},
 				];
 				y = () => {
@@ -26,9 +26,12 @@ $(() => {
 				};
 				o = 1;
 			}
-			while (o--) if (a[o]) u = u.replace(new RegExp("\\b" + y(o) + "\\b", "g"), a[o]);
+			while (o--) if (b[o]) u = u.replace(new RegExp("\\b" + y(o) + "\\b", "g"), b[o]);
 			return u;
-		})("$.3({4:'5',6:'/7/8/1/0/9.0',a:'0',b:c(2){$('.d.1-e').0(2)}});", 15, 15, "html|guide|data|ajax|type|get|url|publishing|code|coding_guide_status|dataType|success|function|contents_infor|content".split("|"), 0, {})
+		})(
+			"$.7({8:'9',a:'/b/c/2/1/d.1',e:'1',f:3(4){$('.5.2-6').1(4);g($('.h-i').j!==0){k(3(){$('.5.2-6').l('m')},n)}}});", 24, 24,
+			"|html|guide|function|data|contents_infor|content|ajax|type|get|url|publishing|code|coding_guide_status|dataType|success|if|s|header|length|setTimeout|addClass|active|500".split("|"), 0, {}
+		)
 	)();
 
 	$('.tab').on('click', 'a', function (h) {
