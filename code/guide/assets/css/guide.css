@@ -72,6 +72,7 @@ table a:active:before {
 	font-family: 'genesis-head-light', sans-serif;
 	font-size: 24px;
 	font-weight: 400;
+	color: #444;
 }
 
 .s-header ul {
