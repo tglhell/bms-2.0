@@ -25,7 +25,6 @@ body {
 body {
 	position: relative;
 	color: #555;
-	/* background-color: #fff; */
 	font: 12px/1.5 'genesis-head-light', sans-serif;
 }
 
@@ -335,17 +334,10 @@ td:last-child {
 	padding: 0;
 }
 
-/*td:last-child .fcR.more {cursor:pointer;}*/
-/*td:last-child .fcR.more.on {height:auto;}*/
-/*td:last-child .fcR.more:before {content:'';position:absolute;top:2px;left:0;width:11px;height:11px;border:1px solid #666;}*/
-/*td:last-child .fcR.more:after {content:'';position:absolute;top:5px;left:3px;width:7px;height:7px;background:url(./asset/images/common/icon/ico_status_more.png) no-repeat left top;}*/
-/*td:last-child .fcR.more.on:before,*/
-/*td:last-child .fcR.more.on:after {background-position:left -7px;}*/
-
 /* layerPopup */
 .layerPopupWrap {
-	-webkit-backdrop-filter: blur(15px);
-	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
 	position: fixed;
 	top: 0;
 	bottom: 0;

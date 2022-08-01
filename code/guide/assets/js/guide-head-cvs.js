@@ -9,7 +9,7 @@ class Visual {
     this.context = this.canvas.getContext('2d');
     this.canvasWidth = 0;
     this.canvasHeight = 0;
-    this.particleLength = 150; // d : 150
+    this.particleLength = 300; // d : 150
     this.particles = [];
     this.particleMaxRadius = 2; // d : 8
     this.initialize();
@@ -32,8 +32,8 @@ class Visual {
   createParticle(id, isRecreate) {
     const radius = random(1, this.particleMaxRadius);
     const x = isRecreate ? -radius - random(0, this.canvasWidth) : random(0, this.canvasWidth);
-    let y = random(this.canvasHeight / 2 - 350, this.canvasHeight / 2 + 350); // d : -150, 150
-    y += random(-200, 100); // d : -100, 100
+    let y = random(this.canvasHeight / 2 - 600, this.canvasHeight / 2 + 450); // d : -150, 150
+    y += random(-100, 100); // d : -100, 100
     const alpha = random(0.05, 1);
     return {
       id: id,
