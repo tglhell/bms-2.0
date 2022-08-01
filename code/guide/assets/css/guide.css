@@ -1,4 +1,4 @@
-@import '../css/logo.css';
+/* @import '../css/logo.css'; */
 
 @font-face {
 	font-family: 'genesis-head-light';
@@ -68,11 +68,9 @@ table a:active:before {
 }
 
 .s-header h1 {
-	display: inline;
-	margin-right: 1em;
-	color: #000;
+	padding-bottom: 10px;
 	font-family: 'genesis-head-light', sans-serif;
-	font-size: 2em;
+	font-size: 24px;
 	font-weight: 400;
 }
 
@@ -235,7 +233,7 @@ body.js .section .content {
 .btn-box {
 	position: absolute;
 	top: 30px;
-	right: 20px;
+	right: 10px;
 	font-size: 0;
 }
 
