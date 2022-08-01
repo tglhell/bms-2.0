@@ -12,9 +12,6 @@ class Visual {
     this.particleLength = 150; // d : 150
     this.particles = [];
     this.particleMaxRadius = 2; // d : 8
-    this.handleMouseMoveBind = this.handleMouseMove.bind(this);
-    this.handleClickBind = this.handleClick.bind(this);
-    this.handleResizeBind = this.handleResize.bind(this);
     this.initialize();
     this.render();
   }
@@ -23,26 +20,6 @@ class Visual {
     for (let i = 0; i < this.particleLength; i++) {
       this.particles.push(this.createParticle(i));
     }
-    this.bind();
-  }
-  bind() {
-    document.body.addEventListener('mousemove', this.handleMouseMoveBind, false);
-    document.body.addEventListener('click', this.handleClickBind, false);
-    window.addEventListener('resize', this.handleResizeBind, false);
-  }
-  unbind() {
-    document.body.removeEventListener('mousemove', this.handleMouseMoveBind, false);
-    document.body.removeEventListener('click', this.handleClickBind, false);
-    window.removeEventListener('resize', this.handleResizeBind, false);
-  }
-  handleMouseMove(e) {
-    this.enlargeParticle(e.clientX, e.clientY);
-  }
-  handleClick(e) {
-    this.burstParticle(e.clientX, e.clientY);
-  }
-  handleResize() {
-    this.resizeCanvas();
   }
   resizeCanvas() {
     this.canvasWidth = document.body.offsetWidth;
@@ -69,7 +46,6 @@ class Visual {
       endAngle: Math.PI * 2,
       alpha: alpha,
       color: { r: random(30, 100), g: random(150, 200), b: 255 },
-      // color: { r: 100, g: 200, b: 255 },
       speed: alpha - 0.5, // d : 1
       amplitude: random(50, 200),
       isBurst: false
@@ -112,4 +88,3 @@ class Visual {
   }
 }
 new Visual();
-/* e : body canvas */
