@@ -48,13 +48,11 @@ class Visual {
       color: { r: random(30, 100), g: random(150, 200), b: 255 },
       speed: alpha - 0.5, // d : 1
       amplitude: random(50, 200),
-      isBurst: false
     };
   }
   drawParticles() {
     this.particles.forEach(particle => {
       this.moveParticle(particle);
-
       this.context.beginPath();
       this.context.fillStyle = `rgba(${particle.color.r}, ${particle.color.g}, ${particle.color.b}, ${particle.alpha})`;
       this.context.arc(particle.x, particle.y, particle.radius, particle.startAngle, particle.endAngle);
@@ -64,17 +62,6 @@ class Visual {
   moveParticle(particle) {
     particle.x += particle.speed;
     particle.y = particle.startY + particle.amplitude * Math.sin(((particle.x / 5) * Math.PI) / 300); // d : 5, 180
-  }
-  enlargeParticle(clientX, clientY) {
-    this.particles.forEach(particle => {
-      if (particle.isBurst) return;
-      const distance = Math.hypot(particle.x - clientX, particle.y - clientY);
-    });
-  }
-  burstParticle(clientX, clientY) {
-    this.particles.forEach(particle => {
-      const distance = Math.hypot(particle.x - clientX, particle.y - clientY);
-    });
   }
   render() {
     this.context.clearRect(0, 0, this.canvasWidth + this.particleMaxRadius * 2, this.canvasHeight);
