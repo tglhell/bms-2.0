@@ -41,13 +41,31 @@ a {
 a:focus,
 a:hover,
 a:active {
+	outline: none;
 	text-decoration: underline;
 	text-underline-position: under;
 }
 
-a:focus,
-a:active {
+a:focus:before,
+a:active:before {
 	outline: 1px dotted #2280ff;
+	outline: none;
+}
+
+table a {
+	position: relative;
+}
+
+table a:focus:before,
+table a:active:before {
+	content: '';
+	position: absolute;
+	top: 2px;
+	right: -5px;
+	width: 3px;
+	height: 3px;
+	border-radius: 50%;
+	background-color: #16a0f0;
 }
 
 .s-header h1 {
