@@ -98,6 +98,7 @@ strong {
 	text-transform: uppercase;
 }
 .header .header-tit em {
+	margin-right: 5px;
 	font-family: var(--cm-font-family-head-light);
 	font-style: normal;
 	color: #16a0f0;
