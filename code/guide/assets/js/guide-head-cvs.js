@@ -46,7 +46,7 @@ class Visual {
       endAngle: Math.PI * 2,
       alpha: alpha,
       color: { r: random(30, 100), g: random(150, 200), b: 255 },
-      speed: alpha - 0.5, // d : 1
+      speed: alpha - 0.3, // d : 1
       amplitude: random(50, 200),
     };
   }
