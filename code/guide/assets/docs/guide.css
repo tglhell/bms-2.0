@@ -607,6 +607,7 @@ header.guide_header h1 {
 
 .cont_codGuide .contents_infor .conIn_tip {
 	position: relative;
+	opacity: .9;
 	overflow: hidden;
 	margin-top: 10px;
 	border: 1px solid var(--cm-opacity-color-black);
@@ -637,7 +638,6 @@ header.guide_header h1 {
 .cont_codGuide .contents_infor .conIn_tip p {
 	-webkit-backdrop-filter: blur(150px);
 	backdrop-filter: blur(150px);
-	opacity: .9;
 	padding: 8px 12px;
 	border-radius: 7px;
 	font-size: 13px;
