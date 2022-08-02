@@ -607,7 +607,7 @@ header.guide_header h1 {
 
 .cont_codGuide .contents_infor .conIn_tip {
 	position: relative;
-	opacity: .9;
+	overflow: hidden;
 	margin-top: 10px;
 	border: 1px solid var(--cm-opacity-color-black);
 	border-radius: 7px;
@@ -625,18 +625,19 @@ header.guide_header h1 {
 }
 
 .cont_codGuide .contents_infor .conIn_tip:before {
-	opacity: .5;
+	opacity: .4;
 	background: url(/publishing/code/guide/assets/images/bg_white_img3.jpg) no-repeat center bottom;
 	background-size: cover;
 }
 
 .cont_codGuide .contents_infor .conIn_tip:after {
-	background-color: rgba(255, 255, 255, .5);
+	background-color: rgba(255, 255, 255, .4);
 }
 
 .cont_codGuide .contents_infor .conIn_tip p {
 	-webkit-backdrop-filter: blur(150px);
 	backdrop-filter: blur(150px);
+	opacity: .9;
 	padding: 8px 12px;
 	border-radius: 7px;
 	font-size: 13px;
