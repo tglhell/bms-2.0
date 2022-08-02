@@ -1,13 +1,19 @@
 @import 'design-review-customlib.css';
 
-/* initializing css value */
-:root {
+/* s : initializing css variable value */
+.design-review-wrap *,
+.design-review-wrap :where(*, :before, :after),
+.design-review-view *,
+.design-review-view :where(*, :before, :after) {
 	--pc-l-r-padding: 0 80px;
 	--tbl-l-r-padding: 0 40px;
+	--cm-color-dark-white: #fafafa;
+	--cm-color-dark-white2: #f6f3f2;
 	--cm-color-white: #fff;
-	--cm-color-gray: #ccc;
 	--cm-color-dark-gray: #777;
+	--cm-color-dark-gray2: #999;
 	--cm-color-light-gray: #e9e9e9;
+	--cm-color-gray: #ccc;
 	--cm-color-green: #00aad2;
 	--cm-color-navy: #002c5f;
 	--cm-color-black0: #000;
@@ -16,6 +22,7 @@
 	--fb-bold-lg: 500;
 	--fb-bold-xl: 700;
 }
+/* e : initializing css variable value */
 
 /* s : custom select item scroll */
 .select-box.on.val-error .selected-value {
@@ -38,9 +45,6 @@
 /* e : custom select item scroll */
 
 /* s : common custom */
-.position-r {
-	position: relative;
-}
 .design-review-wrap .steps {
 	height: 90px;
 	margin-bottom: 140px;

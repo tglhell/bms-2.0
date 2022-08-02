@@ -1,4 +1,4 @@
-/* daterangepicker */
+/* s : daterangepicker */
 .daterangepicker {
 	z-index: 99;
 	border-radius: 0;
@@ -91,9 +91,9 @@
 	border-color: #fff;
 }
 
-
 @media (min-width: 564px) {
 	.daterangepicker .drp-calendar.left .calendar-table {
 		padding-right: 62px;
 	}
 }
+/* e : daterangepicker */
