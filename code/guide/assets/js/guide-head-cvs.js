@@ -32,8 +32,8 @@ class Visual {
   createParticle(id, isRecreate) {
     const radius = random(1, this.particleMaxRadius);
     const x = isRecreate ? -radius - random(0, this.canvasWidth) : random(0, this.canvasWidth);
-    let y = random(this.canvasHeight / 2 - 600, this.canvasHeight / 2 + 450); // d : -150, 150
-    y += random(-100, 100); // d : -100, 100
+    let y = random(this.canvasHeight / 2 - 150, this.canvasHeight / 2 + 150); // d : -150, 150
+    y += random(-500, 300); // d : -100, 100
     const alpha = random(0.05, 1);
     return {
       id: id,
