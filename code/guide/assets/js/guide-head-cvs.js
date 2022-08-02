@@ -11,7 +11,7 @@ class Visual {
     this.canvasHeight = 0;
     this.particleLength = 300; // d : 150
     this.particles = [];
-    this.particleMaxRadius = 3; // d : 8
+    this.particleMaxRadius = 2; // d : 8
     this.initialize();
     this.render();
   }
