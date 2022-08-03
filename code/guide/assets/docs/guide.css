@@ -569,7 +569,7 @@ header.guide_header h1 {
 }
 
 .cont_codGuide .tab a:after {
-	transform: rotateX(-90deg);
+	transform: rotateX(90deg);
 }
 
 .cont_codGuide .tab a:focus,
@@ -585,7 +585,7 @@ header.guide_header h1 {
 }
 
 .cont_codGuide .tab a.active:before {
-	transform: rotateX(90deg);
+	transform: rotateX(-90deg);
 }
 
 .cont_codGuide .tab a.active:after {
