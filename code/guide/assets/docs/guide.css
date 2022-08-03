@@ -21,16 +21,17 @@ body::-webkit-scrollbar,
 }
 body::-webkit-scrollbar-thumb,
 .layerPopupBody .layerCont::-webkit-scrollbar-thumb {
+	border: 1px solid rgba(255, 255, 255, .8);
 	border-radius: 3px;
-	background: rgba(102, 102, 102, .5);
+	background: rgba(102, 102, 102, .25);
 }
 body::-webkit-scrollbar-thumb:hover,
 .layerPopupBody .layerCont::-webkit-scrollbar-thumb:hover {
-	background: rgba(102, 102, 102, .7);
+	background: rgba(102, 102, 102, .15);
 }
 body::-webkit-scrollbar-track,
 .layerPopupBody .layerCont::-webkit-scrollbar-track {
-	background: #fff;
+	background: transparent;
 }
 
 @font-face {
