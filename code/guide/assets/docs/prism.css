@@ -40,10 +40,10 @@ pre[class*="language-"] {
 	background-size: cover;
 }
 code[class*="language-"] {
-	-webkit-backdrop-filter: blur(8px);
-	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(25px);
+	backdrop-filter: blur(25px);
 	display: block;
-	padding: 1em;
+	padding: 8px 12px;
 }
 
 :not(pre) > code[class*="language-"],
