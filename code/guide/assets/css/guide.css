@@ -363,7 +363,7 @@ td:last-child {
 	position: relative;
 	display: inline-block;
 	min-width: 600px;
-	/* box-shadow: 7px 7px 2px 2px rgba(0, 0, 0, .1); */
+	border: 1px solid rgba(0, 0, 0, .05);
 	box-shadow:
 		-7px -7px 20px 0px rgba(241, 241, 241, .9),
 		-4px -4px 5px 0px rgba(241, 241, 241, .9),
@@ -372,7 +372,7 @@ td:last-child {
 	background: rgba(255, 255, 255, .75);
 	margin: 0 auto;
 	transition: none;
-	text-align: left;
+	text-align: initial;
 }
 
 .layerPopupCont:focus {
@@ -401,14 +401,14 @@ td:last-child {
 
 .layerPopupBody .layerCont {
 	overflow-y: auto;
-	height: 700px;
+	min-height: 400px;
+	max-height: 700px;
 	padding: 71px 25px 25px 25px;
 	box-sizing: border-box;
 }
 
 .layerPopupBody .layerCont p {
 	margin: 0;
-	padding: 20px 0;
 	font-size: 18px;
 	letter-spacing: -0.5px;
 }
