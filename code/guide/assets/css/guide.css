@@ -363,7 +363,7 @@ td:last-child {
 	position: relative;
 	display: inline-block;
 	min-width: 600px;
-	border: 1px solid rgba(0, 0, 0, .05);
+	max-width: 1200px;
 	box-shadow:
 		-7px -7px 20px 0px rgba(241, 241, 241, .9),
 		-4px -4px 5px 0px rgba(241, 241, 241, .9),
