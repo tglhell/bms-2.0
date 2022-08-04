@@ -617,6 +617,10 @@ header.guide_header h1 {
 	border-radius: 7px;
 }
 
+.cont_codGuide .contents_infor .view_code ~ .conIn_tip {
+	margin-top: 0;
+}
+
 .cont_codGuide .contents_infor .conIn_tip:before,
 .cont_codGuide .contents_infor .conIn_tip:after {
 	content: '';
@@ -668,11 +672,9 @@ header.guide_header h1 {
 	margin-top: 15px;
 }
 
-/* .cont_codGuide .view_code {
-	padding: 5px;
-	display: block;
-	font-size: 12px
-} */
+.cont_codGuide .view_code {
+	margin-bottom: 10px;
+}
 
 .cont_codGuide .import-code {
 	margin-top: 15px;
