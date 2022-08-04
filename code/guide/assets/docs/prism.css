@@ -36,11 +36,12 @@ pre[class*="language-"] {
 	overflow: auto;
 	margin-bottom: 10px;
 	border-radius: 7px;
-	background: url(/publishing/code/guide/assets/images/bg_header.jpg) no-repeat center bottom;
+	background: url(/publishing/code/guide/assets/images/bg_box.jpg) no-repeat center center;
+	background-size: cover;
 }
 code[class*="language-"] {
-	-webkit-backdrop-filter: blur(80px);
-	backdrop-filter: blur(80px);
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
 	display: block;
 	padding: 1em;
 }
