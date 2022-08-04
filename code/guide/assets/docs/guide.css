@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* @import '/publishing/code/guide/assets/docs/base.css'; */
+@import '/publishing/code/guide/assets/css/button.css';
 :root {
 	--cm-title-white: #fff;
 	--cm-title-black: #444;
@@ -668,12 +668,14 @@ header.guide_header h1 {
 	margin-top: 15px;
 }
 
-.cont_codGuide .view_code {
-	color: #FFF;
-	background-color: #111;
+/* .cont_codGuide .view_code {
 	padding: 5px;
 	display: block;
 	font-size: 12px
+} */
+
+.cont_codGuide .import-code {
+	margin-top: 15px;
 }
 
 table.guide_list {

@@ -1,0 +1,71 @@
+/* s : button */
+.btn {
+	transition: all .3s ease;
+  position: relative;
+  display: inline-block;
+  height: 30px;
+  padding: 5px 15px;
+  border-radius: 5px;
+	box-shadow:inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+	7px 7px 20px 0px rgba(0, 0, 0, .1),
+	2px 2px 2px 0px rgba(0, 0, 0, .1);
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+.btn:where(:active, :focus, :hover) {
+	transition: all .3s ease;
+	background-color: rgba(255, 255, 255, .4);
+}
+.btn span {
+	transition: all .3s ease;
+  position: relative;
+}
+.btn:where(:active, :focus, :hover) span {
+	color: #16a0f0;
+}
+.btn span:active:hover,
+.btn span:focus:hover {
+	color: #16a0f0;
+}
+.btn:active span:after,
+.btn:focus span:after {
+  content: '';
+	position: absolute;
+	top: 0;
+	right: -9px;
+	width: 3px;
+	height: 3px;
+	background-color: rgba(22, 160, 240, 0.5);
+}
+.btn:active:hover span:after,
+.btn:focus:hover span:after {
+	background-color: rgba(22, 160, 240, 0.5);
+}
+/* style 1 */
+.btn-1 {
+  border: none;
+  color: #444;
+}
+.btn-1:after {
+	content: '';
+  direction: rtl;
+	transition: all .3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  box-shadow:
+		-7px -7px 20px 0px #fff9,
+		-4px -4px 5px 0px #fff9,
+		7px 7px 20px 0px rgba(0, 0, 0, 0.045),
+		2px 2px 2px 0px rgba(0, 0, 0, 0.045);
+}
+.btn-1:hover:after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+/* e : button */
