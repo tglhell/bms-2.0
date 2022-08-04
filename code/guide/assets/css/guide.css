@@ -68,7 +68,7 @@ table a:active:before {
 }
 
 .s-header h1 {
-	padding: 0 0 10px 120px;
+	padding-bottom: 10px;
 	font-family: 'genesis-head-light', sans-serif;
 	font-size: 24px;
 	font-weight: 400;
@@ -232,7 +232,7 @@ body.js .section .content {
 .btn-box {
 	position: absolute;
 	top: 30px;
-	left: 10px;
+	right: 10px;
 	font-size: 0;
 }
 
