@@ -531,7 +531,6 @@ header.guide_header h1 {
 	top: 60px;
 	z-index: 200;
 	display: flex;
-	border-bottom: 1px solid var(--cm-opacity-color-black);
 	background-color: var(--cm-title-black);
 }
 
