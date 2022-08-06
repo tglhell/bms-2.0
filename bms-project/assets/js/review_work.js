@@ -1,4 +1,86 @@
-// s : design_review_03
+/* s : design_review_01 */
+function designReview () {
+	maxItemLeng = 10; // 체크박스 체크된 최대 갯수
+	swtParent = $('.js-switch-outer');
+	$('.js-switch, .switch-placeholder').on('click', function () {
+		$(this).closest(swtParent).toggleClass('active');
+		chkLeng ($(this));
+	});
+	$('.switch-btm-box .chk').on('click', 'input', function () {
+		const thisTxt = $(this).parent().find('span').text();
+		const tagTxt = $(this).parents('.add-tag').find('.switch-item-list .txt');
+		$(this).parent().toggleClass('on');
+		chkLeng ($(this));
+		if ($(this).parent().hasClass('on')) {
+			let chkItemIdx = [$(this).closest('.check-box').index(), $(this).parent().index()];
+			let chkSwtTxt = [$(this).closest('.check-box').find('>label').text(), $(this).parent().find('span').text()];
+			strCateTxt = '<strong><span>' + chkItemIdx[0] + '</span>'+ chkSwtTxt[0] + '</strong>';
+			hypTxt = ' - ';
+			if (swtParent.find('.switch-cont').hasClass('add-tag')) {
+				strCateTxt = '';
+				hypTxt = '';
+			}
+			$(this).closest(swtParent).find('ul').prepend('<li data-label="' + chkSwtTxt[1] + '">'
+			+ strCateTxt + hypTxt + '<span>' + chkItemIdx[1] + '</span>' + chkSwtTxt[1] + '<button class="btn-item-del"></button></li>');
+			let swtItems = $(this).closest(swtParent).find('ul').children('li').get();
+			swtItems.sort(function (a, b) {
+				let swtLi = [$(a).find('span').text(), $(b).find('span').text()];
+				return swtLi[0] - swtLi[1];
+			});
+			$.each(swtItems, function (index, obj) {
+				$(this).closest(swtParent).find('ul').append(obj);
+			});
+			tagTxt.hide();
+			$('.btn-item-del').on('click', function () {
+				const dataChkTxt = $(this).parent().attr('data-label');
+				const chkCnt = $(this).closest('.switch-cont');
+				const tarInp = chkCnt.find('.chk input');
+				$(this).parent().remove();
+				chkCnt.find('.chk span:contains(' + dataChkTxt + ')').parent().removeClass('on').find('input').prop('checked', false);
+				chkLeng (tarInp);
+				if (tagTxt.next().children().length = 0 ) {
+					tagTxt.show();
+				}
+			});
+		} else {
+			$(this).closest(swtParent).find('ul').find('li[data-label="' + thisTxt + '"]').remove();
+		}
+	});
+}
+
+function chkLeng (elem) {
+	const tarSwtPrnt = elem.closest(swtParent);
+	const swtCntVal = [tarSwtPrnt.find('ul').height(), parseInt(tarSwtPrnt.find('ul').css('margin-top')),
+	tarSwtPrnt.find('.chk input:checked').length, tarSwtPrnt.find('.chk input:not(:checked)'), 'disabled'];
+	const swtCntPd = [tarSwtPrnt.find('.switch-cont'), parseInt(tarSwtPrnt.find('.switch-cont').css('padding-top'))];
+	chkSwitch = false;
+	if (swtCntVal[2] !== 0) {
+		if (!swtCntPd[0].hasClass('active') && !swtCntPd[0].children().is('.switch-item-list')) {
+			swtCntPd[0].addClass('active').prepend('<div class="switch-item-list"><ul></ul></div>');
+		}
+		tarSwtPrnt.addClass('on');
+		switch(swtCntVal[2]) {
+			case maxItemLeng :
+				swtCntVal[3].prop(swtCntVal[4], !chkSwitch);
+				break
+			default :
+				swtCntVal[3].prop(swtCntVal[4], chkSwitch);
+				break
+		}
+	} else if (!swtCntPd[0].is('.add-tag')) {
+		tarSwtPrnt.removeClass('on').find('.switch-cont').removeClass('active');
+		tarSwtPrnt.removeAttr('style').find('.switch-item-list').remove();
+	} else {
+		swtCntPd[0].find('.switch-item-list .txt').show();
+	}
+	if (tarSwtPrnt.hasClass('on') && !swtCntPd[0].is('.add-tag')) {
+		tarSwtPrnt.removeAttr('style');
+		elem.closest('.js-switch-outer.on:not(.active)').css('height', (swtCntVal[0] + swtCntVal[1]) + (swtCntPd[1] * irNum[1]));
+	}
+}
+/* e : design_review_01 */
+
+/* s : design_review_03 */
 function reviewManagementFunc () {
 	eDateTar = [$('.review-list-filter .text'), $('.daterange'), $('.date-fix-type .slt-date'), $('.search-date')];
 	prntDateTar = [$('.review-filter-outer'), $('.review-list-filter'), $('.review-filter-form')];
@@ -37,18 +119,32 @@ function reviewManagementFunc () {
 	});
 	dateInp ();
 }
+
 function dateInp () {
-	new Function (
-		(function (t, i, c, k) {
-			while (c--) {
-				if (k[c]) {
-					t = t.replace(new RegExp("\\b" + c.toString(i) + "\\b", "g"), k[c]);
-				}
-			}
-			return t;
-		})("5=8 d();s={};4=[5.o(),5.f()+g[0],5.b(),5.f()+(c+g[0]),5.p(),5.n()];q(i=1;i<=2;i++)4[i]=m(4[i]).l(2,'0');t=4[1]+'.'+4[2]+'.'+4[0];9=8 d(4[0],4[1],0).b();7((h(4[1])+c)>e){r j=e-(h(4[1])+c);4[3]=-j;4[0]++}6=8 d(4[0],4[3],0).b();4[3]=m(4[3]).l(2,'0');7(4[2]>6){a=4[3]+'.'+6+'.'+4[0]}k 7(4[2]>=9){7(9<6){a=4[3]+'.'+6+'.'+4[0]}}k{a=4[3]+'.'+4[2]+'.'+4[0]}u();", 31, 31, "||||chkDate|nDate|eLastDate|if|new|sLastDate|eDateVal|getDate|sltMon|Date|12|getMonth|irNum|parseInt||sum|else|padStart|String|getMinutes|getFullYear|getHours|for|let|dateRangeOptions|sDateVal|actDateInp".split("|"))
-	)();
+	nDate = new Date();
+	dateRangeOptions = {};
+	chkDate = [nDate.getFullYear(), nDate.getMonth() + irNum[0], nDate.getDate(), nDate.getMonth() + (sltMon + irNum[0])];
+	for (i = 1; i <= 2; i++) chkDate[i] = String(chkDate[i]).padStart(2, '0');
+	sDateVal = chkDate[1] + '.' + chkDate[2] + '.' + chkDate[0];
+	sLastDate = new Date(chkDate[0], chkDate[1], 0).getDate();
+	if ((parseInt(chkDate[1]) + sltMon) > 12) {
+		let sum = 12 - (parseInt(chkDate[1]) + sltMon);
+		chkDate[3] = -sum;
+		chkDate[0]++;
+	}
+	chkDate[3] = String(chkDate[3]).padStart(2, '0');
+	eLastDate = new Date(chkDate[0], chkDate[3], 0).getDate();
+	eDateVal = chkDate[3] + '.' + chkDate[2] + '.' + chkDate[0];
+	if (chkDate[2] > eLastDate) {
+		eDateVal = chkDate[3] + '.' + eLastDate + '.' + chkDate[0];
+	} else if (chkDate[2] >= sLastDate) {
+		if (sLastDate < eLastDate) {
+			eDateVal = chkDate[3] + '.' + eLastDate + '.' + chkDate[0];
+		}
+	}
+	actDateInp ();
 }
+
 function actDateInp () {
 	dateRangeOptions = {
 		startDate: sDateVal,
@@ -61,34 +157,26 @@ function actDateInp () {
 		autoApply: true,
 	}
 	eDateTar[1].daterangepicker(dateRangeOptions);
-	new Function (
-		(function (g, u, o, y) {
-			while (o--) {
-				if (y[o]) {
-					g = g.replace(new RegExp("\\b" + o + "\\b", "g"), y[o]);
-				}
-			}
-			return g;
-		})("2[1].8(4+' - '+5);2[3].6(0).7(4);2[3].6(1).7(5);", 9, 9, "||eDateTar||sDateVal|eDateVal|eq|text|val".split("|"))
-	)();
+	eDateTar[1].val(sDateVal + ' - ' + eDateVal);
+	eDateTar[3].eq(0).text(sDateVal);
+	eDateTar[3].eq(1).text(eDateVal);
 }
-// e : design_review_03
+/* e : design_review_03 */
 
-// s : design_review_05
+/* s : design_review_05 */
 function btmFixBoxFunc () {
-	dsFixBoxTar = [$('.btm-fix-box'), $('.bms-footer'), $('.right-guide-outer'), $('.btn-top-box'), $('.bms-header, body')];
-	dsFixBoxPos = [parseInt(dsFixBoxTar[0].css('bottom')), parseInt(dsFixBoxTar[3].css('right'))];
+	const dsFixBoxTar = [$('.btm-fix-box'), $('.bms-footer'), $('.right-guide-outer'), $('.btn-top-box'), $('.bms-header, body')];
+	const dsFixBoxPos = [parseInt(dsFixBoxTar[0].css('bottom')), parseInt(dsFixBoxTar[3].css('right'))];
 	if (dsFixBoxTar[0].length !== 0) {
-		new Function (
-			(function (s, u, c, k) {
-				while (c--) {
-					if (k[c]) {
-						s = s.replace(new RegExp("\\b" + c.toString(u) + "\\b", "g"), k[c]);
-					}
-				}
-				return s;
-			})("$(a).d('c',e(){8 2=$(f).b();8 4=($(i).6()-$(a).6())-3[1].g(h);k(2>=4){3[0].5('9',(2-4)+7[0])}j{3[0].5('9',7[0])}});", 21, 21, "||dsScrPos|dsFixBoxTar|dsScrPosSum|css|height|dsFixBoxPos|let|bottom|window|scrollTop|scroll|on|function|this|outerHeight|true|document|else|if".split("|"))
-		)();
+		$(window).on('scroll', function () {
+			let dsScrPos = $(this).scrollTop();
+			let dsScrPosSum = ($(document).height() - $(window).height()) - dsFixBoxTar[1].outerHeight(true);
+			if (dsScrPos >= dsScrPosSum) {
+				dsFixBoxTar[0].css('bottom', (dsScrPos - dsScrPosSum) + dsFixBoxPos[0]);
+			} else {
+				dsFixBoxTar[0].css('bottom', dsFixBoxPos[0]);
+			}
+		});
 		dsFixBoxTar[0].on('click', '.btn-right-guide', function () {
 			const dsWsize = [$(window).outerWidth(), $(window).width()];
 			const rightFixPos = [parseInt($(this).parent().css('right')), (dsWsize[0] - dsWsize[1])];
@@ -118,6 +206,7 @@ function btmFixBoxFunc () {
 		});
 	}
 }
+
 function reviewCarousel () {
 	if($('.review-guide-step').length > 0) {
 		const carouselType1 = new Swiper('.review-guide-step .slide-swiper', {
@@ -148,38 +237,37 @@ function reviewCarousel () {
 		});
 	}
 }
+
 function dsSaveToast () {
 	setInterval(function () {
 		$('.write-save-toast').addClass('active');
 		setTimeout(function () {
 			$('.write-save-toast').removeClass('active');
 		}, secVal[2] * twoDig[0]);
-		dsSavedateInp ();
+		dsSaveDateInp ();
 	}, 10000);
 	// }, secVal[8] * secVal[1]);
 }
-function dsSavedateInp () {
-	new Function (
-		(function (o, r, a, c, l, e) {
-			l = function (c) {
-				return c.toString(r);
-			};
-			if (!"".replace(/^/, String)) {
-				while (a--) e[l(a)] = c[a] || l(a);
-				c = [
-					function (l) {
-						return e[l];
-					},
-				];
-				l = function () {
-					return "\\w+";
-				};
-				a = 1;
-			}
-			while (a--) if (c[a]) o = o.replace(new RegExp("\\b" + l(a) + "\\b", "g"), c[a]);
-			return o;
-		})("7 6=a b();7 5=[6.c(),6.d()+e[0],6.f(),6.g(),6.h()];7 8=5.j;k(i=1;i<8;i++)5[i]=l(5[i]).m(2,'0');n 9=5[1]+'.'+5[2]+'.'+5[0]+' '+5[3]+':'+5[4];$('.o-p-q').r(9);", 28, 28, "|||||chkDate|nDate|const|chkDateLeng|sDateVal|new|Date|getFullYear|getMonth|irNum|getDate|getHours|getMinutes||length|for|String|padStart|let|toast|check|time|text".split("|"), 0, {}
-		)
-	)();
+
+function dsSaveDateInp () {
+	const nDate = new Date();
+	const chkDate = [nDate.getFullYear(), nDate.getMonth() + irNum[0], nDate.getDate(), nDate.getHours(), nDate.getMinutes()];
+	const chkDateLeng = chkDate.length;
+	for (i = 1; i < chkDateLeng; i++) chkDate[i] = String(chkDate[i]).padStart(2, '0');
+	let sDateVal = chkDate[1] + '.' + chkDate[2] + '.' + chkDate[0] + ' ' + chkDate[3] + ':' + chkDate[4];
+	$('.toast-check-time').text(sDateVal);
 }
-// e : design_review_05
+
+function parameterUrl () {
+	let urlValChk = location.href.substr(
+		location.href.lastIndexOf('=') + 1
+	);
+	if (urlValChk == 1) {
+		$('body').css('zoom', '.23');
+	}
+}
+
+window.onload = () => {
+	parameterUrl ();
+}
+/* e : design_review_05 */
