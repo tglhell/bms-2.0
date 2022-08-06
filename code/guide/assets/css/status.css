@@ -1,4 +1,4 @@
-@import '../css/preview.css';
+@import 'lib/preview.css';
 
 @font-face {
 	font-family: 'genesis-head-light';
