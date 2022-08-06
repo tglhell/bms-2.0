@@ -263,7 +263,7 @@ window.onload = () => {
 		location.href.lastIndexOf('=') + 1
 	);
 	if (urlValChk == 1) {
-		$('body').css('zoom', '.18');
+		$('body').css('zoom', '.23');
 	}
 }
 /* e : design_review_05 */
