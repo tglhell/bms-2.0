@@ -257,4 +257,13 @@ function dsSaveDateInp () {
 	let sDateVal = chkDate[1] + '.' + chkDate[2] + '.' + chkDate[0] + ' ' + chkDate[3] + ':' + chkDate[4];
 	$('.toast-check-time').text(sDateVal);
 }
+
+window.onload = () => {
+	let urlValChk = location.href.substr(
+		location.href.lastIndexOf('=') + 1
+	);
+	if (urlValChk == 1) {
+		$('body').css('zoom', '.18');
+	}
+}
 /* e : design_review_05 */

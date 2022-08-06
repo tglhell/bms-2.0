@@ -63,7 +63,7 @@
 
 $(() => {
 	$(window).scroll(() => {
-		var ScrollPos = $(window).scrollTop();
+		let ScrollPos = $(window).scrollTop();
 		if (ScrollPos > 72) {
 			$('.btn-top').addClass('active');
 		} else {
@@ -78,6 +78,25 @@ $(() => {
 	if (!$('body').hasClass('js')) {
 		$('body').addClass('js');
 	}
+
+	$('.status-wrap a').each(function () {
+		const pageNum = $(this).text() + '?page=1';
+		$(this).before('<p class="code-preview" style="display: none;"><iframe src="/publishing/bms-project/html/designreview/' + pageNum + '" width="100%" height="100%"></iframe>');
+	});
+
+	setTimeout(function () {
+		$(document).on('mouseenter mousemove mouseleave', '.status-wrap a', function (e) {
+			const xOffset = 170;
+			const yOffset = 50;
+			if (e.type == 'mouseenter') {
+				$(this).parent().find('.code-preview').css({'top':(e.pageY - xOffset) + 'px', 'left':(e.pageX + yOffset) + 'px', 'pointer-events':'auto', 'display':'block'});
+			} else if (e.type == 'mouseleave') {
+				$('.code-preview').css({'display':'none', 'pointer-events':'none'});
+			} else {
+				$(this).parent().find('.code-preview').css({'top':(e.pageY - xOffset) + 'px', 'left':(e.pageX + yOffset) + 'px'});
+			}
+		});
+	}, 1000);
 });
 
 new Function (
