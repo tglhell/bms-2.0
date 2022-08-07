@@ -25,15 +25,18 @@
 .cg-preview.position-r {
 	position: relative;
 }
-.cg-preview {
-	zoom: .23;
-}
 .cg-preview .bms-footer {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: 30;
+}
+
+@media screen and (max-width: 1023px) {
+	body {
+		zoom: .23;
+	}
 }
 /* e : initializing css variable value */
 
