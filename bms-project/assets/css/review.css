@@ -22,22 +22,6 @@
 	--fb-bold-lg: 500;
 	--fb-bold-xl: 700;
 }
-.cg-preview.position-r {
-	position: relative;
-}
-.cg-preview .bms-footer {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 30;
-}
-
-@media screen and (max-width: 1023px) {
-	body {
-		zoom: .23;
-	}
-}
 /* e : initializing css variable value */
 
 /* s : custom select item scroll */
@@ -554,3 +538,38 @@
 	opacity: 1;
 }
 /* e : design_review_05 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* s : 미리보기용 작업시는 미포함 */
+.cg-preview.position-r {
+	position: relative;
+}
+.cg-preview .bms-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 30;
+}
+
+@media screen and (max-width: 1023px) {
+	body {
+		zoom: .23;
+	}
+}
+/* e : 미리보기용 작업시는 미포함 */
