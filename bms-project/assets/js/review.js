@@ -142,6 +142,9 @@ function dateInp () {
 			eDateVal = chkDate[3] + '.' + eLastDate + '.' + chkDate[0];
 		}
 	}
+	if ($('.select-items li:last-of-type').hasClass('selected')) {
+		eDateVal = sDateVal;
+	}
 	actDateInp ();
 }
 
@@ -160,6 +163,7 @@ function actDateInp () {
 	eDateTar[1].val(sDateVal + ' - ' + eDateVal);
 	eDateTar[3].eq(0).text(sDateVal);
 	eDateTar[3].eq(1).text(eDateVal);
+	console.log(eDateVal);
 }
 /* e : design_review_03 */
 
