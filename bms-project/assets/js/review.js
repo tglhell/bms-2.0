@@ -163,7 +163,6 @@ function actDateInp () {
 	eDateTar[1].val(sDateVal + ' - ' + eDateVal);
 	eDateTar[3].eq(0).text(sDateVal);
 	eDateTar[3].eq(1).text(eDateVal);
-	console.log(eDateVal);
 }
 /* e : design_review_03 */
 
