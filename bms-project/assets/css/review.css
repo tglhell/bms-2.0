@@ -319,13 +319,13 @@
 	display: flex;
 }
 .review-list-box .review-list-item .list-text-area .status-info li {
-	padding: 3px 8px;
+	padding: 5px 11px;
 	background-color: var(--cm-color-navy);
 	font-weight: var(--fb-bold-lg);
 	color: var(--cm-color-white);
 }
 .review-list-box .review-list-item .list-text-area .status-info li.st-box2 {
-	background-color: var(--cm-color-black3);
+	background-color: var(--cm-color-black0);
 }
 .review-list-box .review-list-item .list-text-area .status-info li.st-box3 {
 	background-color: var(--cm-color-green);
