@@ -142,6 +142,10 @@
   $('.design-review-view').parents('html').addClass('view-wrap');
   $('.view-wrap').find('.layer-popup-cont').width(1200);
   designReview ();
+
+	window.onload = () => {
+		$('.pop-open').trigger('click');
+	}
 </script>
 </body>
 </html>
