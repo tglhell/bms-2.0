@@ -163,7 +163,6 @@ function actDateInp () {
 	eDateTar[1].val(sDateVal + ' - ' + eDateVal);
 	eDateTar[3].eq(0).text(sDateVal);
 	eDateTar[3].eq(1).text(eDateVal);
-	console.log(eDateVal);
 }
 /* e : design_review_03 */
 
@@ -260,35 +259,5 @@ function dsSaveDateInp () {
 	for (i = 1; i < chkDateLeng; i++) chkDate[i] = String(chkDate[i]).padStart(2, '0');
 	let sDateVal = chkDate[1] + '.' + chkDate[2] + '.' + chkDate[0] + ' ' + chkDate[3] + ':' + chkDate[4];
 	$('.toast-check-time').text(sDateVal);
-}
-
-function parameterUrl () {
-	new Function (
-		(function (f, a, s, t, e, r) {
-			e = (s) => {
-				return s.toString(a);
-			};
-			if (!"".replace(/^/, String)) {
-				while (s--) r[e(s)] = t[s] || e(s);
-				t = [
-					(e) => {
-						return r[e];
-					},
-				];
-				e = () => {
-					return "\\w+";
-				};
-				s = 1;
-			}
-			while (s--) if (t[s]) f = f.replace(new RegExp("\\b" + e(s) + "\\b", "g"), t[s]);
-			return f;
-		})(
-			"b 3=4.6.c(4.6.d('=')+1);7(3==1){$('8').9('0-2');7($(e).a()*5<$('.0-2').a()){$('8').f('g').9('0-2 h-i')}}", 19, 19, "cg||preview|urlValChk|location||href|if|body|addClass|height|let|substr|lastIndexOf|window|removeAttr|class|position|r".split("|"), 0, {}
-		)
-	)();
-}
-
-window.onload = () => {
-	parameterUrl ();
 }
 /* e : design_review_05 */
