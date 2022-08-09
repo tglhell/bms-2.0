@@ -80,29 +80,23 @@ $(() => {
 	}
 
 	$(document).on('mouseenter mousemove mouseleave', '.status-wrap a', function (e) {
-		eval(
-			(function (h, i, j, a, c, k) {
-				c = (j) => {
-					return (j < i ? "" : c(parseInt(j / i))) + ((j = j % i) > 35 ? String.fromCharCode(j + 29) : j.toString(36));
-				};
-				if (!"".replace(/^/, String)) {
-					while (j--) k[c(j)] = a[j] || c(j);
-					a = [
-						(c) => {
-							return k[c];
-						},
-					];
-					c = () => {
-						return "\\w+";
-					};
-					j = 1;
-				}
-				while (j--) if (a[j]) h = h.replace(new RegExp("\\b" + c(j) + "\\b", "g"), a[j]);
-				return h;
-			})(
-				"1 6=v;1 7=-w;8(e.d=='x'){1 f=$(g).9()/5;8(!$(2).y().z('.3-4')){1 h=($(g).a()+A)/5;1 i=$(2).B();$(2).C('<p D=\"3-4\" E=\"b: j; 9:'+f+'0;a:'+h+'0\"><k F=\"/G/H-I/J/K/'+i+'\" 9=\"L\" a=\"M\"></k>')}$(2).l().m('.3-4').c({'n':(e.o-6)+'0','q':(e.r+7)+'0','s-t':'N','b':'O'})}u 8(e.d=='P'){$('.3-4').c({'b':'j','s-t':'Q'})}u{$(2).l().m('.3-4').c({'n':(e.o-6)+'0','q':(e.r+7)+'0'})}", 53, 53, "px|const|this|code|preview||xOffset|yOffset|if|width|height|visibility|css|type||wSize|window|hSize|pageNum|hidden|iframe|parent|find|top|pageY||left|pageX|pointer|events|else|625|650|mouseenter|prev|is|230|text|before|class|style|src|publishing|bms|project|html|designreview|1920|1080|auto|visible|mouseleave|none".split("|"), 0, {}
-			)
-		);
+		const xOffset = 625;
+		const yOffset = -650;
+		if (e.type == 'mouseenter') {
+			const wSize = $(window).width() / 5;
+			if (!$(this).prev().is('.code-preview')) {
+				const hSize = ($(window).height() + 230) / 5;
+				const locationUrl = $(this).closest('td').prev().text();
+				const pageNum = $(this).text();
+				$(this).before('<p class="code-preview" style="visibility: hidden; width:' + wSize + 'px;height:' + hSize + 'px"><iframe src="/publishing/bms-project/html' + locationUrl + pageNum + '" width="1920" height="1080"></iframe>');
+			}
+			$(this).parent().find('.code-preview').css({'top':(e.pageY - xOffset) + 'px', 'left':(e.pageX + yOffset) + 'px', 'pointer-events':'auto', 'visibility':'visible'});
+		} else if (e.type == 'mouseleave') {
+			$('.code-preview').css({'visibility':'hidden', 'pointer-events':'none'});
+			// $('.code-preview').remove();
+		} else {
+			$(this).parent().find('.code-preview').css({'top':(e.pageY - xOffset) + 'px', 'left':(e.pageX + yOffset) + 'px'});
+		}
 	});
 });
 
