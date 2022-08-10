@@ -80,29 +80,22 @@ $(() => {
 	}
 
 	$(document).on('mouseenter mousemove mouseleave', '.status-wrap a', function (e) {
-		eval(
-			((h, i, a, b, c, d) => {
-				c = (a) => {
-					return (a < i ? "" : c(parseInt(a / i))) + ((a = a % i) > 35 ? String.fromCharCode(a + 29) : a.toString(36));
-				};
-				if (!"".replace(/^/, String)) {
-					while (a--) d[c(a)] = b[a] || c(a);
-					b = [
-						(c) => {
-							return d[c];
-						},
-					];
-					c = () => {
-						return "\\w+";
-					};
-					a = 1;
-				}
-				while (a--) if (b[a]) h = h.replace(new RegExp("\\b" + c(a) + "\\b", "g"), b[a]);
-				return h;
-			})(
-				"0 6=y;0 7=-z;8(e.d=='A'){0 f=$(g).9()/5;8(!$(1).h().B('.3-4')){0 i=($(g).a()+C)/5;0 j=$(1).D('E').h().k();0 l=$(1).k();$(1).F('<p G=\"3-4\" H=\"b: m; 9:'+f+'2;a:'+i+'2\"><n I=\"/J/K-L/M'+j+l+'\" 9=\"N\" a=\"O\"></n>')}$(1).o().q('.3-4').c({'r':(e.s-6)+'2','t':(e.u+7)+'2','v-w':'P','b':'Q'})}x 8(e.d=='R'){$('.3-4').c({'b':'m','v-w':'S'})}x{$(1).o().q('.3-4').c({'r':(e.s-6)+'2','t':(e.u+7)+'2'})}", 55, 55, "const|this|px|code|preview||xOffset|yOffset|if|width|height|visibility|css|type||wSize|window|prev|hSize|locationUrl|text|pageNum|hidden|iframe|parent||find|top|pageY|left|pageX|pointer|events|else|625|650|mouseenter|is|230|closest|td|before|class|style|src|publishing|bms|project|html|1920|1080|auto|visible|mouseleave|none".split("|"), 0, {}
-			)
-		);
+		const xOffset = 625;
+		const yOffset = -650;
+		if (e.type == 'mouseenter') {
+			const wSize = $(window).width() / 5;
+			if (!$(this).prev().is('.code-preview')) {
+				const hSize = ($(window).height() + 230) / 5;
+				const locationUrl = $(this).closest('td').prev().text();
+				const pageNum = $(this).text();
+				$(this).before('<p class="code-preview" style="display: none; width:' + wSize + 'px; height:' + hSize + 'px"><iframe src="/publishing/bms-project/html' + locationUrl + pageNum + '" width="1920" height="1080"></iframe>');
+			}
+			$(this).parent().find('.code-preview').css({'top':(e.pageY - xOffset) + 'px', 'left':(e.pageX + yOffset) + 'px', 'display':'block'});
+		} else if (e.type == 'mouseleave') {
+			$('.code-preview').css({'display':'none'});
+		} else {
+			$(this).parent().find('.code-preview').css({'top':(e.pageY - xOffset) + 'px', 'left':(e.pageX + yOffset) + 'px'});
+		}
 	});
 });
 
