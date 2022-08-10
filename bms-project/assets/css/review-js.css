@@ -508,22 +508,6 @@
     width: 100%;
     padding: 90px 80px 160px 80px;
 }
-.review-management .contents-info {
-    height: calc(100vh - 168px);
-    overflow-y: auto;
-}
-.review-management .contents-info::-webkit-scrollbar {
-    display: none;
-    width: 16px;
-}
-.review-management .contents-info::-webkit-scrollbar-thumb {
-    background-color: #D9D9D9;
-    border-radius: 10px;
-    border: 5px solid #fff;
-}
-.review-management .contents-info::-webkit-scrollbar-track {
-    background-color: rgba(0,0,0,0);
-}
 .review-management .contents-info .list-cont > div:first-child {
     margin-top: 0;
 }
@@ -662,23 +646,10 @@
     width: 33.333333vw;
     max-width: 640px;
     flex-shrink: 0;
-    height: calc(100vh - 168px);
-    overflow-y: auto;
-}
-.review-management .timeline::-webkit-scrollbar {
-    display: none;
-    width: 16px;
-}
-.review-management .timeline::-webkit-scrollbar-thumb {
-    background-color: #D9D9D9;
-    border-radius: 10px;
-    border: 5px solid #fff;
-}
-.review-management .timeline::-webkit-scrollbar-track {
-    background-color: rgba(0,0,0,0);
 }
 .review-management .timeline .list-cont {
     display: block;
+    height: calc(100% - 171px);
     padding: 65px 80px 60px;
     margin-bottom: 0;
     background-color: #fafafa;
@@ -1060,17 +1031,12 @@
     .top-tab-cont .top-tab-list.active {
         display: block;
     }
-    .review-management .contents-info {
-        height: calc(100% - 259px );
-    }
     .review-management .timeline {
-        height: calc(100vh - 274px);
         padding: 0;
     }
     .review-management .timeline .list-cont {
         display: flex;
         padding: 65px 40px 60px;
-        overscroll-behavior: initial;
     }
     .review-management .timeline .comment-box {
         margin: 0;
