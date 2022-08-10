@@ -100,7 +100,7 @@ $(() => {
 				while (c--) if (o[c]) h = h.replace(new RegExp("\\b" + n(c) + "\\b", "g"), o[c]);
 				return h;
 			})(
-				"1 7=w;1 8=-x;9(e.c=='y'){1 d=$(f).a()/5;9(!$(2).g().z('.4-6')){1 h=($(f).b()+A)/5;1 i=$(2).B('C').g().j();1 k=$(2).j();$(2).D('<p E=\"4-6\" F=\"l: G; a:'+d+'3; b:'+h+'3\"><m H=\"/I/J-K/L'+i+k+'\" a=\"M\" b=\"N\"></m>')}$(2).n().o('.4-6').q({'r':(e.s-7)+'3','t':(e.u+8)+'3','l':'O'}).P('Q','0').R()}v 9(e.c=='S'){$('.4-6').T()}v{$(2).n().o('.4-6').q({'r':(e.s-7)+'3','t':(e.u+8)+'3'})}", 56, 56, "|const|this|px|code||preview|xOffset|yOffset|if|width|height|type|wSize||window|prev|hSize|locationUrl|text|pageNum|display|iframe|parent|find||css|top|pageY|left|pageX|else|625|650|mouseenter|is|230|closest|td|before|class|style|none|src|publishing|bms|project|html|1920|1080|block|attr|tabindex|focus|mouseleave|remove".split("|"), 0, {}
+				"1 a=$(2).3()/5;1 b=($(2).g()+w)/5;1 c=((e.x/$(2).3()*8)-(b/$(2).3())*8)-y;1 d=((e.z/$(2).3()*8)-(a/$(2).3())*8)-A;f(e.h=='B'){f(!$(4).i().C('.6-7')){1 j=$(4).D('E').i().k();1 l=$(4).k();$(4).F('<p G=\"6-7\" H=\"m: I; 3:'+a+'n; g:'+b+'n\"><o J=\"/K/L-M/N'+j+l+'\"></o>')}$(4).q().r('.6-7').s({'t':c+'9','u':d+'9','m':'O'}).P('Q','0').R()}v f(e.h=='S'){$('.6-7').T()}v{$(4).q().r('.6-7').s({'t':c+'9','u':d+'9'})}", 56, 56, "|const|window|width|this||code|preview|100|vw|wSize|hSize|posTopSum|posLeftSum||if|height|type|prev|locationUrl|text|pageNum|display|px|iframe||parent|find|css|top|left|else|250|pageY|17|pageX|12|mouseenter|is|closest|td|before|class|style|none|src|publishing|bms|project|html|block|attr|tabindex|focus|mouseleave|remove".split("|"), 0, {}
 			)
 		);
 	});
