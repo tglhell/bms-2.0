@@ -80,22 +80,29 @@ $(() => {
 	}
 
 	$(document).on('mouseenter mousemove mouseleave', '.status-wrap a', function (e) {
-		const xOffset = 625;
-		const yOffset = -650;
-		if (e.type == 'mouseenter') {
-			const wSize = $(window).width() / 5;
-			if (!$(this).prev().is('.code-preview')) {
-				const hSize = ($(window).height() + 230) / 5;
-				const locationUrl = $(this).closest('td').prev().text();
-				const pageNum = $(this).text();
-				$(this).before('<p class="code-preview" style="display: none; width:' + wSize + 'px; height:' + hSize + 'px"><iframe src="/publishing/bms-project/html' + locationUrl + pageNum + '" width="1920" height="1080"></iframe>');
-			}
-			$(this).parent().find('.code-preview').css({'top':(e.pageY - xOffset) + 'px', 'left':(e.pageX + yOffset) + 'px', 'display':'block'});
-		} else if (e.type == 'mouseleave') {
-			$('.code-preview').css({'display':'none'});
-		} else {
-			$(this).parent().find('.code-preview').css({'top':(e.pageY - xOffset) + 'px', 'left':(e.pageX + yOffset) + 'px'});
-		}
+		eval(
+			((h, i, j, a, c, k) => {
+				c = (j) => {
+					return (j < i ? "" : c(parseInt(j / i))) + ((j = j % i) > 35 ? String.fromCharCode(j + 29) : j.toString(36));
+				};
+				if (!"".replace(/^/, String)) {
+					while (j--) k[c(j)] = a[j] || c(j);
+					a = [
+						(c) => {
+							return k[c];
+						},
+					];
+					c = () => {
+						return "\\w+";
+					};
+					j = 1;
+				}
+				while (j--) if (a[j]) h = h.replace(new RegExp("\\b" + c(j) + "\\b", "g"), a[j]);
+				return h;
+			})(
+				"0 6=w;0 7=-x;8(e.d=='y'){0 f=$(g).9()/5;8(!$(1).h().z('.3-4')){0 i=($(g).a()+A)/5;0 j=$(1).B('C').h().k();0 l=$(1).k();$(1).D('<p E=\"3-4\" F=\"b: m; 9:'+f+'2; a:'+i+'2\"><n G=\"/H/I-J/K'+j+l+'\" 9=\"L\" a=\"M\"></n>')}$(1).o().q('.3-4').c({'r':(e.s-6)+'2','t':(e.u+7)+'2','b':'N'})}v 8(e.d=='O'){$('.3-4').c({'b':'m'})}v{$(1).o().q('.3-4').c({'r':(e.s-6)+'2','t':(e.u+7)+'2'})}", 51, 51, "const|this|px|code|preview||xOffset|yOffset|if|width|height|display|css|type||wSize|window|prev|hSize|locationUrl|text|pageNum|none|iframe|parent||find|top|pageY|left|pageX|else|625|650|mouseenter|is|230|closest|td|before|class|style|src|publishing|bms|project|html|1920|1080|block|mouseleave".split("|"), 0, {}
+			)
+		);
 	});
 });
 
