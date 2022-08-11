@@ -289,7 +289,7 @@ function autoReTxt() {
 function review_management_set() {
 	$('.design-review-view').parents('html').addClass('view-wrap');
 	$('.view-wrap').find('.layer-popup-cont').width(1200);
-	if($(window).width() < 1281 && $('html').hasClass('view-wrap')) {
+	if($(window).width() < 1281) {
 		$(window).on('scroll', function(){
 			$('.bms-header').removeClass('fixed');
 			let scroll = $(this).scrollTop(),
@@ -304,6 +304,7 @@ function review_management_set() {
 	}  
 }
 /* e : review management view */
+
 
 /* s : design_review_05 */
 function btmFixBoxFunc () {
