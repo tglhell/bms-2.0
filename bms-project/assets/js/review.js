@@ -198,15 +198,15 @@ function nameTooltip() {
 //text more
 function txtMore() {
 	let txtList = $('.timeline .list'),
-			txtCont = $('.timeline .txt-cont'),
-			txtContLen = txtCont.length,
-			txtContH,
-			txtContHArr = [],
-			listIdxArr =[],
-			minHeight = 241,
-			pushBtn = '<button type="button" class="btn-more"></button>',
-			btnTxt1 = 'More',
-			btnTxt2 = 'Close';
+		txtCont = $('.timeline .txt-cont'),
+		txtContLen = txtCont.length,
+		txtContH,
+		txtContHArr = [],
+		listIdxArr =[],
+		minHeight = 241,
+		pushBtn = '<button type="button" class="btn-more"></button>',
+		btnTxt1 = 'More',
+		btnTxt2 = 'Close';
 
 	txtCont.each(function(){
 		txtContH = $(this).find('.txt').outerHeight();
@@ -237,6 +237,23 @@ function txtMore() {
 		} else {
 			$(this).text(btnTxt2).parent().removeClass('short');
 			$(this).siblings('.txt').stop().animate({height:txtContHArr[thisIdx]});
+		}		
+
+		if ($(window).width() > 1280) {
+			let liIdx = $(this).closest('.list').data('idx'),
+			txtIdxH = txtContHArr[liIdx] - (minHeight-1),
+			commentB = parseInt($('.comment-box').css('bottom'));
+			if (commentB > 0) {
+				if($(this).parent('.txt-cont').hasClass('short')) {
+					$('.comment-box').stop().animate({
+						bottom:commentB + txtIdxH
+					});
+				} else {
+					$('.comment-box').stop().animate({
+						bottom:commentB - txtIdxH
+					});
+				}
+			}
 		}
 	})
 }
