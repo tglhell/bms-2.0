@@ -177,6 +177,8 @@ function review_management_view_set() {
 		$(this).addClass('active');
 		tabContLi.removeClass('active');
 		tabContLi.eq(i).addClass('active');
+
+		txtMore();
 	})
 }
 
@@ -262,6 +264,20 @@ function commentFile() {
 			clearFile($this)
 		})
 	}); 
+
+	const cmFixBoxTar = [$('.comment-box'), $('.bms-footer')];
+	const cmFixBoxPos = [parseInt(cmFixBoxTar[0].css('bottom'))];
+	if (cmFixBoxTar[0].length !== 0) {
+		$(window).on('scroll', function () {
+			let cmScrPos = $(this).scrollTop();
+			let cmScrPosSum = ($(document).height() - $(window).height()) - cmFixBoxTar[1].outerHeight(true);
+			if (cmScrPos >= cmScrPosSum) {
+				cmFixBoxTar[0].css('bottom', (cmScrPos - cmScrPosSum) + cmFixBoxPos[0]);
+			} else {
+				cmFixBoxTar[0].css('bottom', cmFixBoxPos[0]);
+			}
+		});
+	}
 }
 
 //clear file
