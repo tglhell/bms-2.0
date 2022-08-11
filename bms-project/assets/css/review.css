@@ -57,7 +57,7 @@
 }
 /* e : common custom */
 
-/* s : design_review_01 */
+/* s : submit design write */
 .row-type.radio-box > label {
 	display: inline-block;
 }
@@ -175,15 +175,15 @@
 .noti .underline {
 	text-decoration: underline;
 }
-/* e : design_review_01 */
+/* e : submit design write */
 
-/* s : design_review_02 */
+/* s : review request complete */
 .design-review-wrap .complete-outer {
 	margin-top: 120px;
 }
-/* e : design_review_02 */
+/* e : review request complete */
 
-/* s : design_review_03 */
+/* s : manage design list */
 .review-list-filter {
 	position: relative;
 	margin-bottom: 56px;
@@ -207,7 +207,7 @@
 .review-list-filter .btn-option .text {
 	display: block;
 	padding-right: 32px;
-	background: url(../images/designreview/advanced_search.svg) no-repeat right center;
+	background: url(../images/review/advanced_search.svg) no-repeat right center;
 }
 .review-list-filter .btn-option .ico {
 	display: none;
@@ -362,7 +362,7 @@
 		width: 50%;
 	}
 }
-/* e : design_review_03 */
+/* e : manage design list */
 
 /* s : design_review_04 */
 /* e : design_review_04 */
@@ -388,7 +388,7 @@
 	width: 40px;
 	height: 40px;
 	border: 1px solid var(--cm-color-navy);
-	background: url(../../assets/images/designreview/questions.svg) no-repeat center center;
+	background: url(../../assets/images/review/questions.svg) no-repeat center center;
 	font-size: 0;
 	line-height: 0;
 }
@@ -690,7 +690,7 @@
 	right: 23px;
 	width: 15px;
 	height: 15px;
-	background: url('../images/designreview/ico_btn_close_w.svg') no-repeat;
+	background: url('../images/review/ico_btn_close_w.svg') no-repeat;
 	background-size: 100%; 
 	text-indent: -9999px;
 }
@@ -738,7 +738,7 @@
 	right: 0;
 	width: 12px;
 	height: 12px;
-	background: url(../images/designreview/ico_more.svg) no-repeat center;
+	background: url(../images/review/ico_more.svg) no-repeat center;
 	background-size: contain;
 	transform: rotate(180deg);
 	content: '';
@@ -780,13 +780,13 @@
 	width: 24px;
 	height: 24px;
 	margin-left: 8px;
-	background: url('../images/designreview/ico_down.svg') no-repeat center;
+	background: url('../images/review/ico_down.svg') no-repeat center;
 	background-size: 11px 14px;
 	vertical-align: middle;
 	content: '';
 }
 .timeline .file-cont .top .btn-down-all:hover:after {
-	background: url('../images/designreview/ico_down_hover.svg') no-repeat center;
+	background: url('../images/review/ico_down_hover.svg') no-repeat center;
 	background-size: 11px 14px;
 }
 .timeline .file-cont ul li {
@@ -805,7 +805,7 @@
 	color: var(--cm-color-green);
 }
 .timeline .file-cont ul li:hover .btn-icon:after {
-	background: url('../images/designreview/ico_down_hover.svg') no-repeat center;
+	background: url('../images/review/ico_down_hover.svg') no-repeat center;
 	background-size: 11px 14px;
 }
 .timeline .file-cont .img {
@@ -826,14 +826,14 @@
 	font-size: 40px;
 	text-align: center;
 	line-height: 60px;
-	background: rgba(40,40,40,0) url('../images/designreview/ico_plus_w.svg') no-repeat center;
+	background: rgba(40,40,40,0) url('../images/review/ico_plus_w.svg') no-repeat center;
 	background-image: none;
 	transition: .3s;
 	z-index: 1;
 	content: '';
 }
 .timeline .file-cont ul li:hover .img:before {
-	background: rgba(40,40,40,.5) url('../images/designreview/ico_plus_w.svg') no-repeat center;
+	background: rgba(40,40,40,.5) url('../images/review/ico_plus_w.svg') no-repeat center;
 }
 .timeline .file-cont .img img {
 	position: absolute;
@@ -873,7 +873,7 @@
 	width: 24px;
 	height: 24px;
 	margin-left: 0;
-	background: url('../images/designreview/ico_down.svg') no-repeat center;
+	background: url('../images/review/ico_down.svg') no-repeat center;
 	background-size: 11px 14px;
 	transform: translateY(-50%);
 	content: '';
@@ -945,7 +945,7 @@
 	width: 24px;
 	height: 24px;
 	margin-right: 16px;
-	background: url('../images/designreview/ico_rev_view_addfile.svg') no-repeat;
+	background: url('../images/review/ico_rev_view_addfile.svg') no-repeat;
 	background-size: 100%;
 	cursor: pointer;
 	text-indent: -9999px;
@@ -1266,7 +1266,7 @@
 	right: 20px;
 	width: 15px;
 	height: 15px;
-	background: url('../images/designreview/ico_btn_close_w.svg') no-repeat;
+	background: url('../images/review/ico_btn_close_w.svg') no-repeat;
 	background-size: 100%; 
 	text-indent: -9999px;
 }
@@ -1410,7 +1410,7 @@
 	display: inline-block;
 	width: 100%;
 	height: 17px;
-	background: url('.././images/designreview/ico_plus_g.svg') no-repeat center;
+	background: url('.././images/review/ico_plus_g.svg') no-repeat center;
 	background-size: 17px;
 	content: '';
 	cursor: pointer;
@@ -1560,7 +1560,7 @@
 			color: var(--cm-color-green);
 	}
 	.timeline .file-cont .top .btn-down-all:hover:after {
-			background: url('../images/designreview/ico_down_hover.svg') no-repeat center;
+			background: url('../images/review/ico_down_hover.svg') no-repeat center;
 			background-size: 14px 18px;
 	}
 	.timeline .comment-box {
