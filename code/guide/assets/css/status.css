@@ -212,8 +212,8 @@ body.js .section .content {
 	color: #d90202;
 }
 
-.fcRb {
-	color: rebeccapurple;
+.fcPv {
+	color: palevioletred;
 }
 
 .fcB {
@@ -312,11 +312,12 @@ body.js .section .content {
 } */
 
 table td.state {
-	color: palevioletred;
+	color: forestgreen;
 }
 
 table td.worker {
 	color: cornflowerblue;
+	color: dodgerblue;
 	text-align: center;
 }
 
