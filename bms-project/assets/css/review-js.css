@@ -116,9 +116,13 @@
 	margin-top: 0;
 	vertical-align: top;
 }
+.layer-popup-cont .file-detail-input > .left {
+	width: 57.666666vw;
+	max-width: 692px;
+}
 .layer-popup-cont .file-detail-input > .right {
-	width: 348px;
-	flex: none;
+	width: 29vw;
+	max-width: 348px;
 }
 .layer-popup-cont .file-detail-input > .right label {
 	font-weight: 400;
