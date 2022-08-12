@@ -172,14 +172,18 @@ function review_management_view_set() {
 	//top tab
 	$('.top-tab-menu').on('click', 'li', function() {
 		let i = $(this).index(),
-				tabContLi = $(this).parent('.top-tab-menu').next('.top-tab-cont').find('.top-tab-list');
-		$(this).parent().find('li').removeClass('active');
+			tabContLi = $(this).parent('.top-tab-menu').next('.top-tab-cont').find('.top-tab-list');
+		$(this).siblings('li').removeClass('active');
 		$(this).addClass('active');
 		tabContLi.removeClass('active');
 		tabContLi.eq(i).addClass('active');
-
-		txtMore();
-	})
+	}) 
+	if ($(this).parent('.top-tab-menu').siblings('.top-tab-cont').find('.top-tab-list').hasClass('timeline')) {
+		console.log('ddd')
+		// $('.top-tab-menu').one('click', 'li', function() {
+		// 	txtMore();
+		// })		
+	}
 }
 
 // tooltip
@@ -228,8 +232,10 @@ function txtMore() {
 
 	let btnMore = $('.timeline .btn-more');
 	btnMore.on('click', function() {
-		let thisTxtH = $(this).siblings().outerHeight(),
-				thisIdx = $(this).parents('.list').data('idx');
+		let thisTxtH = $(this).siblings('.txt').outerHeight(),
+			thisIdx = $(this).parents('.list').data('idx');
+
+		console.log(txtContHArr)
 
 		if (thisTxtH >= minHeight){
 			$(this).text(btnTxt1).parent().addClass('short');
