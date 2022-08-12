@@ -383,7 +383,7 @@ function btmFixBoxFunc () {
 	}
 }
 
-function reviewCarousel () {
+function carouselType1 () {
 	if($('.review-guide-step').length > 0) {
 		const carouselType1 = new Swiper('.review-guide-step .slide-swiper', {
 			direction: 'horizontal',
@@ -397,13 +397,10 @@ function reviewCarousel () {
 			},
 			loop: true,
 			initialSlide: 0,
-			on: {
-				slideChangeTransitionStart: function () {
-					const swpLinkTar = $('.guide-step-info > ul').find('> li');/* , $('.guide-step2-info > ul').find('> li')]; */
-					let swpChpIdx = $('.review-guide-step .swiper-slide-active').attr('data-swiper-slide-index');
-					swpLinkTar.removeAttr('class').eq(swpChpIdx).addClass('on');
-				}
-			}
+		});
+		carouselType1.on('transitionStart', function() {
+			const swpLinkTar = $('.guide-step-info > ul').find('> li');
+			swpLinkTar.removeAttr('class').eq(carouselType1.realIndex).addClass('on');
 		});
 	}
 }
