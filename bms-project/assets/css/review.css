@@ -55,6 +55,15 @@
 	top: 48px;
 	bottom: auto;
 }
+.group-box-cont {
+	display: flex;
+}
+.group-box-cont > div {
+	margin: 0;
+}
+.group-box-cont > div  + div {
+	margin-left: 30px;
+}
 /* e : common custom */
 
 /* s : submit design write */
@@ -1381,6 +1390,11 @@
 	padding: 16px;
 	margin-top: 16px;
 	border: 1px solid #ccc;
+}
+.selected-tag .selected-box p {
+	font-size: 16px;
+	color: var(--cm-color-gray);
+	line-height: 20px;
 }
 .selected-tag.input-outer-box div label {
 	min-width: none;
