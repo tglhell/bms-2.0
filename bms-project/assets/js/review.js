@@ -399,15 +399,9 @@ function reviewCarousel () {
 			initialSlide: 0,
 			on: {
 				slideChangeTransitionStart: function () {
-					const swpLinkTar = [$('.guide-step-info > ul').find('> li'), $('.guide-step2-info > ul').find('> li')];
+					const swpLinkTar = $('.guide-step-info > ul').find('> li');/* , $('.guide-step2-info > ul').find('> li')]; */
 					let swpChpIdx = $('.review-guide-step .swiper-slide-active').attr('data-swiper-slide-index');
-					let swpStepLeng = $('.guide-step2-info > ul').find('> li').length;
-					swpLinkTar[0].removeAttr('class').eq(swpChpIdx).addClass('on');
-					if (swpChpIdx < swpStepLeng) {
-						swpLinkTar[1].removeAttr('class').eq(swpStepLeng - swpStepLeng).addClass('on');
-					} else {
-						swpLinkTar[1].removeAttr('class').eq(swpStepLeng - irNum[0]).addClass('on');
-					}
+					swpLinkTar.removeAttr('class').eq(swpChpIdx).addClass('on');
 				}
 			}
 		});
@@ -415,22 +409,7 @@ function reviewCarousel () {
 }
 
 function dsSaveToast () {
-	setInterval(function () {
-		$('.write-save-toast').addClass('active');
-		setTimeout(function () {
-			$('.write-save-toast').removeClass('active');
-		}, secVal[2] * twoDig[0]);
-		dsSaveDateInp ();
-	}, 10000);
-	// }, secVal[8] * secVal[1]);
-}
-
-function dsSaveDateInp () {
-	const nDate = new Date();
-	const chkDate = [nDate.getFullYear(), nDate.getMonth() + irNum[0], nDate.getDate(), nDate.getHours(), nDate.getMinutes()];
-	const chkDateLeng = chkDate.length;
-	for (i = 1; i < chkDateLeng; i++) chkDate[i] = String(chkDate[i]).padStart(2, '0');
-	let sDateVal = chkDate[1] + '.' + chkDate[2] + '.' + chkDate[0] + ' ' + chkDate[3] + ':' + chkDate[4];
-	$('.toast-check-time').text(sDateVal);
+	$('.write-save-toast').addClass('active');
+	// $('.write-save-toast').removeClass('active');
 }
 /* e : design_review_05 */
