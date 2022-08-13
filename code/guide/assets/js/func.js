@@ -14,8 +14,8 @@
 		return this.each(function () {
 			var self = this,
 				$self = $(self),
-				title_text = [],
-				completed = 0;
+				title_text = [];
+			completed = 0;
 			self.section_title = $(settings.title, $self);
 			self.content = $(settings.content, $self);
 			self.files = $(settings.files, $self);
@@ -23,7 +23,7 @@
 				var date = $(settings.date, this);
 				date.each(function () {
 					var text = $(this).text();
-					if (text) {
+					if (text === 'complete') {
 						completed++;
 					}
 				});
@@ -36,7 +36,7 @@
 					$(this).removeClass('hover');
 				});
 			title_text = [self.section_title.text(), ' <span class="page-count">(', completed, '/', self.files.length,
-				') - <span style="color:#16a0f0;">1depth</span><span class="s-bar"></span></span>'
+				') - <span style="color:#16a0f0;">1depth</span><p class="s-bar" style="width: ' + ((completed / self.files.length) * 100) + '%"></p></span>'
 			];
 			self.section_title.html(title_text.join(''));
 			self.section_title.bind('click', () => {
@@ -70,6 +70,11 @@ $(() => {
 			$('.btn-top').removeClass('active');
 		}
 	});
+
+	// if (!$('.s-title').children().is('.status-bar')) {
+	// 	$('.s-title').append('<p class="status-bar"></p>');
+	// 	$('.status-bar').css('width', completed + '%');
+	// }
 
 	$('.btn-top').on('click', () => {
 		$('html, body').stop().animate({scrollTop:0}, secVal[4], 'easeInOutQuart');
