@@ -376,30 +376,12 @@
 /* s : design_review_04 */
 /* e : design_review_04 */
 
-/* s : design_review_05 */
+/* s : submit_library_write */
 .design-review-wrap .review-lib-cont .cont-text2 {
 	margin-top: 16px;
 }
 .review-lib-tit {
 	margin-bottom: 51px;
-}
-.btm-fix-box {
-	position: fixed;
-	bottom: 248px;
-	right: 80px;
-	z-index: 90;
-}
-.btm-fix-box .btn-right-guide {
-	vertical-align: top;
-}
-.btm-fix-box .btn-right-guide span {
-	display: block;
-	width: 40px;
-	height: 40px;
-	border: 1px solid var(--cm-color-navy);
-	background: url(../../assets/images/review/questions.svg) no-repeat center center;
-	font-size: 0;
-	line-height: 0;
 }
 .right-guide-outer {
 	transition: right .7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
@@ -432,39 +414,39 @@
 .review-guide-step {
 	padding-top: 22px;
 }
-.review-guide-step .carousel-type1 {
+.review-guide-step .guide-swiper-box {
 	position: relative;
 	padding-bottom: 0;
 	border: 1px solid var(--cm-color-gray);
 }
-.review-guide-step .carousel-type1 .swiper {
+.review-guide-step .guide-swiper-box .swiper {
 	position: static;
 	overflow: hidden;
 }
-.review-guide-step .carousel-type1 .swiper-wrapper {
+.review-guide-step .guide-swiper-box .swiper-wrapper {
 	height: 346px;
 	align-items: center;
 }
-.review-guide-step .carousel-type1 .swiper-slide img {
+.review-guide-step .guide-swiper-box .swiper-slide img {
 	margin-bottom: 0;
 }
-.review-guide-step .carousel-type1 .swiper-pagination {
+.review-guide-step .guide-swiper-box .swiper-pagination {
 	margin-top: 8px;
 }
-.review-guide-step .carousel-type1 .swiper-button-prev,
-.review-guide-step .carousel-type1 .swiper-button-next {
+.review-guide-step .guide-swiper-box .swiper-button-prev,
+.review-guide-step .guide-swiper-box .swiper-button-next {
 	width: 60px;
 	height: 60px;
 	background: url(../../assets/images/common/ico_carousel_type2.svg) no-repeat center center;
 }
-.review-guide-step .carousel-type1 .swiper-button-prev:hover,
-.review-guide-step .carousel-type1 .swiper-button-next:hover {
+.review-guide-step .guide-swiper-box .swiper-button-prev:hover,
+.review-guide-step .guide-swiper-box .swiper-button-next:hover {
 	background-image: url(../../assets/images/common/ico_carousel_type2_hovered.svg);
 }
-.review-guide-step .carousel-type1 .swiper-button-prev {
+.review-guide-step .guide-swiper-box .swiper-button-prev {
 	margin-top: -30px;
 }
-.review-guide-step .carousel-type1 .swiper-button-next {
+.review-guide-step .guide-swiper-box .swiper-button-next {
 	margin-top: 0;
 }
 .guide-step-info {
@@ -530,11 +512,17 @@
 .guide-btm-image {
 	margin-top: 24px;
 }
-.design-review-wrap .write-save-toast {
-	transition: bottom .5s, opacity .5s, z-index 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+.btm-btn-fix {
+	position: relative;
+	margin: 60px 0 -160px;
+	padding: 20px;
+	background-color: var(--cm-color-dark-white);
+}
+.btm-btn-fix .write-save-toast {
+	transition: top .5s, opacity .5s, z-index 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 	transform: translateX(-50%);
 	position: absolute;
-	bottom: -100px;
+	top: -70px;
 	left: 50%;
 	z-index: -1;
 	opacity: 0;
@@ -547,13 +535,30 @@
 	line-height: 21px;
 	text-align: center;
 }
-.design-review-wrap .write-save-toast.active {
-	transition: bottom .5s, opacity .5s, z-index 0s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-	bottom: -80px;
+.btm-btn-fix .write-save-toast.active {
+	transition: top .5s, opacity .5s, z-index 0s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	top: -85px;
 	z-index: 80;
 	opacity: 1;
 }
-/* e : design_review_05 */
+.btm-btn-fix .cta-outer {
+	margin-top: 0;
+}
+.btm-btn-fix .btn-right-guide {
+	transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+	right: 83px;
+}
+.btm-btn-fix .btn-right-guide span {
+	display: block;
+	padding-right: 23px;
+	background: url(../../assets/images/review/ico_guide_on.svg) no-repeat right center;
+	font-size: 18px;
+	font-weight: var(--fb-bold-lg);
+	line-height: 30px;
+}
+/* e : submit_library_write */
 
 /* s: view detail */
 .view-wrap .bms-container {
@@ -1667,6 +1672,51 @@
 	}
 }
 /* e: view detail */
+
+/* s : right guide swiper */
+.guide-swiper-box {
+  padding-bottom: 20px;
+}
+.guide-swiper-box .swiper-button-prev,
+.guide-swiper-box .swiper-button-next{
+  /*width: 38px;*/
+  /*height: 60px;*/
+  width: 160px;
+  height: 160px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url('../../assets/images/common/ico_carousel_type1.svg')no-repeat 0 0;
+}
+.guide-swiper-box .swiper-button-prev {
+  left: 0;
+  transform: rotate(180deg);
+  margin-top: -102px;
+}
+.guide-swiper-box .swiper-button-next {
+  right: 0;
+}
+.guide-swiper-box .swiper-button-prev:hover,
+.guide-swiper-box .swiper-button-next:hover{
+  background-image: url('../../assets/images/common/ico_carousel_type1_hovered.svg');
+}
+.guide-swiper-box .swiper-button-prev.swiper-button-disabled ,
+.guide-swiper-box .swiper-button-next.swiper-button-disabled  {
+  display: none;
+}
+.guide-swiper-box .swiper-button-prev:after ,
+.guide-swiper-box .swiper-button-next:after {
+  display: none;
+}
+.guide-swiper-box .swiper-pagination {
+  bottom: unset;
+  top: 100%;
+  font-family: 'HyundaiSansHeadKR';
+  color: #777;
+}
+.guide-swiper-box .swiper-pagination .swiper-pagination-current{
+  color: #333;
+}
+/* e : right guide swiper */
 
 /* s : layer-popup */
 .layer-popup-body .layer-title.h5-title {

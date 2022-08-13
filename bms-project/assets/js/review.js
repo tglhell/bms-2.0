@@ -345,33 +345,25 @@ function review_management_set() {
 /* e : review management view */
 
 
-/* s : design_review_05 */
+/* s : submit_library_write */
 function btmFixBoxFunc () {
-	const dsFixBoxTar = [$('.btm-fix-box'), $('.bms-footer'), $('.right-guide-outer'), $('.btn-top-box'), $('.bms-header, body')];
+	const dsFixBoxTar = [$('.btm-btn-fix'), $('.bms-footer'), $('.right-guide-outer'), $('.btn-top-box'), $('.bms-header, body')];
 	const dsFixBoxPos = [parseInt(dsFixBoxTar[0].css('bottom')), parseInt(dsFixBoxTar[3].css('right'))];
 	if (dsFixBoxTar[0].length !== 0) {
-		$(window).on('scroll', function () {
-			let dsScrPos = $(this).scrollTop();
-			let dsScrPosSum = ($(document).height() - $(window).height()) - dsFixBoxTar[1].outerHeight(true);
-			if (dsScrPos >= dsScrPosSum) {
-				dsFixBoxTar[0].css('bottom', (dsScrPos - dsScrPosSum) + dsFixBoxPos[0]);
-			} else {
-				dsFixBoxTar[0].css('bottom', dsFixBoxPos[0]);
-			}
-		});
 		dsFixBoxTar[0].on('click', '.btn-right-guide', function () {
 			const dsWsize = [$(window).outerWidth(), $(window).width()];
 			const rightFixPos = [parseInt($(this).parent().css('right')), (dsWsize[0] - dsWsize[1])];
 			dsFixBoxTar[2].toggleClass('active');
 			if (dsFixBoxTar[2].hasClass('active')) {
 				dsFixBoxTar[4].css({'overflow':'hidden', 'width':dsWsize[1]});
-				$(this).parent().css('right', rightFixPos[0] + rightFixPos[1]);
 				dsFixBoxTar[3].css('right', dsFixBoxPos[1] + rightFixPos[1]);
 			}
 			$(document).on('click', function (e) {
-				const dsReFixTar = $('.btn-right-guide *, .right-guide-outer, .right-guide-outer *');
-				if(!$(e.target).is(dsReFixTar)) {
-					dsRboxClose ();
+				if (dsFixBoxTar[2].hasClass('active')) {
+					const dsReFixTar = $('.btn-right-guide *, .right-guide-outer, .right-guide-outer *');
+					if(!$(e.target).is(dsReFixTar)) {
+						dsRboxClose ();
+					}
 				}
 			});
 			$('.btn-guide-close').on('click',function () {
@@ -389,9 +381,9 @@ function btmFixBoxFunc () {
 	}
 }
 
-function carouselType1 () {
+function rightGuideSwiper () {
 	if($('.review-guide-step').length > 0) {
-		const carouselType1 = new Swiper('.review-guide-step .slide-swiper', {
+		const rightGuideSwiper = new Swiper('.review-guide-step .slide-swiper', {
 			direction: 'horizontal',
 			pagination: {
 				el: ".review-guide-step .swiper-pagination",
@@ -404,15 +396,19 @@ function carouselType1 () {
 			loop: true,
 			initialSlide: 0,
 		});
-		carouselType1.on('transitionStart', function() {
+		rightGuideSwiper.on('transitionStart', function() {
 			const swpLinkTar = $('.guide-step-info > ul').find('> li');
-			swpLinkTar.removeAttr('class').eq(carouselType1.realIndex).addClass('on');
+			swpLinkTar.removeAttr('class').eq(rightGuideSwiper.realIndex).addClass('on');
 		});
 	}
 }
 
 function dsSaveToast () {
-	$('.write-save-toast').addClass('active');
-	// $('.write-save-toast').removeClass('active');
+	$('.btn-tp-save').on('click', function () {
+		$('.write-save-toast').addClass('active');
+		setTimeout(() => {
+			$('.write-save-toast').removeClass('active');
+		}, 3000);
+	});
 }
-/* e : design_review_05 */
+/* e : submit_library_write */

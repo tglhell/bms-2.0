@@ -152,12 +152,12 @@ table tr.modify td {
 }
 
 table tr.hover td {
-	background-color: #eee;
+	background-color: rgba(22, 160, 240, .08);
 }
 
 table tr.none td {
 	color: #000;
-	background-color: #fc8989;
+	background-color: rgba(252, 137, 137, .2);
 }
 
 table tr.up td {

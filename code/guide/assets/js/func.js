@@ -72,7 +72,7 @@ $(() => {
 	});
 
 	$('.btn-top').on('click', () => {
-		$('html, body').stop().animate({scrollTop:0}, 500, 'easeInOutQuart');
+		$('html, body').stop().animate({scrollTop:0}, secVal[4], 'easeInOutQuart');
 	});
 
 	if (!$('body').hasClass('js')) {
@@ -100,7 +100,7 @@ $(() => {
 				while (c--) if (o[c]) h = h.replace(new RegExp("\\b" + n(c) + "\\b", "g"), o[c]);
 				return h;
 			})(
-				"5(e.6=='q'){5(!$(1).7().r('.2-3')){8 9=$(1).s('t').7().a();8 b=$(1).a();$(1).u('<p v=\"2-3\" w=\"c: x;\"><d y=\"/z/A-B/C'+9+b+'\"></d>')}$(1).f().g('.2-3').h({'i':(e.j-k)+'4','l':(e.m-n)+'4','c':'D'}).E('F','0').G()}o 5(e.6=='H'){$('.2-3').I()}o{$(1).f().g('.2-3').h({'i':(e.j-k)+'4','l':(e.m-n)+'4'})}", 45, 45, "|this|code|preview|px|if|type|prev|const|locationUrl|text|pageNum|display|iframe||parent|find|css|top|pageY|630|left|pageX|620|else||mouseenter|is|closest|td|before|class|style|none|src|publishing|bms|project|html|block|attr|tabindex|focus|mouseleave|remove".split("|"), 0, {}
+				"a(e.b=='v'){a(!$(2).c().w('.3-4')){d f=$(2).x('y').c().g();d h=$(2).g();$(2).z('<p A=\"3-4\" B=\"i: C;\"><j D=\"/E/F-G/H'+f+h+'\"></j>')}$(2).k().l('.3-4').m({'n':(e.o-(q[8]*7[6]))+'9','r':(e.s-(t[5]+7[1]))+'9','i':'I'}).J('K','0').L()}u a(e.b=='M'){$('.3-4').N()}u{$(2).k().l('.3-4').m({'n':(e.o-(q[8]*7[6]))+'9','r':(e.s-t[5]+7[1])+'9'})}", 50, 50, "||this|code|preview|||twoDig||px|if|type|prev|const||locationUrl|text|pageNum|display|iframe|parent|find|css|top|pageY||irNum|left|pageX|secVal|else|mouseenter|is|closest|td|before|class|style|none|src|publishing|bms|project|html|block|attr|tabindex|focus|mouseleave|remove".split("|"), 0, {}
 			)
 		);
 	});
