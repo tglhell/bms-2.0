@@ -1679,8 +1679,6 @@
 }
 .guide-swiper-box .swiper-button-prev,
 .guide-swiper-box .swiper-button-next{
-  /*width: 38px;*/
-  /*height: 60px;*/
   width: 160px;
   height: 160px;
   top: 50%;
