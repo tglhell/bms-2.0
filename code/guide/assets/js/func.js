@@ -23,7 +23,7 @@
 				var date = $(settings.date, this);
 				date.each(function () {
 					var text = $(this).text();
-					if (text === 'complete') {
+					if (text === 'o') {
 						completed++;
 					}
 				});

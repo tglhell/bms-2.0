@@ -187,6 +187,7 @@ body.js .section .s-title {
 	border: 1px solid #ccc;
 	border-width: 1px 0;
 	background-color: rgba(221, 221, 221, .5);
+	/* background-color: rgba(236, 238, 117, 0.05); */
 	font: 12px/1.5 'genesis-head-light', sans-serif;
 	cursor: pointer;
 }
