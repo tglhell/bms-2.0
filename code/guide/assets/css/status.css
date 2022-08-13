@@ -330,7 +330,7 @@ body.js .section .content {
 } */
 
 table td.state {
-	color: forestgreen;
+	color: palevioletred;
 }
 
 table td.worker {
