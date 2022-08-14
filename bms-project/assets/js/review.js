@@ -267,6 +267,7 @@ function txtMore() {
 // comment file
 function commentFile() {
 	let addFile = $('.comment-box input[type="file"]');
+	cateThumbBox = $('.cate-thumb-box');
 
 	addFile.on('change', function (e) {
 		let fileCont = $(this).parents('.inp-cont').next('.switch-item-list'),
@@ -281,8 +282,8 @@ function commentFile() {
 		}
 
 		let pushTag = '<li>'+filename+'<button class="btn-item-del"></button></li>';
-		if ($('.comment-box').hasClass('cate-thumb-box')) {
-			$('.cate-thumb-box').addClass('active').parent().find('.right .input-item').val(filename);
+		if ($(this).parents('.comment-box').hasClass('cate-thumb-box')) {
+			$(this).parents('.comment-box').addClass('active').parent().find('.right .input-item').val(filename);
 			thumbReadUrl (this);
 			e.target.value = null;
 		}
@@ -310,10 +311,10 @@ function commentFile() {
 
 function thumbReadUrl (input) {
 	if (input.files && input.files[0]) {
-			var reader = new FileReader();
+			let reader = new FileReader();
 			reader.onload = function (e) {
-				$('.cate-thumb-box').find('.add-file label img').remove();
-				$('.cate-thumb-box').find('.add-file label').append('<img src="' + e.target.result + '" alt="대표 이미지">');
+				cateThumbBox.find('.add-file label img').remove();
+				cateThumbBox.find('.add-file label').append('<img src="' + e.target.result + '" alt="대표 이미지">');
 			}
 			reader.readAsDataURL(input.files[0]);
 	}
