@@ -35,9 +35,9 @@
 				.bind('mouseleave', function () {
 					$(this).removeClass('hover');
 				});
-			let barChkSum = parseInt((completed / self.files.length) * 100);
+			let barChkSum = ((completed / self.files.length) * 100);
 			title_text = [self.section_title.text(), ' <span class="page-count">(', completed, '/', self.files.length,
-				') - <span style="color:#16a0f0;">1depth</span><p class="s-bar" data-chk="' + barChkSum + '%" style="width: ' + barChkSum + '%"></p></span>'
+				') - <span style="color:#16a0f0;">1depth</span><p class="s-bar" data-chk="' + parseInt(barChkSum) + '%" style="width: ' + barChkSum + '%"></p></span>'
 			];
 			self.section_title.html(title_text.join(''));
 			self.section_title.bind('click', () => {
