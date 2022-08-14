@@ -268,7 +268,7 @@ function txtMore() {
 function commentFile() {
 	let addFile = $('.comment-box input[type="file"]');
 
-	addFile.on('change', function(){
+	addFile.on('change', function () {
 		let fileCont = $(this).parents('.inp-cont').next('.switch-item-list'),
 				filename;
 		if(!fileCont.children().is('ul')) {
@@ -281,14 +281,18 @@ function commentFile() {
 		}
 
 		let pushTag = '<li>'+filename+'<button class="btn-item-del"></button></li>';
+		if ($('.comment-box').hasClass('cate-thumb-box')) {
+			$('.cate-thumb-box').addClass('active').parent().find('.right .input-item').val(filename);
+			readURL(this);
+		}
 		fileCont.children('ul').append(pushTag);
 		$('.btn-item-del').on('click', function() {
 			let $this = $(this);
 			clearFile($this)
 		})
-	}); 
+	});
 
-	const cmFixBoxTar = [$('.comment-box'), $('.bms-footer')];
+	const cmFixBoxTar = [$('.comment-box:not(.cate-thumb-box)'), $('.bms-footer')];
 	const cmFixBoxPos = [parseInt(cmFixBoxTar[0].css('bottom'))];
 	if (cmFixBoxTar[0].length !== 0) {
 		$(window).on('scroll', function () {
@@ -300,6 +304,17 @@ function commentFile() {
 				cmFixBoxTar[0].css('bottom', cmFixBoxPos[0]);
 			}
 		});
+	}
+}
+
+function readURL(input) {
+	if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function (e) {
+				$('.cate-thumb-box').find('.add-file label img').remove();
+				$('.cate-thumb-box').find('.add-file label').append('<img src="' + e.target.result + '" alt="대표 이미지">');
+			}
+			reader.readAsDataURL(input.files[0]);
 	}
 }
 

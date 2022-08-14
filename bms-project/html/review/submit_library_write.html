@@ -478,7 +478,12 @@
 								</div>
 								<div class="input-group-box">
 									<div class="input-box img">
-										<div class="img-box"><!-- <img src="" alt=""> --></div>
+										<div class="comment-box cate-thumb-box">
+											<div class="add-file">
+												<label for="addfile"><span>이미지 등록</span></label>
+												<input type="file" id="addfile" class="inpfile" accept=".jpg, .png">
+											</div>
+										</div>
 										<div class="right">
 											<div class="input-box">
 												<input type="text" class="input-item">
@@ -684,6 +689,20 @@
 							<button class="btn-guide-close"><img src="../../assets/images/review/popup_x.svg" alt="닫기"></button>
 						</div>
 					</div>
+				</div>
+
+				<div class="cont-outer fullcase">
+					<div class="design-review-wrap">
+						<div class="btm-btn-fix">
+							<p class="write-save-toast">임시저장이 완료되었습니다.</p>
+							<div class="cta-outer">
+								<button class="btn btn-type2"><span>취소</span></button>
+								<button class="btn btn-type2 btn-tp-save"><span>임시저장</span></button>
+								<button class="btn btn-test"><span>저장</span></button>
+							</div>
+							<button class="btn-right-guide"><span>Guide</span></button>
+						</div>
+					</div>
 
 					<!-- s : layer-popup-area -->
 					<div class="layer-popup-wrap add-tag-pop" data-pop-idx="1">
@@ -749,18 +768,6 @@
 					</div>
 					<!-- e : layer-popup-area -->
 				</div>
-
-				<div class="design-review-wrap">
-					<div class="btm-btn-fix">
-						<p class="write-save-toast">임시저장이 완료되었습니다.</p>
-						<div class="cta-outer">
-							<button class="btn btn-type2"><span>취소</span></button>
-							<button class="btn btn-type2 btn-tp-save"><span>임시저장</span></button>
-							<button class="btn btn-test"><span>저장</span></button>
-						</div>
-						<button class="btn-right-guide"><span>Guide</span></button>
-					</div>
-				</div>
         <!-- E: [forward_file] -->
       </div>
       <!-- E: 20220531 cont-outer 분리(form 포함)︎ -->
@@ -820,6 +827,7 @@
 	designReview ();
 	btmFixBoxFunc ();
 	rightGuideSwiper ();
+	commentFile ();
 	dsSaveToast ();
 </script>
 </html>

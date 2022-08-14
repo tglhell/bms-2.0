@@ -1,10 +1,5 @@
-@import 'design-review-customlib.css';
-
 /* s : initializing css variable value */
-.design-review-wrap *,
-.design-review-wrap :where(*, :before, :after),
-.design-review-view *,
-.design-review-view :where(*, :before, :after) {
+:root {
 	--pc-l-r-padding: 0 80px;
 	--tbl-l-r-padding: 0 40px;
 	--cm-color-dark-white: #fafafa;
@@ -376,7 +371,7 @@
 /* s : design_review_04 */
 /* e : design_review_04 */
 
-/* s : submit_library_write */
+/* s : submit library write */
 .design-review-wrap .review-lib-cont .cont-text2 {
 	margin-top: 16px;
 }
@@ -558,7 +553,49 @@
 	font-weight: var(--fb-bold-lg);
 	line-height: 30px;
 }
-/* e : submit_library_write */
+.cate-thumb-box {
+	position: relative;
+}
+.cate-thumb-box .add-file label {
+	position: relative;
+	overflow: hidden;
+	width: 148px;
+	height: 100px;
+	min-width: auto;
+	align-items: center;
+	justify-content: center;
+	padding-top: 24px;
+	border: 1px dashed var(--cm-color-gray);
+	background-color: var(--cm-color-dark-white);
+	font-size: 14px;
+	color: var(--cm-color-dark-gray2);
+	line-height: 21px;
+	cursor: pointer;
+}
+.input-outer-box.row-type .cate-thumb-box .add-file label {
+	display: flex;
+	margin-bottom: 0;
+}
+.cate-thumb-box .add-file label span:before {
+	content: '';
+	transform: translateX(-50%);
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	right: 0;
+	width: 17px;
+	height: 17px;
+	background: url(../images/review/ico_plus_g.svg);
+}
+.cate-thumb-box.active .add-file label img {
+	transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	max-width: none;
+	height: 100%;
+}
+/* e : submit library write */
 
 /* s: view detail */
 .view-wrap .bms-container {
@@ -952,10 +989,10 @@
 .timeline .comment-box .inp-cont .add-file {
 	margin-top: 16px;
 }
-.timeline .comment-box .inp-cont .add-file > * {
+.comment-box .add-file > * {
 	display: inline-block;
 }
-.timeline .comment-box .inp-cont .add-file label {
+.timeline .comment-box .add-file label {
 	width: 24px;
 	height: 24px;
 	margin-right: 16px;
@@ -964,7 +1001,7 @@
 	cursor: pointer;
 	text-indent: -9999px;
 }
-.timeline .comment-box .inp-cont .add-file input[type="file"] {
+.comment-box .add-file input[type="file"] {
 	position:absolute;
 	width:1px;
 	height:1px;
@@ -1033,7 +1070,7 @@
 .management .bms-container {
 	padding-bottom: 0;
 }
-.management .comment-box {
+.management .comment-box:not(.cate-thumb-box) {
 	position: fixed;
 	width: 33.333333vw;
 	max-width: 640px;

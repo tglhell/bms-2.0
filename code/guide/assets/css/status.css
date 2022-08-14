@@ -183,7 +183,7 @@ body.js .section {
 
 body.js .section .s-title {
 	position: relative;
-	padding: .5em;
+	padding: .3em .5em;
 	border: 1px solid #ccc;
 	border-width: 1px 0;
 	background-color: rgba(221, 221, 221, .5);
