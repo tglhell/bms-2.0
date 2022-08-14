@@ -268,7 +268,7 @@ function txtMore() {
 function commentFile() {
 	let addFile = $('.comment-box input[type="file"]');
 
-	addFile.on('change', function () {
+	addFile.on('change', function (e) {
 		let fileCont = $(this).parents('.inp-cont').next('.switch-item-list'),
 				filename;
 		if(!fileCont.children().is('ul')) {
@@ -283,7 +283,8 @@ function commentFile() {
 		let pushTag = '<li>'+filename+'<button class="btn-item-del"></button></li>';
 		if ($('.comment-box').hasClass('cate-thumb-box')) {
 			$('.cate-thumb-box').addClass('active').parent().find('.right .input-item').val(filename);
-			readURL(this);
+			thumbReadUrl (this);
+			e.target.value = null;
 		}
 		fileCont.children('ul').append(pushTag);
 		$('.btn-item-del').on('click', function() {
@@ -307,7 +308,7 @@ function commentFile() {
 	}
 }
 
-function readURL(input) {
+function thumbReadUrl (input) {
 	if (input.files && input.files[0]) {
 			var reader = new FileReader();
 			reader.onload = function (e) {
