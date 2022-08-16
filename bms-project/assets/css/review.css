@@ -296,9 +296,10 @@
 	margin-left: auto;
 }
 .review-list-box .review-list-item .list-text-area .list-tit {
-	font-size: 46px;
+	margin-top: 12px;
+	font-size: 40px;
 	font-weight: var(--fb-bold-lg);
-	line-height: 88px;
+	line-height: 40px;
 }
 .review-list-box .review-list-item .list-text-area .list-tit a {
 	overflow: hidden;
@@ -310,13 +311,14 @@
 }
 .review-list-box .review-list-item .list-text-area ul {
 	display: flex;
+	margin-top: 25px;
 }
 .review-list-box .review-list-item .list-text-area .status-info li {
-	padding: 5px 11px;
+	padding: 3px 8px 2px;
 	background-color: var(--cm-color-navy);
 	font-size: 18px;
 	color: var(--cm-color-white);
-	line-height: 22px;
+	line-height: 27px;
 }
 .review-list-box .review-list-item .list-text-area .status-info li.st-box2 {
 	background-color: var(--cm-color-black0);
@@ -419,7 +421,7 @@
 	overflow: hidden;
 }
 .review-guide-step .guide-swiper-box .swiper-wrapper {
-	height: 346px;
+	max-height: 346px;
 	align-items: center;
 }
 .review-guide-step .guide-swiper-box .swiper-slide img {
@@ -508,8 +510,11 @@
 	margin-top: 24px;
 }
 .btm-btn-fix {
-	position: relative;
-	margin: 60px 0 -160px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
 	padding: 20px;
 	background-color: var(--cm-color-dark-white);
 }
