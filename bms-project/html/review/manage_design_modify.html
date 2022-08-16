@@ -158,7 +158,7 @@
                 <div class="input-outer-box row-type selected-tag">
                   <div class="top">
                     <label for="inpNum01_031">연관 태그</label>
-                    <button class="btn btn-type3 btn-small"><span>태그 추가</span></button>
+                    <button class="btn btn-type3 btn-small pop-open" data-pop-idx="1"><span>태그 추가</span></button>
                   </div>
                   <div class="selected-box"></div>
                 </div>
@@ -408,6 +408,70 @@
             </div>
           </div>
         </div>
+
+        <!-- s : layer-popup-area -->
+					<div class="layer-popup-wrap add-tag-pop" data-pop-idx="1">
+						<div class="layer-popup-body">
+							<div class="layer-popup-cont">
+								<div class="layer-popup-cont-inner">
+									<h1 class="layer-title">태그추가</h1>
+									<div class="layer-cont">
+										<label for="">연관 태그 추가 (최대 10개) <span class="required">*</span></label>
+										<div class="js-switch-outer">
+											<div class="switch-cont add-tag">
+												<div class="tag-select">
+													<div class="input-outer-box">
+														<div class="input-box">
+															<input type="text" class="input-item inp-search" placeholder="텍스트를 입력해 주세요.">
+															<button class="btn-reset"></button>
+															<button class="btn-search"><span>search</span></button>
+														</div>
+													</div>
+													<div class="result-outer">
+														<div class="switch-btm-box">
+															<div class="input-outer-box row-type check-box">
+																<div class="check-group"><!-- 에러시 + val-error -->
+																	<label class="chk"><input type="checkbox"><span>Accent(RB)</span></label>
+																	<label class="chk"><input type="checkbox"><span>Aslan(AG)</span></label>
+																	<label class="chk"><input type="checkbox"><span>Avante / Elantra(AD)</span></label>
+																	<label class="chk"><input type="checkbox"><span>Eon(HA)</span></label>
+																	<label class="chk"><input type="checkbox"><span>Grand i10(BA)</span></label>
+																	<label class="chk"><input type="checkbox"><span>Grandeur / Azera(IG)</span></label>
+																	<label class="chk"><input type="checkbox"><span>Sonata(DN)</span></label>
+																	<label class="chk"><input type="checkbox"><span>Sonata(DN8)</span></label>
+																	<label class="chk"><input type="checkbox"><span>Others</span></label>
+																	<label class="chk"><input type="checkbox"><span>Others jsjs</span></label>
+																	<label class="chk"><input type="checkbox"><span>Others jsjs2</span></label>
+																	<label class="chk"><input type="checkbox"><span>Others jsjs3</span></label>
+																	<label class="chk"><input type="checkbox"><span>Others jsjs4</span></label>
+																	<label class="chk"><input type="checkbox"><span>Others jsjs5</span></label>
+																</div>
+															</div>
+														</div>
+														<!-- S: 검색결과 없을시 -->
+														<div class="no-data">
+															<p class="txt">'<span class="word">love</span>'에 대한<br>검색 결과가 없습니다.</p>
+														</div>
+														<!-- E: 검색결과 없을시 -->
+													</div>
+												</div>
+												<div class="switch-item-list">
+													<p class="txt">태그를 선택해주세요.</p>
+													<ul></ul>
+												</div>
+											</div>
+										</div>
+										<div class="cta-outer">
+											<button class="btn btn-middle btn-type2 btn-close"><span>취소</span></button>
+											<button class="btn btn-middle"><span>확인</span></button>
+										</div>
+									</div>
+								</div>
+								<button class="btn-close-popup btn-close">close</button>
+							</div>
+						</div>
+					</div>
+					<!-- e : layer-popup-area -->
       </div>
     </div>
   </div>
@@ -465,6 +529,7 @@ nameTooltip();
 txtMore();
 commentFile();
 autoReTxt();
+designReview ();
 </script>
 </body>
 </html>
