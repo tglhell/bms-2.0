@@ -1228,7 +1228,7 @@
 .review-management .timeline .list-cont {
 	display: block;
 	min-height: 100%;
-	padding: 65px 80px var(--fb-normal)px;
+	padding: 65px 80px 400px;
 	margin-bottom: 0;
 	background-color: var(--cm-color-dark-white);
 }

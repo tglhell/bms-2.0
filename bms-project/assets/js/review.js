@@ -177,13 +177,10 @@ function review_management_view_set() {
 		$(this).addClass('active');
 		tabContLi.removeClass('active');
 		tabContLi.eq(i).addClass('active');
+		if (!$('.txt-cont').is('.short')) {
+			txtMore ();
+		}
 	}) 
-	if ($(this).parent('.top-tab-menu').siblings('.top-tab-cont').find('.top-tab-list').hasClass('timeline')) {
-		console.log('ddd')
-		// $('.top-tab-menu').one('click', 'li', function() {
-		// 	txtMore();
-		// })		
-	}
 }
 
 // tooltip
@@ -234,8 +231,6 @@ function txtMore() {
 	btnMore.on('click', function() {
 		let thisTxtH = $(this).siblings('.txt').outerHeight(),
 			thisIdx = $(this).parents('.list').data('idx');
-
-		console.log(txtContHArr)
 
 		if (thisTxtH >= minHeight){
 			$(this).text(btnTxt1).parent().addClass('short');
