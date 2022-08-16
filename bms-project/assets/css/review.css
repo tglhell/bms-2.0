@@ -1670,6 +1670,10 @@
 		width: 100%;
 		max-width: 100%;
 	}
+	.management .comment-box:not(.cate-thumb-box) {
+		width: 100%;
+		max-width: 100%;
+	}
 }
 /* e: view detail */
 
