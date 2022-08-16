@@ -1758,4 +1758,197 @@
 	padding-bottom: 10px;
 	font-size: 26px;
 }
+.db-pop .layer-popup-cont .layer-popup-cont-inner {
+	max-height: 80vh;
+}
+.layer-popup-wrap.w1200 .layer-popup-cont {
+width: 1200px;
+max-width: 100%;
+}
+.layer-popup-cont .tit-txt {
+font-size: 16px;
+line-height: 24px;
+color: #333;
+text-align: center;
+}
+.layer-popup-cont .tit-txt + .pop-cont-tit {
+	margin-top: 48px;
+}
+.layer-popup-cont .pop-cont-tit {
+display: block;
+margin: 30px 0 16px;
+font-size: 16px;
+line-height: 16px;
+color:#333;
+}
+.layer-popup-cont .file-detail-input {
+display: flex;
+flex-wrap: nowrap;
+margin-top: 32px;
+gap: 40px;
+}
+.layer-popup-cont .file-detail-input .tbl-box {
+width: 100%;
+height: 565px;
+overflow-x: hidden;
+overflow-y: auto;
+border-bottom: 1px solid #ccc;
+}
+.layer-popup-cont .file-detail-input .tbl-box::-webkit-scrollbar {
+width: 16px;
+}
+.layer-popup-cont .file-detail-input .tbl-box::-webkit-scrollbar-thumb {
+background-color: #D9D9D9;
+border-radius: 10px;
+border: 5px solid #FFF;
+}
+.layer-popup-cont .file-detail-input .tbl-box::-webkit-scrollbar-track {
+background-color: rgba(0,0,0,0);
+}
+.layer-popup-cont .file-detail-input .tbl-box table {
+border-bottom: none;
+}
+.layer-popup-cont .file-detail-input .tbl-box thead th {
+position: sticky;
+top:0;
+z-index: 999;
+}
+.layer-popup-cont .file-detail-input .tbl-box thead th:before {
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: -1px;
+	right: -1px;
+	height: 2px;
+	background-color: #ccc;
+}
+.layer-popup-cont .file-detail-input .tbl-box thead th:after {
+	content: '';
+	position: absolute;
+	bottom: -1px;
+	left: -1px;
+	right: -1px;
+	height: 1px;
+	background-color: #e9e9e9;
+}
+.layer-popup-cont .file-detail-input .tbl-box thead th + th {
+box-shadow: inset 1px 0px 0 #eee;
+} 
+.layer-popup-cont .file-detail-input .tbl-box th {
+font-weight: 400;
+text-align: center;
+}
+.layer-popup-cont .file-detail-input .tbl-box th + th {
+border-left: 1px solid #e9e9e9;
+margin-left: -1px;
+}
+.layer-popup-cont .file-detail-input .tbl-box td {
+padding: 12px 24px;
+border-bottom: none;
+}
+.layer-popup-cont .file-detail-input .img-chk {
+position: relative;
+display: inline-block;
+width: 109px;
+height: 72px;
+margin-right: 12px;
+}
+.layer-popup-cont .file-detail-input .img-chk .img {
+width: 100%;
+height: 100%;
+overflow: hidden;
+}
+.layer-popup-cont .file-detail-input .img-chk .img img {
+position: absolute;
+	top: 50%;
+	left: 50%;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	min-width: 100%;
+	min-height: 100%;
+	object-fit: cover;
+	transform: translate(-50%, -50%);
+}
+.layer-popup-cont .file-detail-input .img-chk .chk {
+position: absolute;
+top: 8px;
+left: 8px;
+font-size: 0;
+}
+.layer-popup-cont .file-detail-input .img-chk + .input-outer-box {
+display: inline-block;
+width: calc(100% - 125px);
+margin-top: 0;
+vertical-align: top;
+}
+.layer-popup-cont .file-detail-input > .left {
+width: 57.666666vw;
+max-width: 692px;
+}
+.layer-popup-cont .file-detail-input > .right {
+width: 29vw;
+max-width: 348px;
+}
+.layer-popup-cont .file-detail-input > .right label {
+font-weight: 400;
+}
+.layer-popup-cont .file-detail-input .input-outer-box + .input-outer-box {
+margin-top: 32px;
+}
+.layer-popup-cont .file-detail-input .input-outer-box .side {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.layer-popup-cont .file-detail-input .input-outer-box .side .chk {
+min-width: auto;
+}
+.layer-popup-cont .file-detail-input .input-outer-box .side .btn {
+width: auto;
+min-width: 64px;
+}
+.layer-popup-cont .file-detail-input .input-outer-box .selected-box {
+width: 100%;
+min-height: 80px;
+padding: 10px;
+margin-top: 7px;
+border: 1px solid #ccc;
+}
+.layer-popup-cont .file-detail-input + .cta-outer {
+text-align: right;
+}
+.layer-popup-cont .file-detail-input + .cta-outer .btn {
+width: auto;
+}
+
+.country-select-wrap {
+width: 100%;
+height: 392px;
+padding: 33px 24px;
+border: 1px solid #ccc;
+overflow-y: auto;
+}
+.country-select-wrap::-webkit-scrollbar {
+width: 16px;
+}
+.country-select-wrap::-webkit-scrollbar-thumb {
+background-color: #D9D9D9;
+border-radius: 10px;
+border: 5px solid #FFF;
+}
+.country-select-wrap::-webkit-scrollbar-track {
+background-color: rgba(0,0,0,0);
+}
+.country-select-wrap .check-group {
+width: auto;
+}
+.country-select-wrap .check-group li + li {
+margin-top: 26px;
+}
+.country-select-wrap .check-group .check-group {
+margin: 26px 0 0 26px;
+}
+
 /* e : layer-popup */
+
