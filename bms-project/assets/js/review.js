@@ -396,7 +396,7 @@ function btmFixBoxFunc () {
 				dsFixBoxTar[0].css('right', rightFixPos[0]);
 				dsFixBoxTar[3].removeAttr('style');
 				setObj(() => {
-					dsFixBoxTar[0].removeAttr('style');
+					dsFixBoxTar[0].css({'overflow':'auto', 'width':'auto'});
 					dsFixBoxTar[4].removeAttr('style');
 				}, secVal[4]);
 			}
