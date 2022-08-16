@@ -429,3 +429,12 @@ function dsSaveToast () {
 	});
 }
 /* e : submit_library_write */
+
+function noSroll() {
+	$('.file-detail-input .date-picker').focusin(function() {
+		$(this).parents('.layer-popup-cont-inner').css('overflow-y','hidden');
+	})
+	$('.file-detail-input .date-picker').focusout(function() {
+		$(this).parents('.layer-popup-cont-inner').css('overflow-y','auto');
+	})
+}
