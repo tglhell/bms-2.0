@@ -177,13 +177,12 @@ function review_management_view_set() {
 		$(this).addClass('active');
 		tabContLi.removeClass('active');
 		tabContLi.eq(i).addClass('active');
-	}) 
-	if ($(this).parent('.top-tab-menu').siblings('.top-tab-cont').find('.top-tab-list').hasClass('timeline')) {
-		console.log('ddd')
-		// $('.top-tab-menu').one('click', 'li', function() {
+
+		// if(!$('.txt-cont').is('short')) {
 		// 	txtMore();
-		// })		
-	}
+		// 	console.log('sss')
+		// }
+	}) 
 }
 
 // tooltip
