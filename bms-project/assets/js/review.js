@@ -177,11 +177,9 @@ function review_management_view_set() {
 		$(this).addClass('active');
 		tabContLi.removeClass('active');
 		tabContLi.eq(i).addClass('active');
-
-		// if(!$('.txt-cont').is('short')) {
-		// 	txtMore();
-		// 	console.log('sss')
-		// }
+		if (!$('.txt-cont').is('.short')) {
+			txtMore ();
+		}
 	}) 
 }
 
@@ -233,8 +231,6 @@ function txtMore() {
 	btnMore.on('click', function() {
 		let thisTxtH = $(this).siblings('.txt').outerHeight(),
 			thisIdx = $(this).parents('.list').data('idx');
-
-		console.log(txtContHArr)
 
 		if (thisTxtH >= minHeight){
 			$(this).text(btnTxt1).parent().addClass('short');

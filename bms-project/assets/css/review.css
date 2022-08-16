@@ -1228,7 +1228,7 @@
 .review-management .timeline .list-cont {
 	display: block;
 	min-height: 100%;
-	padding: 65px 80px var(--fb-normal)px;
+	padding: 65px 80px 400px;
 	margin-bottom: 0;
 	background-color: var(--cm-color-dark-white);
 }
@@ -1257,8 +1257,8 @@
 	margin-top: 64px;
 }
 .review-management .timeline .list .cont-wrap {
-	width: 25vw;
-	max-width: 480px;
+	width: 100%;
+	max-width: 100%;
 }
 .review-management .timeline .list .cont {
 	padding: 48px;
