@@ -1334,6 +1334,9 @@
 	margin-top: 12px;
 	background-color: var(--cm-color-dark-white2);
 }
+.review-management .timeline .dividing {
+	border: none;
+}
 .review-management .timeline .file-cont .btn-icon:after,
 .review-management .timeline .file-cont ul li:hover .btn-icon:after {
 	background-size: 14px 18px;
