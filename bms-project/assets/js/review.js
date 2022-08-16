@@ -302,6 +302,16 @@ function commentFile() {
 			}
 		});
 	}
+	reSizeCmmt();
+	function reSizeCmmt() {
+		let reWinWid = ($(window).width() - 1920) / 2;
+		if ($(window).width() > 1920) {
+			$('.comment-box').css('right',reWinWid);
+		}
+	}
+	$(window).resize(function() {
+		reSizeCmmt();		
+	})
 }
 
 function thumbReadUrl (input) {
