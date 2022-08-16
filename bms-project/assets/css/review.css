@@ -1327,6 +1327,9 @@
 	background-size: 100%; 
 	text-indent: -9999px;
 }
+.review-management .timeline .list .left .tooltip .btn-close:after {
+	display: none;
+}
 .review-management .timeline .list.type2 .cont {
 	margin-top: 12px;
 	background-color: var(--cm-color-dark-white2);
