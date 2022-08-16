@@ -670,6 +670,12 @@
 	color: var(--cm-color-green);
 	font-weight: var(--fb-bold-lg);
 }
+.design-review-view .input-outer-box .side,
+.review-management .input-outer-box .side {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 .timeline {
 	width: 100%;
 }
@@ -1352,6 +1358,17 @@
 .management-lang label {
 	font-weight: var(--fb-normal);
 }
+.management-lang .tit-cont {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 16px;
+}
+.management-lang .input-outer-box.row-type .tit-cont label {
+	margin-bottom: 0 !important;
+	font-weight: var(--fb-normal);
+	line-height: 1;
+}
 .management-lang .editor-cont {
 	margin-top: 32px;
 	width: 100%;
@@ -1364,7 +1381,6 @@
 .top-tab-menu {
 	display: none;
 }
-.input-box.side,
 .selected-tag .top {
 	display: flex;
 	justify-content: space-between;
@@ -1870,11 +1886,6 @@ font-weight: var(--fb-normal);
 }
 .layer-popup-cont .file-detail-input .input-outer-box + .input-outer-box {
 margin-top: 32px;
-}
-.layer-popup-cont .file-detail-input .input-outer-box .side {
-display: flex;
-justify-content: space-between;
-align-items: center;
 }
 .layer-popup-cont .file-detail-input .input-outer-box .side .chk {
 min-width: auto;
