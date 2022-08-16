@@ -1108,6 +1108,7 @@
 	color: var(--cm-color-dark-gray);
 	font-weight: var(--fb-normal);
 }
+.design-review-wrap .input-info-form .tab-box-wrap,
 .review-management .contents-info .tab-box-wrap {
 	margin-top: 80px;
 }
