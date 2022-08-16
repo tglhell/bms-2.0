@@ -1077,8 +1077,7 @@
 }
 .management .comment-box:not(.cate-thumb-box) {
 	position: fixed;
-	width: 33.333333vw;
-	max-width: 640px;
+	width: 640px;
 }
 .review-management {
 	margin-top: 17px;
@@ -1226,9 +1225,7 @@
 	display: block;
 }
 .review-management .timeline {
-	width: 33.333333vw;
-	max-width: 640px;
-	flex-shrink: 0;
+	width: 640px;
 }
 .review-management .timeline .list-cont {
 	display: block;
