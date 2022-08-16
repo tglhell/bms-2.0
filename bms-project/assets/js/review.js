@@ -386,7 +386,7 @@ function btmFixBoxFunc () {
 			const rightFixPos = [parseInt($(this).parent().css('right')), (dsWsize[0] - dsWsize[1])];
 			dsFixBoxTar[2].toggleClass('active');
 			if (dsFixBoxTar[2].hasClass('active')) {
-				dsFixBoxTar[0].css({'overflow':'hidden', 'width':dsWsize[1]});
+				dsFixBoxTar[0].css({'width':dsWsize[1]});
 				dsFixBoxTar[4].css({'overflow':'hidden', 'width':dsWsize[1]});
 				dsFixBoxTar[3].css('right', dsFixBoxPos[1] + rightFixPos[1]);
 			}
@@ -406,7 +406,7 @@ function btmFixBoxFunc () {
 				dsFixBoxTar[0].css('right', rightFixPos[0]);
 				dsFixBoxTar[3].removeAttr('style');
 				setObj(() => {
-					dsFixBoxTar[0].css({'overflow':'auto', 'width':'auto'});
+					dsFixBoxTar[0].css({'width':'auto'});
 					dsFixBoxTar[4].removeAttr('style');
 				}, secVal[4]);
 			}
@@ -438,6 +438,7 @@ function rightGuideSwiper () {
 
 function dsSaveToast () {
 	$('.btn-tp-save').on('click', function () {
+		console.log('test');
 		$('.write-save-toast').addClass('active');
 		setTimeout(() => {
 			$('.write-save-toast').removeClass('active');
