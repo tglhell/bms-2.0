@@ -361,6 +361,15 @@ function review_management_set() {
 function btmFixBoxFunc () {
 	const dsFixBoxTar = [$('.btm-btn-fix'), $('.bms-footer'), $('.right-guide-outer'), $('.btn-top-box'), $('.bms-header, body')];
 	const dsFixBoxPos = [parseInt(dsFixBoxTar[0].css('bottom')), parseInt(dsFixBoxTar[3].css('right'))];
+	$(window).on('scroll', function () {
+		let dsScrPos = $(this).scrollTop();
+		let dsScrPosSum = ($(document).height() - $(window).height()) - dsFixBoxTar[1].outerHeight(true);
+		if (dsScrPos >= dsScrPosSum) {
+			dsFixBoxTar[0].css('bottom', (dsScrPos - dsScrPosSum) + dsFixBoxPos[0]);
+		} else {
+			dsFixBoxTar[0].css('bottom', dsFixBoxPos[0]);
+		}
+	});
 	if (dsFixBoxTar[0].length !== 0) {
 		dsFixBoxTar[0].on('click', '.btn-right-guide', function () {
 			const dsWsize = [$(window).outerWidth(), $(window).width()];
