@@ -1688,7 +1688,7 @@
 			width: 61.71875vw;
 			max-width: 790px;
 	}
-	.management .comment-box {
+	.management .comment-box:not(.cate-thumb-box) {
 		position: sticky;
 		bottom: 0 !important;
 		width: 100%;
