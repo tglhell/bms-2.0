@@ -307,6 +307,8 @@ function commentFile() {
 		let reWinWid = ($(window).width() - 1920) / 2;
 		if ($(window).width() > 1920) {
 			$('.comment-box:not(.cate-thumb-box)').css('right',reWinWid);
+		} else {
+			$('.comment-box:not(.cate-thumb-box)').css('right', 0);
 		}
 	}
 	$(window).resize(function() {
