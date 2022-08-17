@@ -637,6 +637,7 @@
 	margin-bottom: 16px;
 	color: var(--cm-color-dark-gray);
 	font-size: 18px;
+	font-family: var(--fs-text-kr);
 	line-height: 23px;
 }
 .design-review-view .review-info .info-list {
@@ -645,6 +646,7 @@
 .design-review-view .review-info .info-list > li > p  {
 	color: var(--cm-color-dark-gray);
 	font-size: 16px;
+	font-family: var(--fs-text-kr);
 	line-height: 24px;
 }
 .design-review-view .review-info .info-list > li + li {
@@ -670,6 +672,7 @@
 .design-review-view .review-info .info-list > li.progress > p {
 	color: var(--cm-color-green);
 	font-weight: var(--fb-bold-lg);
+	font-family: var(--fs-text-kr);
 }
 .design-review-view .input-outer-box .side,
 .review-management .input-outer-box .side {
@@ -741,6 +744,7 @@
 	display: block;
 	color: var(--cm-color-light-gray);
 	font-size: 16px;
+	font-family: var(--fs-text-kr);
 	line-height: 24px;
 }
 .timeline .list .left .tooltip span + span {
@@ -766,6 +770,7 @@
 	background-color: var(--cm-color-dark-gray2);
 	color: var(--cm-color-white);
 	font-size: 14px;
+	font-family: var(--fs-text-kr);
 	text-align: center;
 }
 .timeline .list .time {
@@ -773,12 +778,14 @@
 	margin-top: 16px;
 	color: var(--cm-color-dark-gray2);
 	font-size: 14px;
+	font-family: var(--fs-text-kr);
 	line-height: 21px;
 }
 .timeline .list .txt-cont .txt {
 	height: auto;
 	color: var(--cm-color-black3);
 	font-size: 16px;
+	font-family: var(--fs-text-kr);
 	line-height: 24px;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -836,6 +843,7 @@
 }
 .timeline .file-cont .top .btn-down-all {
 	color: var(--cm-color-black3);
+	font-family: var(--fs-text-kr);
 }
 .timeline .file-cont .top .btn-down-all:after {
 	display: inline-block;
@@ -919,6 +927,7 @@
 	line-height: 21px;
 	text-align: left;
 	transition: 0.3s;
+	font-family: var(--fs-text-kr);
 }
 .timeline .file-cont .btn-icon span {
 	display: inline-block;
@@ -947,6 +956,7 @@
 	color: var(--cm-color-dark-gray2);
 	transform: translateY(-50%);
 	font-size: 14px;
+	font-family: var(--fs-text-kr);
 	line-height: 21px;
 }
 .timeline .dividing {
@@ -991,6 +1001,7 @@
 }
 .timeline .comment-box .chk {
 	margin-right: 0;
+	font-family: var(--fs-text-kr);
 }
 .timeline .comment-box .inp-cont {
 	display: flex;
@@ -1039,6 +1050,7 @@
 	height: 0;
 	padding: 0 80px 0 0;
 	line-height: 24px;
+	font-family: var(--fs-text-kr);
 }
 .timeline .comment-box .inp-cont .txtarea-resize textarea::-webkit-scrollbar {
 	width: 16px;
@@ -1128,6 +1140,7 @@
 	width: 50%;
 	color: var(--cm-color-dark-gray);
 	font-size: 16px;
+	font-family: var(--fs-text-kr);
 	line-height: 24px;
 }
 .review-management .contents-info .info-list > li + li {
@@ -1141,6 +1154,7 @@
 	margin-bottom: 8px;
 	color: var(--cm-color-black3);
 	font-weight: var(--fb-normal);
+	font-family: var(--fs-head-kr);
 }
 .review-management .contents-info .info-list .img-wrap {
 	display: flex;
@@ -1200,6 +1214,7 @@
 .review-management .contents-info .tbl-file-info td {
 	padding: 28px 10px;
 	text-align: left;
+	font-family: var(--fs-head-kr);
 }
 .review-management .contents-info .tbl-file-info .img {
 	position: relative;
