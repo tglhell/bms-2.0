@@ -674,6 +674,7 @@
 	font-weight: var(--fb-bold-lg);
 	font-family: var(--fs-text-kr);
 }
+.design-review-wrap .input-outer-box .side,
 .design-review-view .input-outer-box .side,
 .review-management .input-outer-box .side {
 	display: flex;
