@@ -355,7 +355,6 @@ function review_management_set() {
 }
 /* e : review management view */
 
-
 /* s : submit_library_write */
 function btmFixBoxFunc () {
 	const dsFixBoxTar = [$('.btm-btn-fix, .comment-box:not(.cate-thumb-box)'), $('.bms-footer'), $('.right-guide-outer'), $('.btn-top-box'), $('.bms-header, body')];
