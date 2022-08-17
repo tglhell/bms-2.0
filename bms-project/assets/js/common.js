@@ -47,7 +47,7 @@ $(function(){
 	// 	$(e.currentTarget).toggleClass('active').parent('li').siblings('li').find('> a').removeClass('active');
 	// })
 
-	inpItem.on('keyup', function () {
+	inpItem.on('keyup focus', function () {
 		let inpItemVal = $(this).val();
 		if (inpItemVal == 0) {
 			$(this).parent().removeClass('active');
@@ -162,6 +162,7 @@ $(function(){
 			else {
 				_list.removeClass('dimm');
 			}
+
 		});
 
 		$('.checking-list-box .chkAll').on('click', function() {
@@ -179,6 +180,20 @@ $(function(){
 					_this.closest('.checking-list').siblings('span').find('input:checkbox').prop('checked',false)
 				}
 			});
+		});
+
+		$('.checking-list-box .list-contents input:checkbox').on('click', function() {
+			const _this = $(this)
+			const lists =  _this.closest('.checking-list').children('.list-contents')
+			const listLength =  lists.length
+			const chkedLength = lists.find("input:checked").length
+			const chkAll = _this.closest('.list').find('.chkAll')
+			if ( listLength == chkedLength ) {
+				chkAll.prop('checked', true)
+			}
+			else {
+				chkAll.prop('checked', false)
+			}
 		});
 	});
 
