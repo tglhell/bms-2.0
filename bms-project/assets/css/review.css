@@ -153,6 +153,7 @@
 	display: inline-block;
 	margin: 12px 10px 0 0;
 	padding: 7px 4px 7px 14px;
+	color: var(--cm-color-black3);
 	background-color: var(--cm-color-dark-white2);
 }
 .switch-item-list ul li span {
