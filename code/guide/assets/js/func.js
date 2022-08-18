@@ -126,3 +126,28 @@ new Function (
 		return a;
   })("$.1('/2/3/4/5/0/6-7.0');", 8, 8, "js|getScript|publishing|code|guide|assets|p|func".split("|"), 0, {})
 )();
+
+function statusOptionChkVal () {
+	new Function (
+		(function (l, o, s, t, f, u) {
+			f = function (s) {
+				return s.toString(o);
+			};
+			if (!"".replace(/^/, String)) {
+				while (s--) u[f(s)] = t[s] || f(s);
+				t = [
+					function (f) {
+						return u[f];
+					},
+				];
+				f = function () {
+					return "\\w+";
+				};
+				s = 1;
+			}
+			while (s--) if (t[s]) l = l.replace(new RegExp("\\b" + f(s) + "\\b", "g"), t[s]);
+			return l;
+		})("0=2['0']||4;0=0===\"5\";6 1=$('.7-8 9');1.a('3',0);1.b(()=>{0=!!1.c(':3');2['0']=0});", 13, 13, "chkPreview|chkValPreview|localStorage|checked|false|true|let|chk|preview|input|prop|change|is".split("|"), 0, {})
+	)();
+}
+statusOptionChkVal ();
