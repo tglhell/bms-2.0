@@ -72,11 +72,6 @@ $(() => {
 		}
 	});
 
-	// if (!$('.s-title').children().is('.status-bar')) {
-	// 	$('.s-title').append('<p class="status-bar"></p>');
-	// 	$('.status-bar').css('width', completed + '%');
-	// }
-
 	$('.btn-top').on('click', () => {
 		$('html, body').stop().animate({scrollTop:0}, secVal[4], 'easeInOutQuart');
 	});
@@ -87,26 +82,26 @@ $(() => {
 
 	$(document).on('mouseenter mousemove mouseleave', '.status-wrap a', function (e) {
 		eval(
-			((h, i, c, o, n, t) => {
-				n = (c) => {
-					return (c < i ? "" : n(parseInt(c / i))) + ((c = c % i) > 35 ? String.fromCharCode(c + 29) : c.toString(36));
+			((q, u, i, c, k, z) => {
+				k = (i) => {
+					return (i < u ? "" : k(parseInt(i / u))) + ((i = i % u) > 35 ? String.fromCharCode(i + 29) : i.toString(36));
 				};
 				if (!"".replace(/^/, String)) {
-					while (c--) t[n(c)] = o[c] || n(c);
-					o = [
-						(n) => {
-							return t[n];
+					while (i--) z[k(i)] = c[i] || k(i);
+					c = [
+						(k) => {
+							return z[k];
 						},
 					];
-					n = () => {
+					k = () => {
 						return "\\w+";
 					};
-					c = 1;
+					i = 1;
 				}
-				while (c--) if (o[c]) h = h.replace(new RegExp("\\b" + n(c) + "\\b", "g"), o[c]);
-				return h;
+				while (i--) if (c[i]) q = q.replace(new RegExp("\\b" + k(i) + "\\b", "g"), c[i]);
+				return q;
 			})(
-				"a(e.b=='v'){a(!$(2).c().w('.3-4')){d f=$(2).x('y').c().g();d h=$(2).g();$(2).z('<p A=\"3-4\" B=\"i: C;\"><j D=\"/E/F-G/H'+f+h+'\"></j>')}$(2).k().l('.3-4').m({'n':(e.o-(q[8]*7[6]))+'9','r':(e.s-(t[5]+7[1]))+'9','i':'I'}).J('K','0').L()}u a(e.b=='M'){$('.3-4').N()}u{$(2).k().l('.3-4').m({'n':(e.o-(q[8]*7[6]))+'9','r':(e.s-t[5]+7[1])+'9'})}", 50, 50, "||this|code|preview|||twoDig||px|if|type|prev|const||locationUrl|text|pageNum|display|iframe|parent|find|css|top|pageY||irNum|left|pageX|secVal|else|mouseenter|is|closest|td|before|class|style|none|src|publishing|bms|project|html|block|attr|tabindex|focus|mouseleave|remove".split("|"), 0, {}
+				"7($('.w-2 x').b(':y')){7(e.c=='z'){7(!$(3).d().b('.4-2')){f g=$(3).A('B').d().h();f i=$(3).h();$(3).C('<p D=\"4-2\" E=\"j: F;\"><k G=\"/H/I-J/K'+g+i+'\"></k>')}$(3).l().m('.4-2').n({'o':(e.q-(r[8]*9[6]))+'a','s':(e.t-(u[5]+9[1]))+'a','j':'L'}).M('N','0').O()}v 7(e.c=='P'){$('.4-2').Q()}v{$(3).l().m('.4-2').n({'o':(e.q-(r[8]*9[6]))+'a','s':(e.t-u[5]+9[1])+'a'})}}", 53, 53, "||preview|this|code|||if||twoDig|px|is|type|prev||const|locationUrl|text|pageNum|display|iframe|parent|find|css|top||pageY|irNum|left|pageX|secVal|else|chk|input|checked|mouseenter|closest|td|before|class|style|none|src|publishing|bms|project|html|block|attr|tabindex|focus|mouseleave|remove".split("|"), 0, {}
 			)
 		);
 	});
