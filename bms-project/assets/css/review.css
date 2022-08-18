@@ -153,6 +153,7 @@
 	display: inline-block;
 	margin: 12px 10px 0 0;
 	padding: 7px 4px 7px 14px;
+	color: var(--cm-color-black3);
 	background-color: var(--cm-color-dark-white2);
 }
 .switch-item-list ul li span {
@@ -764,6 +765,9 @@
 	background-size: 100%; 
 	text-indent: -9999px;
 }
+.timeline .list .left .tooltip .btn-close:after {
+	display: none;
+}
 .timeline .list .cont {
 	padding: 48px;
 }
@@ -1353,9 +1357,6 @@
 	background: url('../images/review/ico_btn_close_w.svg') no-repeat;
 	background-size: 100%; 
 	text-indent: -9999px;
-}
-.review-management .timeline .list .left .tooltip .btn-close:after {
-	display: none;
 }
 .review-management .timeline .list.type2 .cont {
 	margin-top: 12px;
