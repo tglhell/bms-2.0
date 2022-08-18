@@ -288,7 +288,6 @@ function commentFile() {
 			clearFile($this)
 		})
 	});
-
 	reSizeCmmt();
 	function reSizeCmmt() {
 		let reWinWid = ($(window).width() - 1920) / 2;
@@ -299,7 +298,7 @@ function commentFile() {
 		}
 	}
 	$(window).resize(function() {
-		reSizeCmmt();		
+		reSizeCmmt();
 	})
 }
 
@@ -354,6 +353,7 @@ function review_management_set() {
 	}  
 }
 /* e : review management view */
+
 
 /* s : submit_library_write */
 function btmFixBoxFunc () {

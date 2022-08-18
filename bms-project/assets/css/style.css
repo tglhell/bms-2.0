@@ -1429,7 +1429,8 @@
 .library-list .tit-box {
   min-height: auto;
 }
-.library-list .nodata-area {
+.library-list .nodata-area,
+.library-cont-list .nodata-area {
   margin-top: 253px;
   margin-bottom: 80px;
 }
@@ -1468,8 +1469,9 @@
 .library-view .download-outer .tag-outer{
   margin-top: 40px;
 }
-.library-view .tag-outer a{
+.library-view .tag-outer .text-tag{
   margin: 0 24px 16px 0;
+  pointer-events: none;
 }
 .library-view .cont-banner{
   margin-top: 88px;
@@ -2226,6 +2228,7 @@
 .gma .tag-area .text-tag,
 .library-cont-view .tag-area .text-tag{
   margin-right: 24px;
+  pointer-events: none;
 }
 .gma .gma-cont .content-tit p,
 .library-cont-view .gma-cont .content-tit p{
