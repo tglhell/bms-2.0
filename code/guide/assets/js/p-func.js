@@ -20,12 +20,11 @@ $('.popup').click((() => {
 			var tarItem = $('.layerPopupCont > div, .layerTitle, .layerCont *');
 			if (!$(e.target).is(tarItem)) {
 				$('.layerPopupWrap').fadeOut(500);
-				$('.layerPopupCont').removeAttr('tabindex').fadeOut(500);
-				$('body').removeAttr('style');
-				$('.tarLoop').remove();
-				setTimeout(() => {
+				$('.layerPopupCont').removeAttr('tabindex').fadeOut(500, () => {
+					$('body').removeAttr('style');
+					$('.tarLoop').remove();
 					returnTar.focus();
-				}, 0);
+				});
 			}
 		});
 	}

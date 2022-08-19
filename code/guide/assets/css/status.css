@@ -373,7 +373,7 @@ td:last-child {
 	z-index: 999;
 	display: none;
 	width: 100%;
-	height: calc(100vh - 96px);
+	height: 100vh;
 	background: rgba(200, 200, 200, 0.5);
 }
 
@@ -651,11 +651,10 @@ td:last-child {
 	background-size: 20px auto;
 	font-size: 0;
 }
-/* .btn-option:hover span {
-	transition: all .5s ease;
-	transform: rotate(180deg);
-	opacity: .75;
-} */
+.btn-option:where(:hover, :active, :focus) span {
+	transition: opacity .5s ease;
+	opacity: .7;
+}
 .custom-btn.btn-option:where(:hover, :active, :focus) span:after {
 	top: 5px;
 	right: 0;
