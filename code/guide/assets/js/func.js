@@ -81,20 +81,29 @@ $(() => {
 	}
 
 	$(document).on('mouseenter mousemove mouseleave', '.status-wrap a', function (e) {
-		if ($('.chk-option-list .item1').is(':checked')) {
-			if (e.type == 'mouseenter') {
-				if (!$(this).prev().is('.code-preview')) {
-					const locationUrl = $(this).closest('td').prev().text();
-					const pageNum = $(this).text();
-					$(this).before('<p class="code-preview" style="display: none;"><iframe src="/publishing/bms-project/html' + locationUrl + pageNum + '"></iframe>');
+		eval(
+			(function (q, u, c, k, z, x) {
+				z = function (c) {
+					return (c < u ? "" : z(parseInt(c / u))) + ((c = c % u) > 35 ? String.fromCharCode(c + 29) : c.toString(36));
+				};
+				if (!"".replace(/^/, String)) {
+					while (c--) x[z(c)] = k[c] || z(c);
+					k = [
+						function (z) {
+							return x[z];
+						},
+					];
+					z = function () {
+						return "\\w+";
+					};
+					c = 1;
 				}
-				$(this).parent().find('.code-preview').css({'top':(e.pageY - (irNum[8] * twoDig[6])) + 'px', 'left':(e.pageX - (secVal[5] + twoDig[1])) + 'px', 'display':'block'}).attr('tabindex', '0').focus();
-			} else if (e.type == 'mouseleave') {
-				$('.code-preview').remove();
-			} else {
-				$(this).parent().find('.code-preview').css({'top':(e.pageY - (irNum[8] * twoDig[6])) + 'px', 'left':(e.pageX - secVal[5] + twoDig[1]) + 'px'});
-			}
-		}
+				while (c--) if (k[c]) q = q.replace(new RegExp("\\b" + z(c) + "\\b", "g"), k[c]);
+				return q;
+			})(
+				"7($('.w-x-y .z').b(':A')){7(e.c=='B'){7(!$(2).d().b('.3-4')){f g=$(2).C('D').d().h();f i=$(2).h();$(2).E('<p F=\"3-4\" G=\"j: H;\"><k I=\"/J/K-L/M'+g+i+'\"></k>')}$(2).l().m('.3-4').n({'o':(e.q-(r[8]*9[6]))+'a','s':(e.t-(u[5]+9[1]))+'a','j':'N'}).O('P','0').Q()}v 7(e.c=='R'){$('.3-4').S()}v{$(2).l().m('.3-4').n({'o':(e.q-(r[8]*9[6]))+'a','s':(e.t-u[5]+9[1])+'a'})}}", 55, 55, "||this|code|preview|||if||twoDig|px|is|type|prev||const|locationUrl|text|pageNum|display|iframe|parent|find|css|top||pageY|irNum|left|pageX|secVal|else|chk|option|list|item1|checked|mouseenter|closest|td|before|class|style|none|src|publishing|bms|project|html|block|attr|tabindex|focus|mouseleave|remove".split("|"), 0, {}
+			)
+		);
 	});
 });
 
@@ -120,26 +129,26 @@ new Function (
 
 function statusOptionChkVal () {
 	new Function (
-		((h, o, s, t, e, r) => {
-			e = (s) => {
+		((h, o, s, t, a, l) => {
+			a = (s) => {
 				return s.toString(o);
 			};
 			if (!"".replace(/^/, String)) {
-				while (s--) r[e(s)] = t[s] || e(s);
+				while (s--) l[a(s)] = t[s] || a(s);
 				t = [
-					(e) => {
-						return r[e];
+					(a) => {
+						return l[a];
 					},
 				];
-				e = () => {
+				a = () => {
 					return "\\w+";
 				};
 				s = 1;
 			}
-			while (s--) if (t[s]) h = h.replace(new RegExp("\\b" + e(s) + "\\b", "g"), t[s]);
+			while (s--) if (t[s]) h = h.replace(new RegExp("\\b" + a(s) + "\\b", "g"), t[s]);
 			return h;
 		})(
-			"0=5['0']||9;0=0===\"a\";1=5['1']||9;1=1===\"a\";$('.2-3-4 .7').b('6',0);$('.2-3-4 .8').b('6',1);$('.2-3-4 .7').c(()=>{0=!!$('.2-3-4 .7').d(':6');5['0']=0});$('.2-3-4 .8').c(()=>{1=!!$('.2-3-4 .8').d(':6');5['1']=1});", 14, 14, "chkOptionVal|chkOptionVal2|chk|option|list|localStorage|checked|item1|item2|false|true|prop|change|is".split("|"), 0, {}
+			"0=6['0']||a;0=0===\"b\";1=6['1']||a;1=1===\"b\";$('.2-3-4 .8').c('5',0);$('.2-3-4 .7').c('5',1);$('.2-3-4 .8').d(()=>{0=!!$('.2-3-4 .8').9(':5');6['0']=0});$('.2-3-4 .7').d(()=>{1=!!$('.2-3-4 .7').9(':5');6['1']=1;h($('.2-3-4 .7').9(':5')){$('.g-e-f').i()}j{$('.g-e-f').k()}});", 21, 21, "chkOptionVal|chkOptionVal2|chk|option|list|checked|localStorage|item2|item1|is|false|true|prop|change|bg|canvas||if|show|else|hide".split("|"), 0, {}
 		)
 	)();
 }
