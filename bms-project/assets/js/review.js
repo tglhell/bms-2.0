@@ -445,10 +445,10 @@ function dsSaveToast () {
 /* e : submit_library_write */
 
 function noSroll() {
-	$('.file-detail-input .date-picker').focusin(function() {
+	$('.file-detail-input .daterange.date-chk').focusin(function() {
 		$(this).parents('.layer-popup-cont-inner').css('overflow-y','hidden');
 	})
-	$('.file-detail-input .date-picker').focusout(function() {
+	$('.file-detail-input .daterange.date-chk').focusout(function() {
 		$(this).parents('.layer-popup-cont-inner').css('overflow-y','auto');
 	})
 }
