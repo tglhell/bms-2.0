@@ -633,13 +633,19 @@ td:last-child {
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
+	width: 40px;
+	height: 40px;
 	padding: 0;
+	border-radius: 50%;
+}
+.btn-option:after {
+	border-radius: 50%;
 }
 .btn-option span {
 	opacity: .5;
 	display: block;
-	width: 40px;
-	height: 30px;
+	width: 100%;
+	height: 100%;
 	background: url(/publishing/code/guide/assets/images/ico_option.png) no-repeat center center;
 	background-size: 20px auto;
 	font-size: 0;
@@ -647,7 +653,7 @@ td:last-child {
 .btn-option:hover span {
 	transition: all .5s ease;
 	transform: rotate(180deg);
-	opacity: .7;
+	opacity: .75;
 }
 .btn-option:focus span:after,
 .btn-option:active span:after {
