@@ -651,7 +651,6 @@ td:last-child {
 .btn-option:where(:hover, :active, :focus) span {
 	transition: all .5s ease;
 	opacity: .7;
-	background-image: url(/publishing/code/guide/assets/images/ico_option.gif);
 }
 .custom-btn.btn-option:where(:hover, :active, :focus) span:after {
 	top: 5px;
