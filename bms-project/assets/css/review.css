@@ -680,10 +680,17 @@
 }
 .design-review-wrap .input-outer-box .side,
 .design-review-view .input-outer-box .side,
+.layer-popup-wrap.w1200 .input-outer-box .side,
 .review-management .input-outer-box .side {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+.layer-popup-wrap.w1200 .input-outer-box .side {
+	align-items: end;
+}
+.layer-popup-wrap.w1200 .input-outer-box:last-of-type .side label {
+	margin-bottom: 0;
 }
 .timeline {
 	width: 100%;
