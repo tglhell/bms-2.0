@@ -147,7 +147,6 @@ strong {
 }
 .guide_container:before {
 	content: '';
-	filter: blur(50px);
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -158,8 +157,8 @@ strong {
 	background-size: cover;
 }
 .guide_container:after {
-	/* -webkit-backdrop-filter: blur(150px);
-	backdrop-filter: blur(150px); */
+	-webkit-backdrop-filter: blur(150px);
+	backdrop-filter: blur(150px);
 	content: '';
 	position: absolute;
 	top: 0;
@@ -347,7 +346,7 @@ header.guide_header h1 {
 .guide_container .contents_infor {
 	max-width: 1280px;
 	margin: 0 auto;
-	padding: 30px 15px;
+	padding: 30px 15px 150px;
 }
 
 .guide_container .contents_infor.guide-content {
