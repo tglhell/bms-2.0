@@ -81,29 +81,20 @@ $(() => {
 	}
 
 	$(document).on('mouseenter mousemove mouseleave', '.status-wrap a', function (e) {
-		eval(
-			((q, u, i, c, k, z) => {
-				k = (i) => {
-					return (i < u ? "" : k(parseInt(i / u))) + ((i = i % u) > 35 ? String.fromCharCode(i + 29) : i.toString(36));
-				};
-				if (!"".replace(/^/, String)) {
-					while (i--) z[k(i)] = c[i] || k(i);
-					c = [
-						(k) => {
-							return z[k];
-						},
-					];
-					k = () => {
-						return "\\w+";
-					};
-					i = 1;
+		if ($('.chk-option-list .item1').is(':checked')) {
+			if (e.type == 'mouseenter') {
+				if (!$(this).prev().is('.code-preview')) {
+					const locationUrl = $(this).closest('td').prev().text();
+					const pageNum = $(this).text();
+					$(this).before('<p class="code-preview" style="display: none;"><iframe src="/publishing/bms-project/html' + locationUrl + pageNum + '"></iframe>');
 				}
-				while (i--) if (c[i]) q = q.replace(new RegExp("\\b" + k(i) + "\\b", "g"), c[i]);
-				return q;
-			})(
-				"7($('.w-2 x').b(':y')){7(e.c=='z'){7(!$(3).d().b('.4-2')){f g=$(3).A('B').d().h();f i=$(3).h();$(3).C('<p D=\"4-2\" E=\"j: F;\"><k G=\"/H/I-J/K'+g+i+'\"></k>')}$(3).l().m('.4-2').n({'o':(e.q-(r[8]*9[6]))+'a','s':(e.t-(u[5]+9[1]))+'a','j':'L'}).M('N','0').O()}v 7(e.c=='P'){$('.4-2').Q()}v{$(3).l().m('.4-2').n({'o':(e.q-(r[8]*9[6]))+'a','s':(e.t-u[5]+9[1])+'a'})}}", 53, 53, "||preview|this|code|||if||twoDig|px|is|type|prev||const|locationUrl|text|pageNum|display|iframe|parent|find|css|top||pageY|irNum|left|pageX|secVal|else|chk|input|checked|mouseenter|closest|td|before|class|style|none|src|publishing|bms|project|html|block|attr|tabindex|focus|mouseleave|remove".split("|"), 0, {}
-			)
-		);
+				$(this).parent().find('.code-preview').css({'top':(e.pageY - (irNum[8] * twoDig[6])) + 'px', 'left':(e.pageX - (secVal[5] + twoDig[1])) + 'px', 'display':'block'}).attr('tabindex', '0').focus();
+			} else if (e.type == 'mouseleave') {
+				$('.code-preview').remove();
+			} else {
+				$(this).parent().find('.code-preview').css({'top':(e.pageY - (irNum[8] * twoDig[6])) + 'px', 'left':(e.pageX - secVal[5] + twoDig[1]) + 'px'});
+			}
+		}
 	});
 });
 
@@ -129,25 +120,27 @@ new Function (
 
 function statusOptionChkVal () {
 	new Function (
-		(function (l, o, s, t, f, u) {
-			f = function (s) {
+		((h, o, s, t, e, r) => {
+			e = (s) => {
 				return s.toString(o);
 			};
 			if (!"".replace(/^/, String)) {
-				while (s--) u[f(s)] = t[s] || f(s);
+				while (s--) r[e(s)] = t[s] || e(s);
 				t = [
-					function (f) {
-						return u[f];
+					(e) => {
+						return r[e];
 					},
 				];
-				f = function () {
+				e = () => {
 					return "\\w+";
 				};
 				s = 1;
 			}
-			while (s--) if (t[s]) l = l.replace(new RegExp("\\b" + f(s) + "\\b", "g"), t[s]);
-			return l;
-		})("0=2['0']||4;0=0===\"5\";6 1=$('.7-8 9');1.a('3',0);1.b(()=>{0=!!1.c(':3');2['0']=0});", 13, 13, "chkPreview|chkValPreview|localStorage|checked|false|true|let|chk|preview|input|prop|change|is".split("|"), 0, {})
+			while (s--) if (t[s]) h = h.replace(new RegExp("\\b" + e(s) + "\\b", "g"), t[s]);
+			return h;
+		})(
+			"0=5['0']||9;0=0===\"a\";1=5['1']||9;1=1===\"a\";$('.2-3-4 .7').b('6',0);$('.2-3-4 .8').b('6',1);$('.2-3-4 .7').c(()=>{0=!!$('.2-3-4 .7').d(':6');5['0']=0});$('.2-3-4 .8').c(()=>{1=!!$('.2-3-4 .8').d(':6');5['1']=1});", 14, 14, "chkOptionVal|chkOptionVal2|chk|option|list|localStorage|checked|item1|item2|false|true|prop|change|is".split("|"), 0, {}
+		)
 	)();
 }
 statusOptionChkVal ();
