@@ -147,7 +147,7 @@ strong {
 }
 .guide_container:before {
 	content: '';
-	filter: blur(30px);
+	filter: blur(50px);
 	position: absolute;
 	top: 0;
 	bottom: 0;
