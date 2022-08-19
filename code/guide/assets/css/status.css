@@ -630,6 +630,9 @@ td:last-child {
 
 /* s : button style */
 .btn-option {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
 	padding: 0;
 }
 .btn-option span {
@@ -642,7 +645,8 @@ td:last-child {
 	font-size: 0;
 }
 .btn-option:hover span {
-	transition: opacity .5s ease;
+	transition: all .5s ease;
+	transform: rotate(180deg);
 	opacity: .7;
 }
 .btn-option:focus span:after,

@@ -147,6 +147,7 @@ strong {
 }
 .guide_container:before {
 	content: '';
+	filter: blur(30px);
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -157,8 +158,8 @@ strong {
 	background-size: cover;
 }
 .guide_container:after {
-	-webkit-backdrop-filter: blur(150px);
-	backdrop-filter: blur(150px);
+	/* -webkit-backdrop-filter: blur(150px);
+	backdrop-filter: blur(150px); */
 	content: '';
 	position: absolute;
 	top: 0;
