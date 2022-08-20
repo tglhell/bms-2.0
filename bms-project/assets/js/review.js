@@ -162,14 +162,12 @@ function actDateInp () {
 	}
 	eDateTar[1].daterangepicker(dateRangeOptions);
 	if ($(eDateTar[1]).hasClass('date-chk')) {
-		
 		if (!$(eDateTar[1]).parent().is('.active')) {
 			$('.daterange.date-chk').val('');
 		}
 	} else {
 		eDateTar[1].val(sDateVal + ' - ' + eDateVal);
 	}
-	
 	eDateTar[3].eq(0).text(sDateVal);
 	eDateTar[3].eq(1).text(eDateVal);
 }
@@ -313,12 +311,12 @@ function commentFile() {
 
 function thumbReadUrl (input) {
 	if (input.files && input.files[0]) {
-			let reader = new FileReader();
-			reader.onload = function (e) {
-				cateThumbBox.find('.add-file label img').remove();
-				cateThumbBox.find('.add-file label').append('<img src="' + e.target.result + '" alt="대표 이미지">');
-			}
-			reader.readAsDataURL(input.files[0]);
+		let reader = new FileReader();
+		reader.onload = function (e) {
+			cateThumbBox.find('.add-file label img').remove();
+			cateThumbBox.find('.add-file label').append('<img src="' + e.target.result + '" alt="대표 이미지">');
+		}
+		reader.readAsDataURL(input.files[0]);
 	}
 }
 
@@ -435,7 +433,6 @@ function rightGuideSwiper () {
 
 function dsSaveToast () {
 	$('.btn-tp-save').on('click', function () {
-		console.log('test');
 		$('.write-save-toast').addClass('active');
 		setTimeout(() => {
 			$('.write-save-toast').removeClass('active');
