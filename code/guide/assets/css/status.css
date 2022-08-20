@@ -626,10 +626,6 @@ td:last-child {
 
 /* s : button style */
 .btn-option {
-	position: fixed;
-	top: 19px;
-	left: 230px;
-	z-index: 5;
 	width: 30px;
 	height: 30px;
 	padding: 0;
