@@ -117,6 +117,13 @@ function reviewManagementFunc () {
 			eDateTar[2].find('input').prop('checked', chkSwitch);
 			actDateInp ();
 		});
+		if ($(this).closest('.layer-popup-wrap').is('.w1200')) {
+			$(this).closest('.layer-popup-wrap.w1200').find('.layer-popup-cont-inner').scroll(function () {
+				let drpInpHgt = $(this).find('.daterange').outerHeight(true);
+				let drpPos = $(this).find('.daterange').offset().top + drpInpHgt;
+				$('.daterangepicker').css('top', drpPos);
+			});
+		}
 	});
 	dateInp ();
 }
@@ -440,12 +447,3 @@ function dsSaveToast () {
 	});
 }
 /* e : submit_library_write */
-
-function noSroll() {
-	$('.file-detail-input .daterange.date-chk').focusin(function() {
-		$(this).parents('.layer-popup-cont-inner').css('overflow-y','hidden');
-	})
-	$('.file-detail-input .daterange.date-chk').focusout(function() {
-		$(this).parents('.layer-popup-cont-inner').css('overflow-y','auto');
-	})
-}
