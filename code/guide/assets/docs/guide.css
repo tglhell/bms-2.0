@@ -10,6 +10,7 @@
 	--cm-font-family-head-regular: 'genesis-head-regular', sans-serif;
 	--cm-font-family-text-regular: 'genesis-text-regular', sans-serif;
 	--cm-font-family-nanum-gothic-regular: 'Nanum Gothic', sans-serif;
+	--cm-font-weight-normal: 400;
 }
 
 body {

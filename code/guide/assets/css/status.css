@@ -27,15 +27,15 @@ body {
 body {
 	position: relative;
 	color: #555;
-	font: 12px/1.5 'genesis-head-light', sans-serif;
+	font: 12px/1.5 var(--cm-font-family-head-light);
 }
 
 button {
-	font-family: 'genesis-head-light', sans-serif;
+	font-family: var(--cm-font-family-head-light);
 }
 
 a {
-	color: #16a0f0;
+	color: var(--cm-color-sky);
 	text-decoration: none;
 }
 
@@ -71,10 +71,10 @@ table a:active:before {
 
 .s-header h1 {
 	padding-bottom: 10px;
-	font-family: 'genesis-head-light', sans-serif;
+	font-family: var(--cm-font-family-head-light);
+	font-weight: var(--cm-font-weight-normal);
 	font-size: 24px;
-	font-weight: 400;
-	color: #444;
+	color: var(--cm-title-black);
 }
 
 .s-header ul {
@@ -190,7 +190,7 @@ body.js .section .s-title {
 	border-width: 1px 0;
 	background-color: rgba(221, 221, 221, .5);
 	/* background-color: rgba(236, 238, 117, 0.05); */
-	font: 12px/1.5 'genesis-head-light', sans-serif;
+	font: 12px/1.5 var(--cm-font-family-head-light);
 	cursor: pointer;
 }
 
@@ -200,7 +200,7 @@ body.js .section .s-title .s-bar {
 	left: 0;
 	width: 0%;
 	height: 1px;
-	background-color: #16a0f0;
+	background-color: var(--cm-color-sky);
 }
 
 body.js .section .s-title .s-bar:after {
@@ -209,7 +209,7 @@ body.js .section .s-title .s-bar:after {
 	top: 5px;
 	right: 2px;
 	font-size: 10px;
-	color: #16a0f0;
+	color: var(--cm-color-sky);
 	line-height: 14px;
 }
 
@@ -273,8 +273,8 @@ body.js .section .content {
 
 .btn-box .btn-aem-64 {
 	display: inline-block;
-	font: 12px/1.5 'genesis-head-light', sans-serif;
-	color: #16a0f0;
+	font: 12px/1.5 var(--cm-font-family-head-light);
+	color: var(--cm-color-sky);
 	cursor: pointer;
 }
 
@@ -284,7 +284,7 @@ body.js .section .content {
 
 .btn-box .btn-aem-64:focus {
 	outline: none;
-	box-shadow: 0 0 0 1px #16a0f0;
+	box-shadow: 0 0 0 1px var(--cm-color-sky);
 }
 
 .btn-aem-64 {
@@ -298,7 +298,7 @@ body.js .section .content {
 
 .btn-aem-64:hover {
 	transition: background-color .5s, border-color .5s ease-in-out;
-	border-color: #16a0f0;
+	border-color: var(--cm-color-sky);
 	background-color: rgba(255, 255, 255, 1);
 	text-decoration: none;
 }
@@ -321,7 +321,7 @@ body.js .section .content {
 	border: 0;
 	border-radius: 50%;
 	background: rgba(0, 0, 0, .5);
-	color: #fff;
+	color: var(--cm-title-white);
 	cursor: pointer;
 }
 .btn-top:before {
@@ -582,11 +582,11 @@ td:last-child {
   position: relative;
 }
 .custom-btn:where(:active, :focus, :hover) span {
-	color: #16a0f0;
+	color: var(--cm-color-sky);
 }
 .custom-btn span:active:hover,
 .custom-btn span:focus:hover {
-	color: #16a0f0;
+	color: var(--cm-color-sky);
 }
 .custom-btn:active span:after,
 .custom-btn:focus span:after {
@@ -601,7 +601,7 @@ td:last-child {
 /* style 1 */
 .btn-1 {
   border: none;
-  color: #444;
+	color: var(--cm-title-black);
 }
 .btn-1:after {
 	content: '';
