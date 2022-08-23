@@ -53,6 +53,7 @@ function designReview () {
 				sltItemLeng = outerSltTagBox.find('ul').children('li').length;
 				if (sltItemLeng == 0) {
 					outerSltTagBox.removeClass('active');
+					$('.btn-item-add').off();
 				}
 			});
 		} else {
@@ -70,7 +71,6 @@ function designReview () {
 				outerSltTagBox.removeClass('active');
 				$('.btn-item-add').off();
 			}
-
 		});
 
 		$('.add-tag-pop .btn-close').off().on('click', function () {
@@ -508,7 +508,7 @@ $(function () {
 
 	$('.selected-tag .btn-item-del').on('click', function () {
 		$(this).parent().remove();
-		if ($('.switch-item-list ul').find('li').length == 0) {
+		if ($('.selected-tag .switch-item-list').find('ul li').length == 0) {
 			outerSltTagBox.removeClass('active');
 		}
 	});
