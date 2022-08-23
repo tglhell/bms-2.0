@@ -186,7 +186,7 @@
 .design-review-wrap .complete-outer {
 	display: flex;
 	align-items: center;
-	height: calc(100vh - 688px);
+	min-height: calc(100vh - 801px);
 	margin-top: 160px;
 }
 .design-review-wrap .complete-outer .complete-area {
