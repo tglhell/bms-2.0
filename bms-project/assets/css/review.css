@@ -184,7 +184,15 @@
 
 /* s : review request complete */
 .design-review-wrap .complete-outer {
-	margin-top: 120px;
+	display: flex;
+	align-items: center;
+	height: calc(100vh - 688px);
+	margin-top: 160px;
+}
+.design-review-wrap .complete-outer .complete-area {
+	display: inline-block;
+	width: 100%;
+	vertical-align: middle;
 }
 /* e : review request complete */
 
@@ -1491,6 +1499,9 @@
 	font-size: 16px;
 	color: var(--cm-color-gray);
 	line-height: 20px;
+}
+.selected-tag .selected-box.active p {
+	display: none;
 }
 .selected-tag.input-outer-box div label {
 	min-width: none;
