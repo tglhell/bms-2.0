@@ -581,7 +581,6 @@
 	min-width: auto;
 	align-items: center;
 	justify-content: center;
-	padding-top: 24px;
 	border: 1px dashed var(--cm-color-gray);
 	background-color: var(--cm-color-dark-white);
 	font-size: 14px;
@@ -592,6 +591,9 @@
 .input-outer-box.row-type .cate-thumb-box .add-file label {
 	display: flex;
 	margin-bottom: 0;
+}
+.cate-thumb-box .add-file label span {
+	padding-top: 24px;
 }
 .cate-thumb-box .add-file label span:before {
 	content: '';
