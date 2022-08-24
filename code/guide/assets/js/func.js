@@ -128,28 +128,67 @@ new Function (
 )();
 
 function statusOptionChkVal () {
-	new Function (
-		((h, o, s, t, a, l) => {
-			a = (s) => {
-				return s.toString(o);
-			};
-			if (!"".replace(/^/, String)) {
-				while (s--) l[a(s)] = t[s] || a(s);
-				t = [
-					(a) => {
-						return l[a];
-					},
-				];
-				a = () => {
-					return "\\w+";
-				};
-				s = 1;
-			}
-			while (s--) if (t[s]) h = h.replace(new RegExp("\\b" + a(s) + "\\b", "g"), t[s]);
-			return h;
-		})(
-			"3=7['3']||b;3=3===\"c\";4=7['4']||b;4=4===\"c\";5=7['5']||b;5=5===\"c\";$('.0-1-2 .e').f('6',3);$('.0-1-2 .9').f('6',4);$('.0-1-2 .a').f('6',5);$('.0-1-2 .e').h(()=>{3=!!$('.0-1-2 .e').8(':6');7['3']=3});$('.0-1-2 .9').h(()=>{4=!!$('.0-1-2 .9').8(':6');7['4']=4;i($('.0-1-2 .9').8(':6')){$('.g-j-k').o()}l{$('.g-j-k').p()}});$('.0-1-2 .a').h(()=>{5=!!$('.0-1-2 .a').8(':6');7['5']=5;i($('.0-1-2 .a').8(':6')){$('m').q('d-n')}l{$('m').r('d-n')}});", 28, 28, "chk|option|list|chkOptionVal|chkOptionVal2|chkOptionVal3|checked|localStorage|is|item2|item3|false|true||item1|prop||change|if|bg|canvas|else|html|mode|show|hide|addClass|removeClass".split("|"), 0, {}
-		)
-	)();
+	// new Function (
+	// 	((h, o, s, t, a, l) => {
+	// 		a = (s) => {
+	// 			return s.toString(o);
+	// 		};
+	// 		if (!"".replace(/^/, String)) {
+	// 			while (s--) l[a(s)] = t[s] || a(s);
+	// 			t = [
+	// 				(a) => {
+	// 					return l[a];
+	// 				},
+	// 			];
+	// 			a = () => {
+	// 				return "\\w+";
+	// 			};
+	// 			s = 1;
+	// 		}
+	// 		while (s--) if (t[s]) h = h.replace(new RegExp("\\b" + a(s) + "\\b", "g"), t[s]);
+	// 		return h;
+	// 	})(
+	// 		"3=7['3']||b;3=3===\"c\";4=7['4']||b;4=4===\"c\";5=7['5']||b;5=5===\"c\";$('.0-1-2 .e').f('6',3);$('.0-1-2 .9').f('6',4);$('.0-1-2 .a').f('6',5);$('.0-1-2 .e').h(()=>{3=!!$('.0-1-2 .e').8(':6');7['3']=3});$('.0-1-2 .9').h(()=>{4=!!$('.0-1-2 .9').8(':6');7['4']=4;i($('.0-1-2 .9').8(':6')){$('.g-j-k').o()}l{$('.g-j-k').p()}});$('.0-1-2 .a').h(()=>{5=!!$('.0-1-2 .a').8(':6');7['5']=5;i($('.0-1-2 .a').8(':6')){$('m').q('d-n')}l{$('m').r('d-n')}});", 28, 28, "chk|option|list|chkOptionVal|chkOptionVal2|chkOptionVal3|checked|localStorage|is|item2|item3|false|true||item1|prop||change|if|bg|canvas|else|html|mode|show|hide|addClass|removeClass".split("|"), 0, {}
+	// 	)
+	// )();
+
+	chkOptionVal = localStorage['chkOptionVal'] || false;
+	chkOptionVal = chkOptionVal === "true";
+	chkOptionVal2 = localStorage['chkOptionVal2'] || false;
+	chkOptionVal2 = chkOptionVal2 === "true";
+	chkOptionVal3 = localStorage['chkOptionVal3'] || false;
+	chkOptionVal3 = chkOptionVal3 === "true";
+
+	$('.chk-option-list .item1').prop('checked', chkOptionVal);
+	$('.chk-option-list .item2').prop('checked', chkOptionVal2);
+	$('.chk-option-list .item3').prop('checked', chkOptionVal3);
+
+	$('.chk-option-list .item1').change(() => {
+		chkOptionVal = !!$('.chk-option-list .item1').is(':checked');
+		localStorage['chkOptionVal'] = chkOptionVal;
+	});
+	$('.chk-option-list .item2').change(() => {
+		chkOptionVal2 = !!$('.chk-option-list .item2').is(':checked');
+		localStorage['chkOptionVal2'] = chkOptionVal2;
+		if ($('.chk-option-list .item2').is(':checked')) {
+			$('.g-bg-canvas').show();
+		} else {
+			$('.g-bg-canvas').hide();
+		}
+	});
+	$('.chk-option-list .item3').change(() => {
+		chkOptionVal3 = !!$('.chk-option-list .item3').is(':checked');
+		localStorage['chkOptionVal3'] = chkOptionVal3;
+		darkModeChk ();
+	});
+
+	function darkModeChk () {
+		if ($('.chk-option-list .item3').is(':checked')) {
+			$('html').addClass('d-mode');
+		} else {
+			$('html').removeClass('d-mode');
+		}
+	}
+	darkModeChk ();
 }
 statusOptionChkVal ();
