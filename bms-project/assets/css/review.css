@@ -642,6 +642,7 @@
 .design-review-view .review-info {
 	flex-shrink: 0;
 	width: 527px;
+	min-height: calc(100vh - 330px);
 	padding: 60px 80px;
 	margin-top: -81px;
 	background-color: var(--cm-color-dark-white);
