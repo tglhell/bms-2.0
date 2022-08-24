@@ -654,6 +654,9 @@
 	font-family: var(--fs-text-kr);
 	line-height: 23px;
 }
+.design-review-view .review-info .h4-title {
+	word-break: break-all;
+}
 .design-review-view .review-info .info-list {
 	margin-top: 55px;
 }
