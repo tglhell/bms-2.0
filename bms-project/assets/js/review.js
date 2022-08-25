@@ -217,6 +217,7 @@ function actDateInp () {
 			"daysOfWeek": [ "S", "M", "T", "W", "T", "F", "S"],
 		},
 		autoApply: true,
+		minDate: moment()
 	}
 	eDateTar[1].daterangepicker(dateRangeOptions);
 	if ($(eDateTar[1]).hasClass('date-chk')) {
