@@ -502,7 +502,7 @@ $(function () {
 	$('.side .right').find('input').on('change', function () {
 		const chkInpTar = $(this).closest('.input-outer-box').find('.inp-slice-box input');
 		if ($(this).is(':checked')) {
-			chkInpTar.addClass('disabled').prop('disabled');
+			chkInpTar.val(null).addClass('disabled').prop('disabled');
 		} else {
 			chkInpTar.removeClass('disabled').prop('enabled');
 		}
