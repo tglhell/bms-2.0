@@ -1472,6 +1472,9 @@
 .input-info-form .row-type .input-group-box .input-box:nth-child(odd) {
 	margin-right: 30px;
 }
+.input-info-form .row-type .input-group-box .input-outer-box .input-box {
+	margin-right: 0;
+}
 .input-info-form .input-box.calendar .inp-slice-box {
 	display: block;
 }
