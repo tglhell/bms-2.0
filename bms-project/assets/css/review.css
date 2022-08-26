@@ -1566,7 +1566,7 @@
   width: 325px;
 }
 .add-tag-pop .switch-cont.add-tag .switch-item-list {
-  height: 318px;
+  min-height: 100%;
   padding: 16px;
   margin-bottom: 0;
   border: 1px solid var(--cm-color-gray);
