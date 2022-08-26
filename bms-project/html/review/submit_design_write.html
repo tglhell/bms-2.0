@@ -434,147 +434,162 @@
 			<div class="cont-outer form">
 				<div class="design-review-wrap">
           <div class="design-review-cont">
-            <div class="input-outer-box row-type">
-              <label for="inpTxt01">제목 <span class="required">*</span></label>
-              <div class="input-box">
-                <input type="text" id="inpTxt01" class="input-item" placeholder="제목을 입력해주세요." maxlength="100">
-                <button class="btn-reset"></button>
-                <p class="typing"><span>0</span>/100</p>
-              </div>
-            </div>
-
-						<div class="input-outer-box row-type radio-box">
-              <label for="rvRdo1">브랜드 <span class="required">*</span></label>
-							<div class="radio-group"><!-- 에러시 val-error -->
-								<label class="radio"><input type="radio" name="rv-radio1" id="rvRdo1"><span>Hyundai</span></label>
-								<label class="radio"><input type="radio" name="rv-radio1" checked><span>N</span></label>
-								<label class="radio"><input type="radio" name="rv-radio1"><span>Truck &amp; Bus</span></label>
+            <div class="input-outer-box">
+							<div class="input-outer-box row-type val-error">
+								<label for="inpTxt01">제목 <span class="required">*</span></label>
+								<div class="input-box">
+									<input type="text" id="inpTxt01" class="input-item" placeholder="제목을 입력해주세요." maxlength="100">
+									<button class="btn-reset"></button>
+									<p class="typing"><span>0</span>/100</p>
+								</div>
 							</div>
+							<p class="error-msg">제목을 입력해주세요.</p>
 						</div>
 
-						<div class="input-outer-box row-type">
-							<label for="rvRdo2">미디어 타입 <span class="required">*</span></label>
-							<div class="slide-switch-box js-switch-outer">
-								<div class="switch-top">
-									<p class="switch-placeholder">미디어 타입을 선택해주세요.</p>
-									<button class="btn-switch js-switch"><span>펼치기</span></button>
+						<div class="input-outer-box">
+							<div class="input-outer-box row-type radio-box val-error">
+								<label for="rvRdo1">브랜드 <span class="required">*</span></label>
+								<div class="radio-group"><!-- 에러시 val-error -->
+									<label class="radio"><input type="radio" name="rv-radio1" id="rvRdo1"><span>Hyundai</span></label>
+									<label class="radio"><input type="radio" name="rv-radio1"><span>N</span></label>
+									<label class="radio"><input type="radio" name="rv-radio1"><span>Truck &amp; Bus</span></label>
 								</div>
-								<div class="switch-cont">
-									<div class="switch-btm-box">
-										<div class="input-outer-box row-type check-box">
-											<label for="rvTgChk1">Film</label>
-											<div class="check-group"><!-- 에러시 + val-error -->
-												<label class="chk"><input type="checkbox"><span>TVC</span></label>
-												<label class="chk"><input type="checkbox"><span>Digital Film</span></label>
-											</div>
-										</div>
-	
-										<div class="input-outer-box row-type check-box">
-											<label for="rvTgChk2">Print</label>
-											<div class="check-group"><!-- 에러시 + val-error -->
-												<label class="chk"><input type="checkbox"><span>Print Advertising</span></label>
-												<label class="chk"><input type="checkbox"><span>Catalogue</span></label>
-												<label class="chk"><input type="checkbox"><span>Magazine</span></label>
-												<label class="chk"><input type="checkbox"><span>Packaging</span></label>
-												<label class="chk"><input type="checkbox"><span>Out Of Home</span></label>
-												<label class="chk"><input type="checkbox"><span>Stationery</span></label>
-											</div>
-										</div>
+							</div>
+							<p class="error-msg">브랜드를 선택하세요.</p>
+						</div>
 
-										<div class="input-outer-box row-type check-box">
-											<label for="rvTgChk3">Digital</label>
-											<div class="check-group"><!-- 에러시 + val-error -->
-												<label class="chk"><input type="checkbox"><span>Digital Banner</span></label>
-												<label class="chk"><input type="checkbox"><span>Social Media</span></label>
-												<label class="chk"><input type="checkbox"><span>Website</span></label>
-												<label class="chk"><input type="checkbox"><span>Mobile / App</span></label>
-												<label class="chk"><input type="checkbox"><span>Digital Event</span></label>
+						<div class="input-outer-box">
+							<div class="input-outer-box row-type val-error">
+								<label for="rvRdo2">미디어 타입 <span class="required">*</span></label>
+								<div class="slide-switch-box js-switch-outer">
+									<div class="switch-top">
+										<p class="switch-placeholder">미디어 타입을 선택해주세요.</p>
+										<button class="btn-switch js-switch"><span>펼치기</span></button>
+									</div>
+									<div class="switch-cont">
+										<div class="switch-btm-box">
+											<div class="input-outer-box row-type check-box">
+												<label for="rvTgChk1">Film</label>
+												<div class="check-group"><!-- 에러시 + val-error -->
+													<label class="chk"><input type="checkbox"><span>TVC</span></label>
+													<label class="chk"><input type="checkbox"><span>Digital Film</span></label>
+												</div>
 											</div>
-										</div>
-
-										<div class="input-outer-box row-type check-box">
-											<label for="rvTgChk4">Merchandise</label>
-											<div class="check-group"><!-- 에러시 + val-error -->
-												<label class="chk"><input type="checkbox"><span>Promotion Item</span></label>
-												<label class="chk"><input type="checkbox"><span>Brand Item</span></label>
+		
+											<div class="input-outer-box row-type check-box">
+												<label for="rvTgChk2">Print</label>
+												<div class="check-group"><!-- 에러시 + val-error -->
+													<label class="chk"><input type="checkbox"><span>Print Advertising</span></label>
+													<label class="chk"><input type="checkbox"><span>Catalogue</span></label>
+													<label class="chk"><input type="checkbox"><span>Magazine</span></label>
+													<label class="chk"><input type="checkbox"><span>Packaging</span></label>
+													<label class="chk"><input type="checkbox"><span>Out Of Home</span></label>
+													<label class="chk"><input type="checkbox"><span>Stationery</span></label>
+												</div>
 											</div>
-										</div>
 	
-										<div class="input-outer-box row-type check-box">
-											<label for="rvTgChk5">Space</label>
-											<div class="check-group"><!-- 에러시 + val-error -->
-												<label class="chk"><input type="checkbox"><span>GDSI</span></label>
-												<label class="chk"><input type="checkbox"><span>Signage</span></label>
-												<label class="chk"><input type="checkbox"><span>Event</span></label>
-												<label class="chk"><input type="checkbox"><span>Motorshow</span></label>
-												<label class="chk"><input type="checkbox"><span>Exhibition</span></label>
+											<div class="input-outer-box row-type check-box">
+												<label for="rvTgChk3">Digital</label>
+												<div class="check-group"><!-- 에러시 + val-error -->
+													<label class="chk"><input type="checkbox"><span>Digital Banner</span></label>
+													<label class="chk"><input type="checkbox"><span>Social Media</span></label>
+													<label class="chk"><input type="checkbox"><span>Website</span></label>
+													<label class="chk"><input type="checkbox"><span>Mobile / App</span></label>
+													<label class="chk"><input type="checkbox"><span>Digital Event</span></label>
+												</div>
 											</div>
-										</div>
 	
-										<div class="input-outer-box row-type check-box">
-											<label for="rvTgChk6">Uniform</label>
-											<div class="check-group"><!-- 에러시 + val-error -->
-												<label class="chk"><input type="checkbox"><span>Event Uniform</span></label>
-												<label class="chk"><input type="checkbox"><span>Corporate Uniform</span></label>
+											<div class="input-outer-box row-type check-box">
+												<label for="rvTgChk4">Merchandise</label>
+												<div class="check-group"><!-- 에러시 + val-error -->
+													<label class="chk"><input type="checkbox"><span>Promotion Item</span></label>
+													<label class="chk"><input type="checkbox"><span>Brand Item</span></label>
+												</div>
 											</div>
-										</div>
-	
-										<div class="input-outer-box row-type check-box">
-											<label for="rvTgChk7">사내 제작물</label>
-											<div class="check-group"><!-- 에러시 + val-error -->
-												<label class="chk"><input type="checkbox"><span>오토웨이 공지</span></label>
-												<label class="chk"><input type="checkbox"><span>사내 이메일</span></label>
-												<label class="chk"><input type="checkbox"><span>사내 제작물</span></label>
+		
+											<div class="input-outer-box row-type check-box">
+												<label for="rvTgChk5">Space</label>
+												<div class="check-group"><!-- 에러시 + val-error -->
+													<label class="chk"><input type="checkbox"><span>GDSI</span></label>
+													<label class="chk"><input type="checkbox"><span>Signage</span></label>
+													<label class="chk"><input type="checkbox"><span>Event</span></label>
+													<label class="chk"><input type="checkbox"><span>Motorshow</span></label>
+													<label class="chk"><input type="checkbox"><span>Exhibition</span></label>
+												</div>
 											</div>
-										</div>
-	
-										<div class="input-outer-box row-type check-box">
-											<label for="rvTgChk8">Others</label>
-											<div class="check-group"><!-- 에러시 + val-error -->
-												<label class="chk"><input type="checkbox"><span>Others</span></label>
+		
+											<div class="input-outer-box row-type check-box">
+												<label for="rvTgChk6">Uniform</label>
+												<div class="check-group"><!-- 에러시 + val-error -->
+													<label class="chk"><input type="checkbox"><span>Event Uniform</span></label>
+													<label class="chk"><input type="checkbox"><span>Corporate Uniform</span></label>
+												</div>
+											</div>
+		
+											<div class="input-outer-box row-type check-box">
+												<label for="rvTgChk7">사내 제작물</label>
+												<div class="check-group"><!-- 에러시 + val-error -->
+													<label class="chk"><input type="checkbox"><span>오토웨이 공지</span></label>
+													<label class="chk"><input type="checkbox"><span>사내 이메일</span></label>
+													<label class="chk"><input type="checkbox"><span>사내 제작물</span></label>
+												</div>
+											</div>
+		
+											<div class="input-outer-box row-type check-box">
+												<label for="rvTgChk8">Others</label>
+												<div class="check-group"><!-- 에러시 + val-error -->
+													<label class="chk"><input type="checkbox"><span>Others</span></label>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+							<p class="error-msg">미디어 타입을 선택해주세요.</p>
 						</div>
 
-						<div class="input-outer-box row-type">
-							<label for="rvRdo3">차량 코드 <span class="required">*</span></label>
-							<div class="slide-switch-box js-switch-outer">
-								<div class="switch-top">
-									<p class="switch-placeholder">차량코드를 선택해주세요.</p>
-									<button class="btn-switch js-switch"><span>펼치기</span></button>
-								</div>
-								<div class="switch-cont">
-									<div class="switch-btm-box">
-										<div class="input-outer-box row-type check-box">
-											<label for="rvTgChk4">Hyundai</label>
-											<div class="check-group"><!-- 에러시 + val-error -->
-												<label class="chk"><input type="checkbox"><span>Accent(RB)</span></label>
-												<label class="chk"><input type="checkbox"><span>Aslan(AG)</span></label>
-												<label class="chk"><input type="checkbox"><span>Avante / Elantra(AD)</span></label>
-												<label class="chk"><input type="checkbox"><span>Eon(HA)</span></label>
-												<label class="chk"><input type="checkbox"><span>Grand i10(BA)</span></label>
-												<label class="chk"><input type="checkbox"><span>Grandeur / Azera(IG)</span></label>
-												<label class="chk"><input type="checkbox"><span>Sonata(DN)</span></label>
-												<label class="chk"><input type="checkbox"><span>Sonata(DN8)</span></label>
-												<label class="chk"><input type="checkbox"><span>Others</span></label>
-												<label class="chk"><input type="checkbox"><span>test</span></label>
-												<label class="chk"><input type="checkbox"><span>temp</span></label>
+						<div class="input-outer-box">
+							<div class="input-outer-box row-type val-error">
+								<label for="rvRdo3">차량 코드 <span class="required">*</span></label>
+								<div class="slide-switch-box js-switch-outer">
+									<div class="switch-top">
+										<p class="switch-placeholder">차량코드를 선택해주세요.</p>
+										<button class="btn-switch js-switch"><span>펼치기</span></button>
+									</div>
+									<div class="switch-cont">
+										<div class="switch-btm-box">
+											<div class="input-outer-box row-type check-box">
+												<label for="rvTgChk4">Hyundai</label>
+												<div class="check-group"><!-- 에러시 + val-error -->
+													<label class="chk"><input type="checkbox"><span>Accent(RB)</span></label>
+													<label class="chk"><input type="checkbox"><span>Aslan(AG)</span></label>
+													<label class="chk"><input type="checkbox"><span>Avante / Elantra(AD)</span></label>
+													<label class="chk"><input type="checkbox"><span>Eon(HA)</span></label>
+													<label class="chk"><input type="checkbox"><span>Grand i10(BA)</span></label>
+													<label class="chk"><input type="checkbox"><span>Grandeur / Azera(IG)</span></label>
+													<label class="chk"><input type="checkbox"><span>Sonata(DN)</span></label>
+													<label class="chk"><input type="checkbox"><span>Sonata(DN8)</span></label>
+													<label class="chk"><input type="checkbox"><span>Others</span></label>
+													<label class="chk"><input type="checkbox"><span>test</span></label>
+													<label class="chk"><input type="checkbox"><span>temp</span></label>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+							<p class="error-msg">차량 코드를 선택해주세요.</p>
 						</div>
 
-						<div class="input-outer-box row-type"><!-- 유효성체크 val-error -->
-							<label for="inpNum01_031">설명 <span class="required">*</span></label>
-							<div class="textarea-box">
-								<textarea name="name" rows="8" placeholder="프로젝트에 대해 간단히 설명해주세요."></textarea>
-								<span class="bite"><em>0</em>/1000</span>
+						<div class="input-outer-box">
+							<div class="input-outer-box row-type val-error">
+								<label for="inpNum01_031">설명 <span class="required">*</span></label>
+								<div class="textarea-box">
+									<textarea name="name" rows="8" placeholder="프로젝트에 대해 간단히 설명해주세요."></textarea>
+									<span class="bite"><em>0</em>/1000</span>
+								</div>
 							</div>
+							<p class="error-msg">내용을 입력해주세요.</p>
 						</div>
 
 						<div class="input-outer-box row-type">
