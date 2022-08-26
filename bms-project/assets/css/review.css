@@ -1953,6 +1953,9 @@ margin-top: 32px;
 .layer-popup-cont .file-detail-input .input-outer-box .side .chk {
 min-width: auto;
 }
+.layer-popup-cont .file-detail-input .input-outer-box .side .chk span:before {
+border-color: #999;
+}
 .layer-popup-cont .file-detail-input .input-outer-box .side .btn {
 width: auto;
 min-width: 64px;
