@@ -80,6 +80,9 @@
 .slide-switch-box.active {
 	height: auto;
 }
+.val-error .slide-switch-box {
+	border-color: #e63312;
+}
 .slide-switch-box .btn-switch {
 	position: absolute;
 	top: 0;
@@ -1510,6 +1513,9 @@
 	padding: 16px;
 	margin-top: 16px;
 	border: 1px solid var(--cm-color-gray);
+}
+.val-error .selected-box {
+	border-color: #e63312;
 }
 .selected-tag .selected-box p {
 	font-size: 16px;
