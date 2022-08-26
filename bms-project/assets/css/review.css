@@ -1443,6 +1443,9 @@
 .input-info-form {
 	margin-top: 124px;
 }
+.input-info-form .input-outer-box .input-outer-box {
+	margin-top: 0;
+}
 .design-review-wrap .input-info-form {
 	margin-top: 0;
 }
