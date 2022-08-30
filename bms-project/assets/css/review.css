@@ -1999,9 +1999,19 @@ width: auto;
 margin-top: 26px;
 }
 .country-select-wrap .check-group .check-group {
-margin: 12px 0 0 26px;
+	margin: 12px 0 0 26px;
 }
 .country-select-wrap div.check-group .chk {
-margin-top: 14px;
+	margin-top: 14px;
 }
 /* e : layer-popup */
+
+/* s : 2022-08-30 modify */
+.design-review-wrap .select-box .select-items {
+	z-index: 51;
+}
+.note-editor.note-frame .note-editing-area,
+.note-editor.note-airframe .note-editing-area {
+	background-color: #fff;
+}
+/* e : 2022-08-30 modify */
