@@ -2007,4 +2007,8 @@ margin: 26px 0 0 26px;
 .design-review-wrap .select-box .select-items {
 	z-index: 51;
 }
+.note-editor.note-frame .note-editing-area,
+.note-editor.note-airframe .note-editing-area {
+	background-color: #fff;
+}
 /* e : 2022-08-30 modify */
