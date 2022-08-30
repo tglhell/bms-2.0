@@ -2001,5 +2001,10 @@ margin-top: 26px;
 .country-select-wrap .check-group .check-group {
 margin: 26px 0 0 26px;
 }
-
 /* e : layer-popup */
+
+/* s : 2022-08-30 modify */
+.design-review-wrap .select-box .select-items {
+	z-index: 51;
+}
+/* e : 2022-08-30 modify */
