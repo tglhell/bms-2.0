@@ -2014,4 +2014,12 @@ margin-top: 26px;
 .note-editor.note-airframe .note-editing-area {
 	background-color: #fff;
 }
+.note-editing-area .note-editable ul,
+.note-editing-area .note-editable ol {
+	list-style: inherit;
+}
+.note-editor.note-frame .note-editing-area .note-editable,
+.note-editor.note-airframe .note-editing-area .note-editable {
+	padding: 10px 25px;
+}
 /* e : 2022-08-30 modify */
