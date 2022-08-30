@@ -1999,7 +1999,10 @@ width: auto;
 margin-top: 26px;
 }
 .country-select-wrap .check-group .check-group {
-margin: 26px 0 0 26px;
+	margin: 12px 0 0 26px;
+}
+.country-select-wrap div.check-group .chk {
+	margin-top: 14px;
 }
 /* e : layer-popup */
 
