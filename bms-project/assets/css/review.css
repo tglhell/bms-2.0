@@ -2014,7 +2014,7 @@ margin-top: 26px;
 .note-editor.note-airframe .note-editing-area {
 	background-color: #fff;
 }
-.note-editing-area .note-editable ul {
+.note-editing-area .note-editable ul, ol {
 	list-style: inherit;
 }
 .note-editor.note-frame .note-editing-area .note-editable,
