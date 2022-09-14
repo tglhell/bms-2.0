@@ -1178,6 +1178,7 @@
 	font-size: 16px;
 	font-family: var(--fs-text-kr);
 	line-height: 24px;
+	vertical-align: top;
 }
 .review-management .contents-info .info-list > li + li {
 	margin-top: 24px;
@@ -1473,7 +1474,8 @@
 .input-info-form .input-outer-box label {
 	font-weight: var(--fb-normal);
 }
-.input-info-form .row-type .input-group-box .input-box:nth-child(odd) {
+.input-info-form .row-type .input-group-box .input-box:nth-child(odd),
+.input-info-form .row-type .input-group-box .select-box:nth-child(odd){
 	margin-right: 30px;
 }
 .input-info-form .row-type .input-group-box .input-outer-box .input-box {
@@ -1907,6 +1909,7 @@ display: inline-block;
 width: 109px;
 height: 72px;
 margin-right: 12px;
+overflow: hidden;
 }
 .layer-popup-cont .file-detail-input .img-chk .img {
 width: 100%;

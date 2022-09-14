@@ -422,7 +422,7 @@ function review_management_set() {
 
 /* s : submit_library_write */
 function btmFixBoxFunc () {
-	const dsFixBoxTar = [$('.btm-btn-fix, .comment-box:not(.cate-thumb-box)'), $('.bms-footer'), $('.right-guide-outer'), $('.btn-top-box'), $('.bms-header, body')];
+	const dsFixBoxTar = [$('.btm-btn-fix, .comment-box:not(.cate-thumb-box)'), $('.bms-footer'), $('.right-guide-outer'), $('.btn-top-box'), $('body')];
 	const dsFixBoxPos = [parseInt(dsFixBoxTar[0].css('bottom')), parseInt(dsFixBoxTar[3].css('right'))];
 	$(window).on('scroll resize mouseover', function () {
 		let dsScrPos = $(this).scrollTop();

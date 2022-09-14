@@ -12,10 +12,10 @@ $(function(){
 		$('.bms-header').addClass('menu-open');
 	})
 
-	$('.bms-header .menu .menu-first-li > a').on('mouseover',function(){
-		$(this).addClass('hover').parent('li').siblings('li').find('> a').removeClass('hover');
+	$('.bms-header .menu .menu-first-li').on('mouseover',function(){
+		$(this).find('> a').addClass('hover').parents('li').siblings('li').find('> a').removeClass('hover');
 		$('.bms-header .sub-menu').hide();
-		$(this).next('.sub-menu').show().parent('li').siblings('li').find('.sub-menu').hide();
+		$(this).find('.sub-menu').show().siblings('li').find('.sub-menu').hide();
 	})
 
 	$('.bms-header .menu, .bms-header .inner-content-bg').on('mouseleave',function(){

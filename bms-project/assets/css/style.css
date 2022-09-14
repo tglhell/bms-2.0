@@ -171,7 +171,7 @@
 .search-result .search-all .search-report-cont .checking-list-box{
   margin: 0;
 }
-.search-result .search-all .search-cont.search-report-cont{
+.search-result .search-all .search-cont.search-library-cont{
   margin-bottom: 0;
 }
 .search-result .small-tab .tab-box-list li a{
@@ -181,14 +181,10 @@
   color: #999;
 }
 .search-result .search-brand .small-tab .tab-box-outer{
-  left: 37.5%;
+  left: 49.95%;
   transform: translateX(-50%);
 }
 .search-result .search-library .small-tab .tab-box-outer{
-  left: 62.5%;
-  transform: translateX(-50%);
-}
-.search-result .search-report .small-tab .tab-box-outer{
   width: auto;
   text-align: right;
 }
@@ -412,7 +408,7 @@
   font-size: 18px;
   line-height: 27px;
 }
-.login-otp .form-outer{
+.login-otp .form-outer .input-outer-box{
   max-width: 410px;
   margin: 0 auto;
 }
