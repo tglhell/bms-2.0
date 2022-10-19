@@ -44,18 +44,18 @@ $(() => {
 
 	$(document).on('mouseenter mousemove mouseleave', '.status-wrap a', function (e) {
 		eval(
-			(function (m, o, n, k, e, y) {
-				e = function (n) {
+			((m, o, n, k, e, y) => {
+				e = (n) => {
 					return (n < o ? "" : e(parseInt(n / o))) + ((n = n % o) > 35 ? String.fromCharCode(n + 29) : n.toString(36));
 				};
 				if (!"".replace(/^/, String)) {
 					while (n--) y[e(n)] = k[n] || e(n);
 					k = [
-						function (e) {
+						(e) => {
 							return y[e];
 						},
 					];
-					e = function () {
+					e = () => {
 						return "\\w+";
 					};
 					n = 1;
