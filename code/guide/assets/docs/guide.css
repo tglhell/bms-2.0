@@ -73,6 +73,7 @@ html.guide body::-webkit-scrollbar-track,
 	margin: 0;
 	list-style: none;
 	text-decoration: none;
+	letter-spacing: -0.25px;
 	box-sizing: border-box;
 }
 html.guide table {
