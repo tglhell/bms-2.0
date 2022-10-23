@@ -418,7 +418,7 @@ td:last-child {
 	position: relative;
 	z-index: 2;
 	margin-bottom: -47px;
-	padding: 10px 50px 10px 15px;
+	padding: 7px 50px 7px 15px;
 	border-bottom: 1px solid rgba(0,0,0,.05);
 	background: rgba(241, 241, 241, .8);
 	text-align: center;
