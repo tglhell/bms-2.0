@@ -707,7 +707,7 @@ td:last-child {
 	height: 100%;
 	border-radius: 50%;
 	background: url(/publishing/code/guide/assets/images/ico_brush.gif) no-repeat center center;
-	background-size: 30px auto;
+	background-size: 64px auto;
 	font-size: 0;
 }
 .btn-pixlr:where(:hover, :active, :focus) {
