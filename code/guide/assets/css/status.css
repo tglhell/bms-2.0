@@ -725,3 +725,24 @@ td:last-child {
 	line-height: 12px;
 }
 /* e : link button style */
+
+/* s : total-result-bar */
+.total-result-bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 2px;
+	background-color: var(--cm-color-sky);
+}
+.total-result-bar:before {
+	content: attr(data-total-value);
+	position: absolute;
+	top: -18px;
+	right: 0;
+}
+.total-chk-state {
+	position: absolute;
+	top: -20px;
+	left: 5px;
+}
+/* e : total-result-bar */
