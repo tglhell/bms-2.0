@@ -27,7 +27,7 @@
 			margin-top: 0;
 		}
 		.navigation a {
-			transition: all .5s ease-in-out;
+			transition: all .5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 			display: block;
 			width: 14px;
 			height: 14px;
@@ -35,11 +35,11 @@
 			border: 1px solid #000;
 			border-radius: 7px;
 			font-size: 0;
-			background-color: #000000;
+			background-color: #fff;
 		}
 		.navigation a.active {
 			transition: all .5s ease-in-out;
-			background-color: #fff;
+			background-color: #000;
 			pointer-events : none;
 		}
 		.section {
@@ -75,15 +75,13 @@
 	function fullpageWithNavigation() {
 		const secCount = $('.section').length;
 		const wHgt = $(window).height();
+		const nav = $('<nav class="navigation"></nav>');
 		let currentPage = 0;
 
-		// Create Navigation
-		const nav = $('<nav class="navigation"></nav>');
 		$('.section').each(function(index) {
 			const sectionId = `section-${index + 1}`;
-			$(this).attr('id', sectionId);
-
 			const navItem = $(`<a href="#${sectionId}">Section ${index + 1}</a>`);
+			$(this).attr('id', sectionId);
 			navItem.on('click', function(e) {
 				e.preventDefault();
 				const targetSectionIndex = index;
@@ -114,7 +112,6 @@
 			}
 		});
 
-		// Function to scroll to a specific section
 		function scrollToSection(index) {
 			const scrollTop = index * wHgt;
 			$('html, body').stop().animate({
