@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Page Scroll</title>
+<style>
+  /* CSS 스타일링 */
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* 수평 스크롤 숨김 */
+  }
+  .section {
+    height: 100vh; /* 화면 높이와 같은 높이 설정 */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+  }
+  .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    overflow-y: auto; /* 스크롤 가능하도록 설정 */
+  }
+</style>
+</head>
+<body>
+
+<div class="section" id="section1">Section 1</div>
+<div class="section" id="section2">Section 2</div>
+<div class="section" id="section3">Section 3</div>
+<div class="section" id="section4">Section 4</div>
+<div class="section" id="section5">Section 5</div>
+<div class="footer" id="footer">Footer<br>스크롤 가능한 영역입니다.</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var pageCount = $('.section').length;
+    var currentPage = 0;
+    
+    // 스크롤 이벤트 감지
+    $(window).on('wheel', function(event) {
+
+      event.preventDefault(); // 기본 스크롤 동작 방지
+			
+      // 스크롤 방향에 따라 페이지 이동
+      if (event.originalEvent.deltaY > 0) { // 아래로 스크롤
+        currentPage = Math.min(currentPage + 1, pageCount);
+				// 마지막 페이지인 경우에는 기본 스크롤 동작 사용
+				if (currentPage === pageCount) return;
+      } else { // 위로 스크롤
+        currentPage = Math.max(currentPage - 1, 0);
+      }
+      
+      // 해당 페이지로 스크롤
+      $('html, body').animate({
+        scrollTop: currentPage * $(window).height()
+      }, 300); // 부드러운 스크롤 시간
+    });
+  });
+</script>
+</body>
+</html>
