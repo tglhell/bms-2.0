@@ -89,6 +89,9 @@
 				e.preventDefault();
 				const targetSectionIndex = index;
 				scrollToSection(targetSectionIndex);
+				$('.section').removeClass('active').eq(targetSectionIndex).addClass('active');
+				$('.navigation a').removeClass('active').eq(targetSectionIndex).addClass('active');
+				currentPage = targetSectionIndex;
 			});
 			nav.append(navItem);
 		});
@@ -100,22 +103,21 @@
 			if (!$('html, body').is(':animated')) {
 				if (e.originalEvent.deltaY > 0) { // scroll down
 					currentPage = Math.min(currentPage + 1, secCount);
-					$('.navigation a').eq(currentPage).addClass('active').siblings().removeClass('active');
 					if (currentPage === secCount) return;
 				} else { // scroll up
 					currentPage = Math.max(currentPage - 1, 0);
-					$('.navigation a').eq(currentPage).addClass('active').siblings().removeClass('active');
 				}
 				$('html, body').stop().animate({
 					scrollTop: currentPage * wHgt
 				}, 500);
+				$('.section').removeClass('active').eq(currentPage).addClass('active');
+				$('.navigation a').removeClass('active').eq(currentPage).addClass('active');
 			}
 		});
 
 		// Function to scroll to a specific section
 		function scrollToSection(index) {
 			const scrollTop = index * wHgt;
-			$('.navigation a').eq(index).addClass('active').siblings().removeClass('active');
 			$('html, body').stop().animate({
 				scrollTop: scrollTop
 			}, 500);
