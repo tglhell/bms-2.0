@@ -73,14 +73,13 @@
 
 <script>
 	function fullpageWithNavigation() {
-		const sections = $('.section');
 		const secCount = $('.section').length;
 		const wHgt = $(window).height();
 		let currentPage = 0;
 
 		// Create Navigation
 		const nav = $('<nav class="navigation"></nav>');
-		sections.each(function(index) {
+		$('.section').each(function(index) {
 			const sectionId = `section-${index + 1}`;
 			$(this).attr('id', sectionId);
 
