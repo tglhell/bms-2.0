@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="guide">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preload" href="/publishing/code/guide/assets/fonts/GenesisSansHeadKRLight.woff2" as="font" type="font/woff2" crossorigin />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<title>Full Page Scroll</title>
+	<link rel="stylesheet" href="/publishing/code/guide/assets/docs/guide.css">
+	<link rel="shortcut icon" href="/publishing/code/guide/assets/favicon.png" type="image/x-icon">
+	<script type="text/javascript" src="/publishing/code/guide/assets/js/lib/jquery-3.6.0.min.js"></script>
 	<style>
 		/* CSS 스타일링 */
 		body, html {
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			font-family: Arial, sans-serif;
 			overflow-x: hidden; /* 수평 스크롤 숨김 */
 		}
 		.section {
@@ -19,7 +23,8 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			font-size: 3em;
+			font-size: 50px;
+			color: #fff;
 		}
 		.footer {
 			background-color: #333;
@@ -29,27 +34,28 @@
 			overflow-y: auto; /* 스크롤 가능하도록 설정 */
 		}
 	</style>
-	<script type="text/javascript" src="/publishing/code/guide/assets/js/lib/jquery-3.6.0.min.js"></script>
 </head>
-<body>
 
-<div class="section" style="background-color:#5f33c7;">페이지 1<br>한 페이지씩 스크롤</div>
-<div class="section" style="background-color:#33c76c;">페이지 2<br>한 페이지씩 스크롤</div>
-<div class="section" style="background-color:#c7a433;">페이지 3<br>한 페이지씩 스크롤</div>
-<div class="section" style="background-color:#9fc733;">페이지 4<br>한 페이지씩 스크롤</div>
-<div class="section" style="background-color:#c73378;">페이지 5<br>한 페이지씩 스크롤</div>
-<div class="footer" id="footer">Footer<br>일반 스크롤</div>
+<body>
+	<div class="wrap">
+		<div class="section" style="background-color:#5f33c7;">페이지 1<br>한 페이지씩 스크롤</div>
+		<div class="section" style="background-color:#33c76c;">페이지 2<br>한 페이지씩 스크롤</div>
+		<div class="section" style="background-color:#c7a433;">페이지 3<br>한 페이지씩 스크롤</div>
+		<div class="section" style="background-color:#9fc733;">페이지 4<br>한 페이지씩 스크롤</div>
+		<div class="section" style="background-color:#c73378;">페이지 5<br>한 페이지씩 스크롤</div>
+		<div class="footer">Footer<br>일반 스크롤</div>
+	</div>
+</body>
 
 <script>
-  $(document).ready(function(){
+  function fullpage () {
     const secCount = $('.section').length;
 		const wHgt = $(window).height();
     let currentPage = 0;
     
-    // 스크롤 이벤트 감지
-    $(window).on('wheel', function(event) {
-      event.preventDefault();
-      if (event.originalEvent.deltaY > 0) { // scroll down
+    $(window).on('wheel', function(e) {
+      e.preventDefault();
+      if (e.originalEvent.deltaY > 0) { // scroll down
         currentPage = Math.min(currentPage + 1, secCount);
 				if (currentPage === secCount) return;
       } else { // scroll up
@@ -61,7 +67,7 @@
 				}, 300);
 			}
     });
-  });
+	}
+	fullpage ();
 </script>
-</body>
 </html>
