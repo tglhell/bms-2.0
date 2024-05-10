@@ -52,20 +52,20 @@
 		const wHgt = $(window).height();
     let currentPage = 0;
     
-    $(window).on('wheel', function(e) {
-      e.preventDefault();
-      if (e.originalEvent.deltaY > 0) { // scroll down
-        currentPage = Math.min(currentPage + 1, secCount);
-				if (currentPage === secCount) return;
-      } else { // scroll up
-        currentPage = Math.max(currentPage - 1, 0);
-      }
+		$(window).on('wheel', function(e) {
+			e.preventDefault();
 			if (!$('html, body').is(':animated')) {
+				if (e.originalEvent.deltaY > 0) { // scroll down
+					currentPage = Math.min(currentPage + 1, secCount);
+					if (currentPage === secCount) return;
+				} else { // scroll up
+					currentPage = Math.max(currentPage - 1, 0);
+				}
 				$('html, body').stop().animate({
 					scrollTop: currentPage * wHgt
-				}, 300);
+				}, 500);
 			}
-    });
+		});
 	}
 	fullpage ();
 </script>
