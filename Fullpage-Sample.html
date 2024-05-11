@@ -27,7 +27,7 @@
 			margin-top: 0;
 		}
 		.navigation a {
-			transition: all .5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+			transition: all 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 			display: block;
 			width: 14px;
 			height: 14px;
@@ -38,7 +38,7 @@
 			background-color: #fff;
 		}
 		.navigation a.active {
-			transition: all .5s ease-in-out;
+			transition: all 1s ease-in-out;
 			background-color: #000;
 			pointer-events : none;
 		}
@@ -106,7 +106,7 @@
 				}
 				$('html, body').stop().animate({
 					scrollTop: currentPage * wHgt
-				}, 500);
+				}, 1000);
 				$('.section').removeClass('active').eq(currentPage).addClass('active');
 				$('.navigation a').removeClass('active').eq(currentPage).addClass('active');
 			}
@@ -116,7 +116,7 @@
 			const scrollTop = index * wHgt;
 			$('html, body').stop().animate({
 				scrollTop: scrollTop
-			}, 500);
+			}, 1000);
 		}
 	}
 	fullpageWithNavigation();
