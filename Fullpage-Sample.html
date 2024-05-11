@@ -17,6 +17,9 @@
 			padding: 0;
 			height: 100%;
 		}
+		html.guide body {
+			overflow-y: hidden;
+		}
 		.navigation {
 			transform: translateY(-50%);
 			position: absolute;
@@ -27,7 +30,7 @@
 			margin-top: 0;
 		}
 		.navigation a {
-			transition: all 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+			transition: all .8s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 			display: block;
 			width: 14px;
 			height: 14px;
@@ -38,7 +41,7 @@
 			background-color: #fff;
 		}
 		.navigation a.active {
-			transition: all 1s ease-in-out;
+			transition: all .8s ease-in-out;
 			background-color: #000;
 			pointer-events : none;
 		}
@@ -106,7 +109,14 @@
 				}
 				$('html, body').stop().animate({
 					scrollTop: currentPage * wHgt
-				}, 1000);
+				}, 800);
+				console.log(currentPage);
+				console.log(secCount);
+				if (currentPage === (secCount - 1)) {
+					$('html.guide body').css('overflow-y', 'auto');
+				} else {
+					$('html.guide body').css('overflow-y', 'hidden');
+				}
 				$('.section').removeClass('active').eq(currentPage).addClass('active');
 				$('.navigation a').removeClass('active').eq(currentPage).addClass('active');
 			}
@@ -116,7 +126,7 @@
 			const scrollTop = index * wHgt;
 			$('html, body').stop().animate({
 				scrollTop: scrollTop
-			}, 1000);
+			}, 800);
 		}
 	}
 	fullpageWithNavigation();
