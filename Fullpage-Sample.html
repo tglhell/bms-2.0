@@ -17,9 +17,6 @@
 			padding: 0;
 			height: 100%;
 		}
-		html.guide body {
-			overflow-y: hidden;
-		}
 		.navigation {
 			transform: translateY(-50%);
 			position: absolute;
@@ -110,13 +107,6 @@
 				$('html, body').stop().animate({
 					scrollTop: currentPage * wHgt
 				}, 800);
-				console.log(currentPage);
-				console.log(secCount);
-				if (currentPage === (secCount - 1)) {
-					$('html.guide body').css('overflow-y', 'auto');
-				} else {
-					$('html.guide body').css('overflow-y', 'hidden');
-				}
 				$('.section').removeClass('active').eq(currentPage).addClass('active');
 				$('.navigation a').removeClass('active').eq(currentPage).addClass('active');
 			}
