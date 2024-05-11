@@ -96,20 +96,20 @@
 		$('.navigation a:first').addClass('active');
 
 		$(window).on('wheel', function(e) {
-			e.preventDefault();
 			if (!$('html, body').is(':animated')) {
+				e.preventDefault();
 				if (e.originalEvent.deltaY > 0) { // scroll down
 					currentPage = Math.min(currentPage + 1, secCount);
-					if (currentPage === secCount) return;
 				} else { // scroll up
 					currentPage = Math.max(currentPage - 1, 0);
 				}
 				$('html, body').stop().animate({
 					scrollTop: currentPage * wHgt
 				}, 800);
-				$('.section').removeClass('active').eq(currentPage).addClass('active');
-				$('.navigation a').removeClass('active').eq(currentPage).addClass('active');
 			}
+			if (currentPage === secCount) return;
+			$('.section').removeClass('active').eq(currentPage).addClass('active');
+			$('.navigation a').removeClass('active').eq(currentPage).addClass('active');
 		});
 
 		function scrollToSection(index) {
